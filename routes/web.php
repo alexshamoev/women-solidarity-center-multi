@@ -107,8 +107,6 @@ if(Schema::hasTable('languages')) {
 
 						Route::get('/contacts', 'AContactsController@edit')->name('contactsEdit');
 						Route::post('/contacts', 'AContactsController@update')->name('contactsUpdate');
-
-						Route::get('/orders', 'AOrdersController@get')->name('getOrders');
 					//
 
 
@@ -139,16 +137,6 @@ if(Schema::hasTable('languages')) {
 
 
 		// Auth routes
-			// Login-Logout!
-				Route::get('/{lang}/login', 'AuthController@getLogin')->name('getLogin');
-				Route::post('/{lang}/login', 'AuthController@login')->name('login');
-				Route::get('/{lang}/logout', 'AuthController@logout')->name('logout');
-			//
-
-			// Register
-				Route::get('/{lang}/register', 'AuthController@getRegistration')->name('getRegister');
-				Route::post('/{lang}/register', 'AuthController@registration')->name('register');
-			//
 
 			// Email Verification
 				Route::get('/{lang}/verify/{id}', 'AuthController@emailVerification')->name('verifyEmail');
@@ -168,19 +156,6 @@ if(Schema::hasTable('languages')) {
 			// // Resend
 			// 	Route::post('/resend', 'MailController@emailVerification')->name('resendEmail');
 			// //
-		// 
-
-
-		// Cabinet
-			$cabinetPage = Page::firstWhere('slug', 'cabinet');
-			Route::get('/{lang}/'.$cabinetPage->alias.'/edit', 'CabinetController@edit')->name('editCabinet');
-			Route::post('/{lang}/'.$cabinetPage->alias.'/update', 'CabinetController@update')->name('updateCabinet');
-		//
-
-
-		// Order 
-			// Route::post('/{lang}/order/order', 'OrdersController@order')->name('orderProducts');
-		
 		//
 
 
@@ -214,31 +189,18 @@ if(Schema::hasTable('languages')) {
 				foreach($moduleTitleForControllerArray as $data) {
 					$moduleTitleForController .= ucfirst($data);
 				}
-
-				$loginAlias = Page::firstWhere('slug', 'login');
-				$registrationAlias = Page::firstWhere('slug', 'registration');
-				$recoverAlias = Page::firstWhere('slug', 'passRecover');
 				
 				foreach(Language::where('disable', '0')->get() as $language) {
-					if($module->page->{ 'alias_'.$language->title } !== $loginAlias->alias
-						&& $module->page->{ 'alias_'.$language->title } !== $registrationAlias->alias
-						&& $module->page->{ 'alias_'.$language->title } !== $recoverAlias->alias) {
 
 						Route::get('/{lang}/'.$module->page->{ 'alias_'.$language->title }, $moduleTitleForController.'Controller@getStep0')->where(['lang' => '[a-z]+'])->name($module->page->{ 'alias_'.$language -> title });
 						Route::get('/{lang}/'.$module->page->{ 'alias_'.$language->title }.'/{step0Alias}', $moduleTitleForController.'Controller@getStep1')->where(['lang' => '[a-z]+', 'step0Alias' => '[a-zა-ჰа-яё0-9-]+']);
 						Route::get('/{lang}/'.$module->page->{ 'alias_'.$language->title }.'/{step0Alias}/{step1Alias}', $moduleTitleForController.'Controller@getStep2')->where(['lang' => '[a-z]+', 'step0Alias' => '[a-zა-ჰа-яё0-9-]+', 'step1Alias' => '[a-zა-ჰа-яё0-9-]+']);
 						Route::get('/{lang}/'.$module->page->{ 'alias_'.$language->title }.'/{step0Alias}/{step1Alias}/{step2Alias}', $moduleTitleForController.'Controller@getStep3')->where(['lang' => '[a-z]+', 'step0Alias' => '[a-zა-ჰа-яё0-9-]+', 'step1Alias' => '[a-zა-ჰа-яё0-9-]+', 'step2Alias' => '[a-zა-ჰа-яё0-9-]+']);
 						Route::get('/{lang}/'.$module->page->{ 'alias_'.$language->title }.'/{step0Alias}/{step1Alias}/{step2Alias}/{step3Alias}', $moduleTitleForController.'Controller@getStep4')->where(['lang' => '[a-z]+', 'step0Alias' => '[a-zა-ჰа-яё0-9-]+', 'step1Alias' => '[a-zა-ჰа-яё0-9-]+', 'step2Alias' => '[a-zა-ჰа-яё0-9-]+', 'step3Alias' => '[a-zა-ჰа-яё0-9-]+']);
-					}
 				}
 			}
 		// Else show static page.
 			Route::get('/{lang}/{pageAlias}', 'FrontController@getPage')->where(['lang' => '[a-z]+', 'pageAlias' => '[a-zა-ჰа-яё0-9-]+']);
 		//
-
-		Route::post('/basket/get-data', 'BasketController@getProducts');
-
-
-		Route::post('/{lang}/make-order', 'OrdersController@order')->name('makeOrder');
 	}
 }
