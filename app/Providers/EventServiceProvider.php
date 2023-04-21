@@ -13,8 +13,6 @@ use App\Models\ModuleStep;
 use App\Observers\ModuleStepObserver;
 use App\Models\Language;
 use App\Observers\LanguageObserver;
-use App\Models\PhotoGalleryStep0;
-use App\Observers\PhotoGalleryStep0Observer;
 use App\Models\PhotoGalleryStep1;
 use App\Observers\PhotoGalleryStep1Observer;
 use App\Models\Page;
@@ -49,7 +47,5 @@ class EventServiceProvider extends ServiceProvider
         Language::observe(LanguageObserver::class);
         Page::observe(PageObserver::class);
         Partner::observe(PartnerObserver::class);
-        PhotoGalleryStep0::observe(PhotoGalleryStep0Observer::class);
-        PhotoGalleryStep1::observe(PhotoGalleryStep1Observer::class);
     }
 }

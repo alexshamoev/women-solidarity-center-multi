@@ -32,8 +32,6 @@ class DatabaseSeeder extends Seeder
             DefaultNewsStep2::class,
             DefaultNewsStep3::class,
             DefaultPartnersStep0::class,
-            DefaultPhotoGalleryStep0::class,
-            DefaultPhotoGalleryStep1::class,
             DefaultProductsStep0::class,
             DefaultProductsStep1::class,
             DefaultProductsStep2::class,

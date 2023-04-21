@@ -15,7 +15,7 @@ class DefaultMenuButtonsLinkTypes extends Seeder
      */
     public function run()
     {
-        DB :: insert("INSERT INTO `menu_buttons_link_types` (`title_ge`, `title_en`, `title_ru`, `option_value`, `rang`, `created_at`, `updated_at`) VALUES
+        DB :: insert("INSERT INTO `menu_buttons_link_types` (`title_az`, `title_en`, `title_ar`, `option_value`, `rang`, `created_at`, `updated_at`) VALUES
                     ('მივაბათ გვერდი', 'Attach page', 'Прикрепить страницу', 'page', 20, NULL, NULL),
                     ('თავისუფალი ბმული', 'Free link', 'Свободная ссылка', 'free_link', 15, NULL, NULL),
                     ('ბმულის გარეშე', 'Without link', 'Без ссылки', 'without_link', 10, NULL, NULL)");

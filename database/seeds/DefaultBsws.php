@@ -15,7 +15,7 @@ class DefaultBsws extends Seeder
      */
     public function run()
     {
-        DB :: insert("INSERT INTO `bsws` (`system_word`, `word_ge`, `word_en`, `word_ru`, `created_at`, `updated_at`) VALUES
+        DB :: insert("INSERT INTO `bsws` (`system_word`, `word_az`, `word_en`, `word_ar`, `created_at`, `updated_at`) VALUES
                     ('address', 'თბილისი', 'Tbilisi', 'Тбилиси', '2022-03-17 09:53:39', '2022-03-17 09:53:52');");
     }
 }

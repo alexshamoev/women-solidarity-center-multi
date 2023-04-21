@@ -15,9 +15,9 @@ class CreateMenuButtonsLinkTypes extends Migration
     {
         Schema::create('menu_buttons_link_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-			$table -> string('title_ge') -> default('');
+			$table -> string('title_az') -> default('');
 			$table -> string('title_en') -> default('');
-			$table -> string('title_ru') -> default('');
+			$table -> string('title_ar') -> default('');
             $table -> string('option_value') -> default('page');
 			$table -> integer('rang') -> default(0);
             $table->timestamps();

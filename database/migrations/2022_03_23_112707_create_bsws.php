@@ -16,9 +16,9 @@ class CreateBsws extends Migration
         Schema::create('bsws', function (Blueprint $table) {
 			$table -> bigIncrements('id');
 			$table -> string('system_word') -> default('');
-			$table -> string('word_ge') -> default('');
+			$table -> string('word_az') -> default('');
 			$table -> string('word_en') -> default('');
-			$table -> string('word_ru') -> default('');
+			$table -> string('word_ar') -> default('');
             $table->timestamps();
         });
     }

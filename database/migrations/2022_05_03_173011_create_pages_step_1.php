@@ -16,16 +16,16 @@ class CreatePagesStep1 extends Migration
         Schema::create('pages_step_1', function (Blueprint $table) {
             $table -> bigIncrements('id');
             $table -> integer('top_level') -> default(0);
-            $table -> string('title_ge') -> default('');
+            $table -> string('title_az') -> default('');
             $table -> string('title_en') -> default('');
-            $table -> string('title_ru') -> default('');
+            $table -> string('title_ar') -> default('');
             $table -> integer('rang') -> default(0);
-            $table -> string('meta_title_ge') -> default('');
+            $table -> string('meta_title_az') -> default('');
             $table -> string('meta_title_en') -> default('');
-            $table -> string('meta_title_ru') -> default('');
-            $table -> string('meta_description_ge') -> default('');
+            $table -> string('meta_title_ar') -> default('');
+            $table -> string('meta_description_az') -> default('');
             $table -> string('meta_description_en') -> default('');
-            $table -> string('meta_description_ru') -> default('');
+            $table -> string('meta_description_ar') -> default('');
             $table -> timestamps();
         });
     }

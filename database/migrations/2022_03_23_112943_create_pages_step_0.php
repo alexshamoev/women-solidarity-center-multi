@@ -15,23 +15,23 @@ class CreatePagesStep0 extends Migration
     {
         Schema::create('pages_step_0', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table -> string('alias_ge') -> default('');
+			$table -> string('alias_az') -> default('');
 			$table -> string('alias_en') -> default('');
-			$table -> string('alias_ru') -> default('');
+			$table -> string('alias_ar') -> default('');
 			$table -> string('title_en') -> default('');
-			$table -> string('title_ge') -> default('');
-			$table -> string('title_ru') -> default('');
-			$table -> text('text_ge') -> nullable();
+			$table -> string('title_az') -> default('');
+			$table -> string('title_ar') -> default('');
+			$table -> text('text_az') -> nullable();
 			$table -> text('text_en') -> nullable();;
-			$table -> text('text_ru') -> nullable();
+			$table -> text('text_ar') -> nullable();
 			$table -> string('slug') -> default('');
 			$table -> integer('like_default') -> default(0);
-			$table -> string('meta_title_ge') -> default('');
+			$table -> string('meta_title_az') -> default('');
 			$table -> string('meta_title_en') -> default('');
-			$table -> string('meta_title_ru') -> default('');
-			$table -> string('meta_description_ge') -> default('');
+			$table -> string('meta_title_ar') -> default('');
+			$table -> string('meta_description_az') -> default('');
 			$table -> string('meta_description_en') -> default('');
-			$table -> string('meta_description_ru') -> default('');
+			$table -> string('meta_description_ar') -> default('');
             $table->timestamps();
         });
     }
