@@ -14,35 +14,6 @@
                         <span>{{ __('bsw.phone_number') }}: {{ config('bsc.phone_number') }}</span>
                     </div>
 
-                    @if(Auth :: check())
-                        <div class="col-2">
-                            {{ Auth :: user() -> name }}
-                        </div>
-                
-                        <div class="col-2">
-                            <a href="{{ route('logout', $language->title) }}">
-                                Logout
-                            </a>
-                        </div>
-
-                        <div class="col-2">
-                            <a href="{{ '/'.$language -> title.'/'.$basketPage -> alias }}">
-                                Basket Icon
-                            </a>
-                        </div>
-                    @else
-                        <div class="col-3">
-                            <a href="{{ route('getRegister', $language->title) }}">
-                                {{ __('auth.register') }}
-                            </a>
-                        </div>
-
-                        <div class="col-3">
-                            <a href="{{ route('getLogin', $language->title) }}">
-                                {{ __('auth.login') }}
-                            </a>
-                        </div>
-                    @endif
                 </div>
 
                 <nav class="navbar
