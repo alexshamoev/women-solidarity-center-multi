@@ -54,6 +54,7 @@ class FrontController extends Controller {
 				'menuButtons' => MenuButtonStep0::with(['page', 'menuButtonStep1', 'menuButtonStep1.page'])->orderByDesc('rang')->get(),
 				'widgetGetVisibility' => $widgetGetVisibility,
 				'joinOurNewtork' => JoinOurNetworkStep0::first(),
+				'partners' => Partner::orderByDesc('rang')->get(),
 
 			];
 		

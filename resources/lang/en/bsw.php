@@ -83,5 +83,7 @@ return [
     'orderSuccessStatus' => 'Order is accepted! Our administrator will contact you soon.',
     'activities' => 'Events',
     'events' => 'Events',
-    'publications' => 'Pubications'
+    'publications' => 'Pubications',
+    'sponsore' => 'Sponsored by',
+    'fill_form' => 'Fill a form'
 ];

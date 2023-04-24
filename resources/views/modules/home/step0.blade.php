@@ -84,6 +84,10 @@
 			</a> 
 		</div>
 		
+		<div class="pertners pt-4">
+			@include('modules.partners.step0')
+		</div>
+
 		<div class="container mt-5 bg-white p-md-0 p-3 pt-0">
 			@include('modules.join_our_network.step0')
 		</div>

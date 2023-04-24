@@ -83,7 +83,9 @@ return [
     'orderSuccessStatus' => 'Order is accepted! Our administrator will contact you soon.',
     'activities' => 'Events',
     'events' => 'Իրադարձություններ',
-    'publications' => 'ռեսուրսներ'
-
+    'publications' => 'ռեսուրսներ',
+    'sponsore' => 'Վաղուց հաստատված',
+    'fill_form' => 'Վաղուց',
+ 
 
 ];
