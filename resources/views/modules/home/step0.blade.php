@@ -25,13 +25,67 @@
 				</div>
 			<!--  -->
 		@endif
+		
+		<div class="container home__main">
+			@include('modules.animated_header.step0', $animatedHeader)
+		</div>
 
 		<h1 class="p-2">
-			{{ $page -> title }}
+			{{ __('bsw.news') }}
 		</h1>
+		
+		<div class="col-sm-6 news__block_wrapper p-2 position-relative">
+			<a href="{{ $eventPage->fullUrl }}">
+				<div class="news__block 
+							p-lg-0 
+							p-5
+							h-100 
+							d-flex 
+							justify-content-center 
+							align-items-center">
+					<div class="news__block_inner 
+								d-flex 
+								justify-content-center 
+								align-items-center 
+								p-5 
+								h-auto">
+						<img src="/storage/images/blog.svg" alt=""/>
+					</div>
+				</div>
 
-		<div class="p-2">
-			{!! $page -> text !!}
+				<div class="position-absolute news__block__title text-center">
+					<h5 class="fw-bold">{{ __('bsw.events') }}</h5>
+				</div>
+			</a> 
+		</div>
+
+		<div class="col-sm-6 news__block_wrapper p-2 position-relative">
+			<a href="{{ $publicationsPage->fullUrl }}">
+				<div class="news__block 
+							p-lg-0 
+							p-5
+							h-100 
+							d-flex 
+							justify-content-center 
+							align-items-center">
+					<div class="news__block_inner 
+								d-flex 
+								justify-content-center 
+								align-items-center 
+								p-5 
+								h-auto">
+						<img src="/storage/images/blog.svg" alt=""/>
+					</div>
+				</div>
+
+				<div class="position-absolute news__block__title text-center">
+					<h5 class="fw-bold">{{ __('bsw.publications') }}</h5>
+				</div>
+			</a> 
+		</div>
+		
+		<div class="container mt-5 bg-white p-md-0 p-3 pt-0">
+			@include('modules.join_our_network.step0')
 		</div>
 	</div>
 @endsection

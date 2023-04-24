@@ -1,25 +1,35 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\AnimatedHeaderStep0;
 use App\Models\Page;
 use App\Models\Language;
 
-class HomeController extends FrontController {
+class HomeController extends FrontController 
+{
     private const PAGE_SLUG = 'home';
     private static $page;
 
 
-    public function __construct() {
+    public function __construct() 
+    {
         parent::__construct();
         
         self::$page = Page::firstWhere('slug', self::PAGE_SLUG);
     }
     
     
-    public static function getStep0($lang) {
+    public static function getStep0($lang) 
+    {
         $language = Language::where('title', $lang)->first();
 
-        $data = array_merge(self::getDefaultData($language, self::$page));
+        $data = array_merge(self::getDefaultData($language, self::$page), 
+                                                [
+                                                    'animatedHeader' => AnimatedHeaderStep0::orderByDesc('rang')->get(),
+                                                    'eventPage' => Page::firstWhere('slug', 'event'),
+                                                    'publicationsPage' => Page::firstWhere('slug', 'publications'),
+                                                    
+                                                ]);
         
         return view('modules.home.step0', $data);
     }

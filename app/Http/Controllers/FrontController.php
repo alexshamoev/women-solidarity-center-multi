@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JoinOurNetworkStep0;
 use App\Models\Page;
 use App\Models\MenuButtonStep0;
 use App\Models\Language;
@@ -51,7 +52,10 @@ class FrontController extends Controller {
 				'language' => $lang,
 				'languages' => Language::where('disable', '0')->orderByDesc('rang')->get(),
 				'menuButtons' => MenuButtonStep0::with(['page', 'menuButtonStep1', 'menuButtonStep1.page'])->orderByDesc('rang')->get(),
-				'widgetGetVisibility' => $widgetGetVisibility];
+				'widgetGetVisibility' => $widgetGetVisibility,
+				'joinOurNewtork' => JoinOurNetworkStep0::first(),
+
+			];
 		
 		return $data;
 	}

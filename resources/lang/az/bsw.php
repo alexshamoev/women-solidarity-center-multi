@@ -50,7 +50,7 @@ return [
     'fullAddress' => 'Full Address',
     'additionalDetails' => 'Additional Details',
     'orderPlacement' => 'Place Order',
-    'news' => 'News',
+    'news' => 'Oxucunun',
     'products' => 'Products',
     'map' => 'Map',
     'delivery' => 'Delivery throughout Georgia',
@@ -82,6 +82,7 @@ return [
     'cancel' => 'Cancel',
     'orderSuccessStatus' => 'Order is accepted! Our administrator will contact you soon.',
     'activities' => 'Events',
-    'events' => 'Events',
-    'publications' => 'Pubications'
+    'events' => 'səhifənin',
+    'publications' => 'səhifənin'
+
 ];

@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\AnimatedHeaderStep0;
+use App\Models\EventStep0;
+use App\Models\PublicationsStep0;
+use App\Observers\AnimatedHeaderStep0Observer;
+use App\Observers\EventStep0Observer;
+use App\Observers\PublicationsStep0Observer;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -47,5 +53,9 @@ class EventServiceProvider extends ServiceProvider
         Language::observe(LanguageObserver::class);
         Page::observe(PageObserver::class);
         Partner::observe(PartnerObserver::class);
+        AnimatedHeaderStep0::observe(AnimatedHeaderStep0Observer::class);
+        PublicationsStep0::observe(PublicationsStep0Observer::class);
+        EventStep0::observe(EventStep0Observer::class);
+        
     }
 }
