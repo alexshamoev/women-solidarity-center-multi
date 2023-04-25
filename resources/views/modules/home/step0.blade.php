@@ -83,6 +83,40 @@
 				</div>
 			</a> 
 		</div>
+
+		<div class="about_us__description
+                        col-xl-4
+                        col-12
+                        items-end
+                        justify-content-center
+                        p-sm-4
+                        p-2
+                        position-relative">
+			<div class="row about_us__stripe_blue p-lg-3 p-0">
+			</div>
+
+			<div class="about_us__text px-md-3 px-2 h-100 w-100">
+
+				<h2 class="about_us__description_text p-2" >{{ $aboutPage->title }}</h2>
+				<div class="about_us__description_text p-2">
+					{!! $aboutPage->text !!}
+				</div>
+				<div class="p-2">
+					<div class="col-xxl-8
+								col-xl-10
+								col-lg-4
+								col-sm-6
+								col-10
+								p-0
+								yellow_button">
+						{{-- @include('includes.button_yellow', [
+											'title' => 'შემოუერთდი ჩვენს ჯგუფს',
+											'link' => $aboutPage->fullUrl,
+										]) --}}
+					</div>
+				</div>
+			</div>
+		</div>
 		
 		<div class="pertners pt-4">
 			@include('modules.partners.step0')

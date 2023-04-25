@@ -156,6 +156,10 @@ if(Schema::hasTable('languages')) {
 			// // Resend
 			// 	Route::post('/resend', 'MailController@emailVerification')->name('resendEmail');
 			// //
+
+			//subscribe
+				Route::post('/subscribe', 'ASubscribeController@subscribe')->name('subscribe');
+			//
 		//
 
 

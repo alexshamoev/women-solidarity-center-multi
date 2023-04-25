@@ -85,5 +85,7 @@ return [
     'events' => 'Events',
     'publications' => 'Pubications',
     'sponsore' => 'Sponsored by',
-    'fill_form' => 'Fill a form'
+    'fill_form' => 'Fill a form',
+    'site_short_name' => 'WPEN',
+    'subscribe' => 'Subscribe Our Newsletters',
 ];

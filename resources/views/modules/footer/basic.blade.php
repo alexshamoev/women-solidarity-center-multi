@@ -1,186 +1,199 @@
 @if($widgetGetVisibility['footer'])
     <footer class="footer">
         <div class="container p-2">
+            <div class="d-lg-flex
+                        justify-content-between">
+                <div class="p-2
+                        d-lg-flex
+                        align-items-center
+                        text-white">
+                    {{ __('bsw.site_short_name') }}
+                </div>
+                <!-- <div class="d-flex align-items-center">
+                    <div class="p-2 text-white">
+                        {{ __('bsw.want_to_join') }}
+                    </div>
+                    <div class="p-2">
+                        <div class="footer__submit">
+                            {{ Form::submit( __('bsw.join')) }}
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+                <div class="p-2">
+                    <div class="footer__horizontal_line"></div>
+                </div>
             <div class="row">
-                <div class="col-md-6 col-0 p-2">
-                    @foreach($menuButtons as $data)
-                        <div class="nav-item
-                                    ps-lg-0
-                                    ps-4
-                                    pt-lg-0
-                                    pt-1
-                                    menu_buttons__item
-                                    position-relative
-                                    js_menu_buttons__item">
-                            @php
-                                $activeCssClass = '';
+                <div class="col-xl-3
+                            col-lg-6
+                            col-12
+                            p-0">
+                    <h4 class="p-2 footer__title_input">
+                        {{ __('bsw.subscribe') }}
+                    </h4>
+                    <div class="p-2 footer__email_input">
 
-                                if($data -> active) {
-                                    $activeCssClass = 'menu_buttons__active_item_block';
-                                }
-                            @endphp
-                            
-                            <div class="d-block
-                                        py-2
-                                        px-4
-                                        {{ $activeCssClass }}"> 
-                                @if($data -> url)
-                                    <a href="{{ $data -> url }}" target="{{ $data -> urlTarget }}">
-                                @endif
+                        {{ Form::open(array('route' => 'subscribe', 'method' => 'POST')) }}
 
-                                <span>
-                                    {{ $data -> title }}
-                                </span>
-                                
-                                @if($data -> url)
-                                    </a>
-                                @endif
+                            {{ Form::email('email_subscribe', old('email_subscribe'), array(
+                                                                                        'placeholder' => __('bsw.email'), 
+                                                                                        'required' => 'required', 
+                                                                                        'pattern' =>  '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+                                                                                        'title' => 'yourname@example.com',
+                                                                                        )) }}
 
-                                @if(count($data -> menuButtonStep1))
-                                    <div class="js_arrow_div
-                                                d-inline-block
-                                                menu_buttons__arrow_block">
-                                        <span class="ba_thin_arrow_right"></span>
-                                    </div>
-                                @endif
-                            </div>
-                            
-                            @if(count($data -> menuButtonStep1))
-                                <div class="menu_buttons__slide_down_block mt-3">
-                                    @foreach($data -> menuButtonStep1 as $dataInside)
-                                        @php
-                                            $activeCssClass = '';
+                            <!-- {{ Form::submit('<div></div>', ['class' => 'btn btn-primary']) }} -->
+                            <button type="submit" class="footer__btn_submit">
+                                <span class="ba_thin_arrow_right"></span>
+                            </button>
 
-                                            if($dataInside -> active) {
-                                                $activeCssClass = 'menu_buttons__sub_menu_item--active';
-                                            }
-                                        @endphp
-                                        
-                                        <div class="menu_buttons__sub_menu_item {{ $activeCssClass }}">
-                                            @if($dataInside -> url)
-                                                <a href="{{ $dataInside -> url }}" target="{{ $dataInside -> urlTarget }}">
-                                                    <span>
-                                                        {{ $dataInside -> title }}
-                                                    </span>
-                                                </a>
-                                            @else
-                                                <span>
-                                                    {{ $dataInside -> title }}
-                                                </span>
-                                            @endif
-                                        </div>
-                                    @endforeach
+                            {{-- @error('email_subscribe')
+                                <div class="alert alert-danger m-0">
+                                    {{ $message }}
                                 </div>
+                            @enderror --}}
 
+                        {{ Form::close() }}
 
-                                <div class="menu_buttons__slide_down_block_in_burger mt-1">
-                                    @foreach($data -> menuButtonStep1 as $dataInside)
-                                        @php
-                                            $activeCssClass = '';
+                    </div>
+                </div>
 
-                                            if($dataInside -> active) {
-                                                $activeCssClass = 'menu_buttons__sub_menu_item--active';
-                                            }
-                                        @endphp
-                                        
-                                        <div class="menu_buttons__sub_menu_item {{ $activeCssClass }}">
-                                            @if($dataInside -> url)
-                                                <a href="{{ $dataInside -> url }}" target="{{ $dataInside -> urlTarget }}">
-                                                    <span>
-                                                        {{ $dataInside -> title }}
-                                                    </span>
-                                                </a>
-                                            @else
-                                                <span>
-                                                    {{ $dataInside -> title }}
-                                                </span>
-                                            @endif
-                                        </div>
-                                    @endforeach
+                @foreach ($footerLinks as $data)
+                    <div class="col-lg-3
+                                col-6
+                                pt-lg-0
+                                pt-3
+                                p-0">
+
+                        @if ($data->url)
+                            <a href="{{ $data->url }}" target="{{ $data->urlTarget }}">
+                                <h4 class="p-2 footer__title">
+                                    {{ $data->title }}
+                                </h4>
+                            </a>
+                        @else
+                            <h4 class="p-2 footer__title">
+                                {{ $data->title }}
+                            </h4>
+                        @endif
+                        
+                        @foreach($data->footerLinksStep1 as $dataInside)
+                            @if($dataInside->url)
+                                <div class="p-2">
+                                    <a href="{{ $dataInside->url }}" target="{{ $dataInside->urlTarget }}">
+                                        <span class="footer__elements">
+                                            {{ $dataInside->title }}
+                                        </span>
+                                    </a>
+                                </div>
+                            @else
+                                <div class="p-2">
+                                    <span class="footer__elements">
+                                        {{ $dataInside->title }}
+                                    </span>
                                 </div>
                             @endif
-                        </div>
-                    @endforeach
-                </div>
-
-                <div class="col-md-6
-                            col-12
-                            text-right
-                            d-flex
-                            p-0
-                            flex-column
-                            align-items-end">
-                    <div class="p-2">
-                        {{ config('bsw.address') }}
-                    </div>
-                    
-                    <div class="p-2">
-                        {{ __('bsw.phone_number') }}: <a href="tel:{{ config('bsc.phone_number') }}">{{ config('bsc.phone_number') }}</a>
-                    </div>
-                    
-                    <div class="p-2">
-                        <a href="mailto:{{ config('bsc.admin_email') }}">{{ config('bsc.admin_email') }}</a>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-4 p-2">
-                            <a href="{{ config('bsc.facebook_link') }}"
-                                target="_blank"
-                                class="ba_fb
-                                        footer__media_icon
-                                        footer__media_icon--fb"></a>
-                        </div>
-                        
-                        <div class="col-4 p-2">
-                            <a href="{{ config('bsc.instagram_link') }}"
-                                target="_blank"
-                                class="ba_inst
-                                        footer__media_icon
-                                        footer__media_icon--instagram"></a>
-                        </div>
-                        
-                        <div class="col-4 p-2">
-                            <a href="{{ config('bsc.twitter_link') }}"
-                                target="_blank"
-                                class="ba_tw
-                                        footer__media_icon
-                                        footer__media_icon--twitter"></a>
-                        </div>
-
-                        <div class="col-3 p-2">
-                            <a href="#"
-                                target="_blank"
-                                class="ba_in
-                                        footer__media_icon
-                                        footer__media_icon--linkedin"></a>
-                        </div>
-                    </div>
-                </div>
+                        @endforeach
+                     </div>
+                @endforeach
             </div>
-        </div>
 
-        <div class="footer__horizontal_line"></div>
-
-        <div class="container p-2">
+            <div class="p-2">
+                <div class="footer__horizontal_line"></div>
+            </div>
+                
             <div class="row">
-                <div class="col-lg-8
-                            col-12
-                            p-2
-                            text-lg-start
-                            text-center">
-                    © {{ config('constants.year_of_site_creation') }} {{ __('bsw.copyright') }} 
-                </div>
-
                 <div class="col-lg-4
                             col-12
-                            p-2
-                            text-lg-end
-                            text-center">
-                    Created by <a href="http://hobbystudio.ge/" target="_blank">HobbyStudio</a>
+                            p-0
+                            text-lg-start
+                            text-center
+                            d-flex
+                            align-items-center
+                            justify-content-lg-start
+                            justify-content-center">
+                    <a href="{{ $termsPage->fullUrl }}">
+                        <span class="p-2
+                                    footer__bottom_el">
+                            {{ $termsPage->title }}
+                        </span>
+                    </a>
+                    <a href="{{ $privacyPage->fullUrl }}">
+                        <span class="p-2
+                                    footer__bottom_el">
+                            {{ $privacyPage->title }}
+                        </span>
+                    </a>
+                </div>
+                <div class="col-lg-4
+                            col-12
+                            p-0
+                            text-white
+                            d-flex
+                            align-items-center
+                            justify-content-center">
+                        <span class="p-1">Created by: </span>
+                        <a href="http://hobbystudio.ge/" target="_blank">
+                            <span class="footer__bottom_el">HobbyStudio</span>
+                        </a>
+                </div>
+                <div class="col-lg-4
+                            col-12
+                            text-lg-start
+                            text-center
+                            p-0">
+                    <div class="d-flex
+                                align-center
+                                justify-content-lg-end
+                                justify-content-center
+                                header__icons_parent">
+                        <div class="footer__social_border m-2">
+                            <div class="footer__social_box">
+                                <a href="{{ config('bsc.facebook_link') }}"
+                                    target="_blank"
+                                    class="footer__media_icon
+                                            footer__media_icon--fb">
+                                    <img src="{{ asset('/storage/images/facebook_new.svg') }}">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer__social_border m-2">
+                            <div class="footer__social_box">
+                                <a href="{{ config('bsc.twitter_link') }}"
+                                    target="_blank"
+                                    class="footer__media_icon
+                                            footer__media_icon--twitter">
+                                    <img src="{{ asset('/storage/images/twitter_new.svg') }}">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="footer__social_border m-2">
+                            <div class="footer__social_box">
+                                <a href="#"
+                                    target="_blank"
+                                    class="footer__media_icon
+                                            footer__media_icon--linkedin">
+                                    <img src="{{ asset('/storage/images/youtube_new.svg') }}" class="youtube">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="footer__social_border m-2">
+                            <div class="pe-0 footer__social_box">
+                                <a href="{{ config('bsc.instagram_link') }}"
+                                    target="_blank"
+                                    class="footer__media_icon
+                                            footer__media_icon--instagram">
+                                    <img src="{{ asset('/storage/images/instagram_new.svg') }}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
         <a href="/admin" target="_blank">
             <div class="footer__admin_button"></div>
         </a>

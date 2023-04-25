@@ -86,5 +86,6 @@ return [
     'publications' => 'səhifənin',
     'sponsore' => 'Oxucunun səhifənin',
     'fill_form' => 'Oxucunun',
-
+    'site_short_name' => 'WPEN',
+    'subscribe' => 'Subscribe Our Newsletters',
 ];

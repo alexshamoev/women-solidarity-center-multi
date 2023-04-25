@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\AboutUsStep0;
 use App\Models\AnimatedHeaderStep0;
 use App\Models\Page;
 use App\Models\Language;
@@ -16,6 +17,8 @@ class HomeController extends FrontController
         parent::__construct();
         
         self::$page = Page::firstWhere('slug', self::PAGE_SLUG);
+        AboutUsStep0::setPage(Page::firstWhere('slug', 'about-us'));
+
     }
     
     
@@ -28,6 +31,7 @@ class HomeController extends FrontController
                                                     'animatedHeader' => AnimatedHeaderStep0::orderByDesc('rang')->get(),
                                                     'eventPage' => Page::firstWhere('slug', 'event'),
                                                     'publicationsPage' => Page::firstWhere('slug', 'publications'),
+                                                    'aboutPage' => AboutUsStep0::first(),
                                                     
                                                 ]);
         

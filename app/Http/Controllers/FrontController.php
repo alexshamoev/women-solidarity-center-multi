@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FooterLinksStep0;
 use App\Models\JoinOurNetworkStep0;
 use App\Models\Page;
 use App\Models\MenuButtonStep0;
@@ -55,7 +56,9 @@ class FrontController extends Controller {
 				'widgetGetVisibility' => $widgetGetVisibility,
 				'joinOurNewtork' => JoinOurNetworkStep0::first(),
 				'partners' => Partner::orderByDesc('rang')->get(),
-
+				'footerLinks' => FooterLinksStep0::with(['page', 'footerLinksStep1', 'footerLinksStep1.page'])->orderByDesc('rang')->get(),
+				'termsPage' => Page::firstWhere('slug', 'terms'),
+				'privacyPage' => Page::firstWhere('slug', 'privacy'),
 			];
 		
 		return $data;

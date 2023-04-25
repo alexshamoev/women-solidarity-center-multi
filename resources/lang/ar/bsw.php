@@ -86,6 +86,7 @@ return [
     'publications' => 'ռեսուրսներ',
     'sponsore' => 'Վաղուց հաստատված',
     'fill_form' => 'Վաղուց',
- 
+    'site_short_name' => 'WPEN',
+    'subscribe' => 'Subscribe Our Newsletters',
 
 ];
