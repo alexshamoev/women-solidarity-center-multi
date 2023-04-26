@@ -170,7 +170,7 @@
                             pb-md-5
                             pe-4
                             pb-4">
-                    <img class="about_us__big_image" src="{{ asset('/storage/images/modules/pages/55/'.$aboutPage->id.'.jpg') }}" alt="network"/>
+                    <img class="about_us__big_image" src="{{ asset('/storage/images/modules/about_us/93/'.$aboutPage->id.'.jpg') }}" alt="{{ $aboutPage->title }}"/>
                 </div>
             </div>
 

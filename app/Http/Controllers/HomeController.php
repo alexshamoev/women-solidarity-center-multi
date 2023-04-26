@@ -18,7 +18,6 @@ class HomeController extends FrontController
         
         self::$page = Page::firstWhere('slug', self::PAGE_SLUG);
         AboutUsStep0::setPage(Page::firstWhere('slug', 'about-us'));
-
     }
     
     
@@ -32,7 +31,6 @@ class HomeController extends FrontController
                                                     'eventPage' => Page::firstWhere('slug', 'event'),
                                                     'publicationsPage' => Page::firstWhere('slug', 'publications'),
                                                     'aboutPage' => AboutUsStep0::first(),
-                                                    
                                                 ]);
         
         return view('modules.home.step0', $data);

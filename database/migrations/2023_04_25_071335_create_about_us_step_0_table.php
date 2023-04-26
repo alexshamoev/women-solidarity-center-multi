@@ -15,16 +15,12 @@ class CreateAboutUsStep0Table extends Migration
     {
         Schema::create('about_us_step_0', function (Blueprint $table) {
             $table->id();
-            $table->string('alias_en')->default('');
-            $table->string('alias_az')->default('');
-            $table->string('alias_ar')->default('');
             $table->string('title_en')->default('');
             $table->string('title_az')->default('');
             $table->string('title_ar')->default('');
             $table->text('text_en')->nullable();
             $table->text('text_az')->nullable();
             $table->text('text_ar')->nullable();
-            $table->integer('rang')->default(0);
             $table->string('meta_title_en')->default('');
             $table->string('meta_title_az')->default('');
             $table->string('meta_title_ar')->default('');

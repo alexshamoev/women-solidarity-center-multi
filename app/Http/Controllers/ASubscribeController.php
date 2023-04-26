@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Module;
 use App\Http\Requests\ASubscribeRequest;
 use App\Models\Subscribe;
-// use OpenSpout\Common\Entity\Style\Style;
-// use Rap2hpoutre\FastExcel\FastExcel;
+use OpenSpout\Common\Entity\Style\Style;
+use Rap2hpoutre\FastExcel\FastExcel;
 use Session;
 
 class ASubscribeController extends AController
