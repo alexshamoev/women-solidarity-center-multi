@@ -25,6 +25,22 @@
 				</div>
 			<!--  -->
 		@endif
+
+		@if(Session::has('subscribe-success'))
+			<div class="p-2">
+				<div class="alert alert-success m-0" role="alert">
+					{{ Session::get('subscribe-success') }}
+				</div>
+			</div>
+		@endif
+
+        @if(Session::has('subscribe-error'))
+			<div class="p-2">
+				<div class="alert alert-success m-0" role="alert">
+					{{ Session::get('subscribe-error') }}
+				</div>
+			</div>
+		@endif
 		
 		<div class="container home__main">
 			@include('modules.animated_header.step0', $animatedHeader)

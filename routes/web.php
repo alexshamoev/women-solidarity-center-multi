@@ -107,6 +107,10 @@ if(Schema::hasTable('languages')) {
 
 						Route::get('/contacts', 'AContactsController@edit')->name('contactsEdit');
 						Route::post('/contacts', 'AContactsController@update')->name('contactsUpdate');
+
+						Route::get('/subscribe', 'ASubscribeController@getStartPoint')->name('subscribeStartPoint');
+						Route::post('/subscribe/export', 'ASubscribeController@export')->name('subscribeExport');
+						Route::get('/subscribe/{id}/delete', 'ASubscribeController@delete')->name('subscribeDelete');
 					//
 
 
