@@ -100,6 +100,30 @@
 			</a> 
 		</div>
 
+		<div class="about_us__image col-xl-8 col-12 p-0">
+			<div class="row about_us__stripe">
+				<div class="col-7 
+							about_us__stripe_white 
+							p-xl-4 
+							p-0"></div>
+				<div class="col-5 
+							about_us__stripe_blue 
+							p-xl-4 
+							p-0"></div>
+			</div>
+
+			<div class="row 
+						about_us__image_wrapper  
+						ps-0 
+						pt-0 
+						pe-md-5 
+						pb-md-5
+						pe-4
+						pb-4">
+				<img class="about_us__big_image" src="{{ asset('/storage/images/modules/pages/55/'.$aboutPage->id.'.jpg') }}" alt="network"/>
+			</div>
+		</div>
+		
 		<div class="about_us__description
                         col-xl-4
                         col-12
