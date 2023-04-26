@@ -90,4 +90,7 @@ return [
     'subscribe' => 'Subscribe Our Newsletters',
     'search' => 'Search',
     'sponsors' => 'Sponsored By',
+    'subscribe-success' => 'You have successfully subscribed to the newsletter',
+    'subscribe-error' => 'An error occurred, please try again',
+    'subscribe-error2' => 'The specified e-mail is already subscribed to the newsletter',
 ];

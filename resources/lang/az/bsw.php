@@ -88,4 +88,7 @@ return [
     'fill_form' => 'Oxucunun',
     'site_short_name' => 'WPEN',
     'subscribe' => 'Subscribe Our Newsletters',
+    'subscribe-success' => 'Siz bülletenə uğurla abunə oldunuz',
+    'subscribe-error' => 'Xəta baş verdi, yenidən cəhd edin',
+    'subscribe-error2' => 'Göstərilən e-poçt artıq bülletenə abunə olub',
 ];

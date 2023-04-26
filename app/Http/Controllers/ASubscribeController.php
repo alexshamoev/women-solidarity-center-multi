@@ -34,20 +34,19 @@ class ASubscribeController extends AController
             ]);
 
             if($subscribe){
-                return redirect()->back()->with('subscribe-success', 'თქვენ წარმატებით გამოიწერეთ სიახლეები');
+                return redirect()->back()->with('subscribe-success', __('bsw.subscribe-success'));
             }else{
-                return redirect()->back()->with('subscribe-error', 'დაფიქესირდა შეცდომა, სცადეთ ხელახლა');
+                return redirect()->back()->with('subscribe-error',  __('bsw.subscribe-error'));
             }
         }
 
-        return redirect()->back()->with('subscribe-error', 'მითითებულ იმეილზე უკვე გამოწერილია სიახლეები');
+        return redirect()->back()->with('subscribe-error',  __('bsw.subscribe-error2'));
 
     }
 
 
     public function export()
     {
-
 		$subscribers = Subscribe::orderByDesc('id')->get();
         $header_style = (new Style())->setFontBold()->setFontItalic();
 

@@ -88,5 +88,7 @@ return [
     'fill_form' => 'Վաղուց',
     'site_short_name' => 'WPEN',
     'subscribe' => 'Subscribe Our Newsletters',
-
+    'subscribe-success' => 'Դուք հաջողությամբ բաժանորդագրվել եք տեղեկագրին',
+    'subscribe-error' => 'Սխալ է տեղի ունեցել, խնդրում ենք կրկին փորձել',
+    'subscribe-error2' => 'Նշված էլ. փոստն արդեն բաժանորդագրված է տեղեկագրին',
 ];
