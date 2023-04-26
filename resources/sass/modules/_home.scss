@@ -1,0 +1,235 @@
+@media only screen and (max-width: $xs_size) {
+    .about_us{
+        &__text{
+            position: relative;
+        }
+    }
+}
+
+
+@media only screen and (min-width: $sm_size) {
+    .about_us{
+        &__text{
+            position: relative;
+        }
+    }
+}
+
+
+@media only screen and (min-width: $md_size) {
+    .about_us{
+        &__text{
+            position: relative;
+        }
+    }
+}
+
+
+@media only screen and (min-width: $lg_size) {
+    .about_us{
+        &__text{
+            position: relative;
+        }
+    }
+}
+
+
+@media only screen and (min-width: $xl_size) {
+    .about_us{
+        &__text{
+            position: absolute;
+        }
+    }
+}
+
+
+@media only screen and (min-width: $xxl_size) {
+
+    .about_us{
+        &__text{
+            position: absolute;
+        }
+    }
+}
+
+.home{
+    &__main_section{
+        padding-top: 0 !important;
+        background: transparent;
+    }
+}
+
+
+.question{
+    &__accordion_item{
+        cursor: pointer;
+        &:last-child{
+            border-bottom: 1px solid #dee2e6;
+        }
+
+    }
+
+    &__accordion_item_wrapper{
+        display: none;
+    }
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+.join_network {
+    background-color: $color_2;
+    box-shadow: 3px 4px 26px $color_4;
+    display: inline-block;
+
+    &__title {
+      font-weight: 700;
+      color: $color_5;
+    }
+
+    &__image_wrapper {
+        position: relative;
+        width: 100%;
+
+        & img:first-child{
+            position: absolute;
+            width: 102px;
+            height: 102px;
+            bottom: -30px;
+            left: -30px;
+        }
+    }
+
+}
+.about_us {
+    overflow: hidden;
+
+    &__image {
+
+        &_wrapper {
+            background: $color_1;
+        }
+    }
+    &__stripe_blue {
+        background: $color_0;
+    }
+    &__description {
+        background: $color_0;
+
+        &_text {
+            color: $color_2;
+        }
+
+        & h2 {
+            font-weight: 700;
+        }
+    }
+
+    &__big_image{
+        margin-left: -120%;
+        transition: 0.7s ease-in;
+        &_active{
+            margin-left: 0;
+        }
+    }
+
+    &__text{
+        right: -120%;
+        transition: 0.7s ease-in;
+        &_active{
+            right: 0;
+        }
+    }
+}
+
+.news {
+    &__header_wrapper{
+
+        & hr {
+            border: 1px solid #E8E8E8;
+            position: relative;
+            top: -26px;
+            z-index: -1;
+            margin: 0;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: center;
+
+        & h2 {
+            font-weight: 700;
+            background: $color_2;
+        }
+
+    }
+    &__block_wrapper{
+        background: $color_2;
+    }
+    &__block {
+        box-shadow: 3px 4px 26px $color_4;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        transition: 0.5s ease;
+        background: $color_2;
+
+        &__title{
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &_inner {
+          height: 100%;
+          & img {
+            width: 68px;
+            height: 70px;
+          }
+          transition: transform 0.5s ease;
+        }
+        &:hover {
+          background: rgba(255, 189, 5, 0.3);
+
+        }
+        &:hover &_inner {
+            background: linear-gradient(133.38deg, #FDD800 0%, rgba(253, 216, 0, 0.75) 19.44%, rgba(253, 216, 0, 0) 98.2%);
+            transform: scale(1.1);
+          }
+    }
+
+
+    &__image {
+        position: relative;
+
+        &_description {
+            position: absolute;
+            bottom: 0;
+            color: $color_2;
+            background: $color_6;
+
+            &_title {
+                font-weight: 800;
+            }
+
+            &_text {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.asked_questions {
+    background: $color_2;
+    box-shadow: 14px -71px 90px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stem_wrapper {
+    display: inline-block;
+}
+
+.video_gallery {
+    display: inline-block;
+}

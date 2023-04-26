@@ -89,4 +89,5 @@ return [
     'site_short_name' => 'WPEN',
     'subscribe' => 'Subscribe Our Newsletters',
     'search' => 'Search',
+    'sponsors' => 'Sponsored By',
 ];

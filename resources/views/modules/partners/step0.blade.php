@@ -3,9 +3,9 @@
 				p-2
 				partners">
 		<h5 class="p-2 fw-bold text-center">
-			{{ __('bsw.sponsore') }}
+			{{ __('bsw.sponsors') }}
 		</h5>
-		
+
 		<div class="row d-flex justify-content-sm-between justify-content-center">
 			@foreach($partners as $data)
 				<div class="partners__logo">
