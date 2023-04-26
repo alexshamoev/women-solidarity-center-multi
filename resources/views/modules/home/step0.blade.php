@@ -125,10 +125,10 @@
 								col-10
 								p-0
 								yellow_button">
-						{{-- @include('includes.button_yellow', [
+						 @include('includes.button_yellow', [
 											'title' => 'შემოუერთდი ჩვენს ჯგუფს',
 											'link' => $aboutPage->fullUrl,
-										]) --}}
+										])
 					</div>
 				</div>
 			</div>
