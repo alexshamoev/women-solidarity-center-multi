@@ -1,57 +1,53 @@
 // MEDIA QUERY BREAKPOINTS
-    $xxl_size: 1500px;
-    $xl_size: 1200px;
-    $lg_size: 992px;
-    $md_size: 768px;
-    $sm_size: 576px;
-    $xs_size: 576px;
+$xxl_size: 1500px;
+$xl_size: 1200px;
+$lg_size: 992px;
+$md_size: 768px;
+$sm_size: 576px;
+$xs_size: 576px;
 
-    $container_xxl_size: 1450px;
-    $container_xl_size: 1150px;
-    $container_lg_size: 940px;
-    $container_md_size: 720px;
-    $container_sm_size: 100%;
-    $container_xs_size: 100%;
+$container_xxl_size: 1450px;
+$container_xl_size: 1150px;
+$container_lg_size: 940px;
+$container_md_size: 720px;
+$container_sm_size: 100%;
+$container_xs_size: 100%;
 //
 
 // Fonts
-    @font-face {
-        font-family: 'HB_Georgia';
-        font-style: normal;
-        font-weight: 400;
-        src: url('/storage/fonts/hb_georgia.ttf');
-    }
+@font-face {
+    font-family: 'firago_regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/storage/fonts/firago_regular.ttf');
+}
 
-    @font-face {
-        font-family: 'Test';
-        font-style: normal;
-        font-weight: 400;
-        src: url('/storage/fonts/test.ttf');
-    }
+@font-face {
+    font-family: 'firago_medium';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/storage/fonts/firago_medium.ttf');
+}
 
-    @font-face {
-        font-family: 'Trebuchet MS';
-        font-style: normal;
-        font-weight: 400;
-        src: url('/storage/fonts/Trebuchet MS.ttf');
-    }
+@font-face {
+    font-family: 'firago_semibold';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/storage/fonts/firago_semibold.ttf');
+}
 
-    $font_family_0: 'HB_Georgia';
-    $font_family_1: 'Test';
-    $font_family_2: 'Trebuchet MS';
-    $font_family_3: 'Arial';
-    $font_family_4: 'Arial';
-    $font_family_5: 'Arial';
-    $font_family_6: 'Arial';
-//  
+$font_family_0: 'firago_regular';
+$font_family_1: 'firago_medium';
+$font_family_2: 'firago_semibold';
+//
 
 // Colors
-    $color_0: #2FAFD6;
-    $color_1: #2C609C;
-    $color_2: #FE982C;
-    $color_3: #2B2B2B;
-    $color_4: #FFFFFF;
-    $color_5: #F7F7F7;
-    $color_6: #858E9E;
-    $color_7: #F8F8F8;
+$color_0: #1B192E;
+$color_1: #FFBD05;
+$color_2: #FFFFFF;
+$color_3: #E4DEDE;
+$color_4: rgba(0, 0, 0, 0.04);
+$color_5: #122049;
+$color_6: rgba(2, 112, 147, 0.6);
+$color_7: #000000;
 //

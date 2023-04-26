@@ -1,16 +1,15 @@
 @if($widgetGetVisibility['menu_buttons'])
 	<div class="navbar-collapse
 				collapse
-				justify-content-center
+				justify-content-start
 				menu_buttons" id="navbar">
 		<div class="navbar-nav
 					d-flex
 					justify-content-between
+					align-items-xl-center
 					position-relative">
 			@foreach($menuButtons as $data)
 				<div class="nav-item
-							ps-lg-0
-							ps-4
 							pt-lg-0
 							pt-1
 							menu_buttons__item
@@ -26,8 +25,10 @@
 					
 					<div class="d-block
 								py-2
-								px-4
-								{{ $activeCssClass }}"> 
+								px-xl-3
+								px-2
+								{{ $activeCssClass }}
+								menu_buttons__single_item"> 
 						@if($data -> url)
 							<a href="{{ $data -> url }}" target="{{ $data -> urlTarget }}">
 						@endif
