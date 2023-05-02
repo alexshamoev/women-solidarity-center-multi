@@ -147,6 +147,11 @@
 		height: 35px;
 		background-color: $color_0;
 		border-radius: 50%;
+		transition: 0.3s ease-in;
+
+		&:hover{
+			background-color: $color_1;
+		}
 	}
 
 	&__social_box a{

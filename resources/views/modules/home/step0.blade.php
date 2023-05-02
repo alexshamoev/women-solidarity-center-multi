@@ -5,7 +5,7 @@
 @section('pageMetaUrl'){{ $page -> metaUrl }}@endsection
 
 @section('content')
-	<div class="container p-2 main_content--height">
+	<div class="container main_section_padding">
 		<!-- Vue -->
 			<div id="app">
 				<example title="Vue - {{ $page -> title }}"></example>
@@ -47,7 +47,7 @@
 		</div>
 
 		<h1 class="p-2">
-			{{ __('bsw.news') }}
+			
 		</h1>
 		
 		<div class="container">
@@ -59,7 +59,7 @@
 							my-3 
 							pt-2">
 					@include('includes.pages_headers', [
-											'title' => 'სიახლეები',
+											'title' => __('bsw.news') ,
 										])
 				</div>
 
@@ -124,7 +124,8 @@
 					<div class="col-lg-6 col-12">
 						<a href="{{ $eventPage->fullUrl }}">
 							<div class="news__image">
-                            	<img src="{{ asset('/storage/images/blog'.$publicationsPage->id.'.svg') }}" alt=""/>
+                    			<img class="" src="{{ asset('/storage/images/modules/about_us/93/'.$aboutPage->id.'_preview.jpg') }}" alt="{{ $aboutPage->title }}"/>
+                            	 
 								
 								<div class="news__image_description p-2">
 									<h4 class="news__image_description_title p-2">
@@ -141,7 +142,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- sdjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkaaaaaaaaaaaaaaaaaaaaaaaasxsxsxsxsxsxsxsxsxsxsxsxsxsxsxsxsxsxsxxnsxsxsxsxsxsxsxsxsxsxsxsxsxsxsxsxsxsxsxedsssssssssssssssssjkjkjkjkjkdsjklaaaaaaaaaaaaaaaa -->
+
 		<div class="about_us
                     mb-5 
                     row  
@@ -170,7 +171,7 @@
                             pb-md-5
                             pe-4
                             pb-4">
-                    <img class="about_us__big_image" src="{{ asset('/storage/images/modules/about_us/93/'.$aboutPage->id.'.jpg') }}" alt="{{ $aboutPage->title }}"/>
+                    <img class="about_us__big_image" src="{{ asset('/storage/images/modules/about_us/93/'.$aboutPage->id.'_preview.jpg') }}" alt="{{ $aboutPage->title }}"/>
                 </div>
             </div>
 
@@ -218,7 +219,6 @@
                 </div>
             </div>
         </div>
-		<!-- sddddddddddjjjjjjjjjjjjjjjjjjjjjjdssssssssssssssssssssssssssssssssssdddddddddddddddaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxmkmkmkmkmkmkmkmkikikikikikikikikikikikikmikmikmikmikmikmikmikmikmikmikmikmikmikmikmikmikmikmikmikmikmikqazqazqazqazqazqazqazqazqazqazqazqazqazqazqazqazqaz -->
 		
 		<div class="pertners pt-4">
 			@include('modules.partners.step0')

@@ -1,0 +1,158 @@
+@media only screen and (max-width: $xs_size) {
+    
+}
+
+
+@media only screen and (min-width: $sm_size) {
+    
+}
+
+
+@media only screen and (min-width: $md_size) {
+    
+}
+
+
+@media only screen and (min-width: $lg_size) {
+    
+}
+
+
+@media only screen and (min-width: $xl_size) {
+    
+}
+
+
+@media only screen and (min-width: $xxl_size) {
+   
+}
+
+
+.animated_header{
+  &__img{
+    z-index: -1;
+  }
+  &__title{
+    width: 70%;
+    color: $color_2;
+  }
+
+  &__activities{
+    z-index: 10;
+    color: $color_2;
+  }
+
+  &__line_left{
+    width: 40%;
+    height: 2px;
+    background-color: #BDC2CE;
+    position: absolute;
+    top: 34px;
+    div{
+      left: 0;
+      height: 100%;
+      background-color: $color_2;
+      width: 0;
+    }
+  }
+
+  &__line_right{
+    width: 40%;
+    height: 2px;
+    background-color: #BDC2CE;
+    position: absolute;
+    top: 34px;
+    right: 0;
+    div{
+      right: 0;
+      height: 100%;
+      background-color: $color_2;
+      width: 0;
+    }
+  }
+}
+
+.line_active{
+  width: 100% !important;
+  transition: 5s;
+  z-index: 10 !important;
+}
+
+
+.z_index{
+  z-index: 10;
+}
+
+.carousel-indicators button{
+  width: 9px !important;
+  height: 9px !important;
+  border-radius: 50%;
+  position: relative;
+  margin: 5px !important;
+  background-color: transparent !important;
+}
+
+.carousel-indicators button::before{
+  content: "";
+  width: 15px;
+  height: 15px;
+  border: 1px solid #fff;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  border-radius: 50%;
+}
+
+button.active{
+  background-color: #fff !important;
+}
+
+button.carousel-control-next{
+  opacity: 1;
+}
+
+button.carousel-control-prev{
+  opacity: 1;
+}
+
+span.carousel-control-next-icon{
+  width: 12px;
+  height: 12px !important;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  color: $color_2 !important; 
+  opacity: 1 !important;
+  background-image: url(../../../public/storage/images/right_arrowr.svg) !important;
+
+  &::before{
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    top: -12px;
+    left: -12px;
+  }
+}
+
+span.carousel-control-prev-icon{
+  width: 12px;
+  height: 12px !important;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  color: $color_2 !important; 
+  
+  background-image: url(../../../public/storage/images/left_arrowl.svg) !important;
+  
+  &::before{
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    top: -12px;
+    left: -12px;  
+  }
+}

@@ -129,10 +129,15 @@
 
 .button_yellow {
     background: $color_1;
-
+    transition: 0.3s ease-in;
     & a {
         color: inherit;
         font-weight: 600;
+    }
+
+    &:hover{
+        color: $color_1;
+        background-color: $color_0;
     }
 }
 
@@ -212,6 +217,11 @@
 .join_us{
     &__button{
         background-color: $color_1;
+        transition: 0.3s ease-in;
+        &:hover{
+            background-color: $color_0;
+            color: $color_1;
+        }
     }
 }
 

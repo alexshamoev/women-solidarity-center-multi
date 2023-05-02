@@ -10,6 +10,9 @@ require("./bootstrap_size_getter"); // Comment this, after project finish.
 require("./plugins/photo_swipe");
 
 require("./modules/menu_buttons");
+require("./modules/home");
+require("./modules/animated_header");
+require("./modules/section_classes");
 
 // Vue.
 import { createApp } from "vue";

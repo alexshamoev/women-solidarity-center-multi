@@ -13,7 +13,7 @@
                         ps-md-0  
                         fw-bold 
                         fs-3">
-                {{ __('bsw.site_short_name') }}
+                <img src="{{ asset('/storage/images/logo.svg') }}" class="logo">
             </div>
 
             <div class="col-xxl-9

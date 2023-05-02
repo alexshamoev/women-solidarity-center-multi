@@ -7,7 +7,7 @@
                         d-lg-flex
                         align-items-center
                         text-white">
-                    {{ __('bsw.site_short_name') }}
+                    <img class="footer__logo" src="{{ asset('/storage/images/logo.svg') }}" class="logo">
                 </div>
                 <!-- <div class="d-flex align-items-center">
                     <div class="p-2 text-white">
