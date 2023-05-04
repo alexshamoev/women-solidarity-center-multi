@@ -50,7 +50,7 @@
 							<div class="footer__social_box">
 								<a href="https://facebook.com" target="_blank" class="footer__media_icon
 											footer__media_icon--fb">
-									<img src="http://127.0.0.1:8000/storage/images/facebook_new.svg">
+									<img src="{{ url('/') }}/storage/images/facebook_new.svg">
 								</a>
 							</div>
 						</div>
@@ -59,7 +59,7 @@
 							<div class="footer__social_box">
 								<a href="https://twitter.com" target="_blank" class="footer__media_icon
 											footer__media_icon--twitter">
-									<img src="http://127.0.0.1:8000/storage/images/twitter_new.svg">
+									<img src="{{ url('/') }}/storage/images/twitter_new.svg">
 								</a>
 							</div>
 						</div>
@@ -68,7 +68,7 @@
 							<div class="footer__social_box">
 								<a href="#" target="_blank" class="footer__media_icon
 											footer__media_icon--linkedin">
-									<img src="http://127.0.0.1:8000/storage/images/youtube_new.svg" class="youtube">
+									<img src="{{ url('/') }}/storage/images/youtube_new.svg" class="youtube">
 								</a>
 							</div>
 						</div>
@@ -77,7 +77,7 @@
 							<div class="pe-0 footer__social_box">
 								<a href="https://instagram.com" target="_blank" class="footer__media_icon
 											footer__media_icon--instagram">
-									<img src="http://127.0.0.1:8000/storage/images/instagram_new.svg">
+									<img src="{{ url('/') }}/storage/images/instagram_new.svg">
 								</a>
 							</div>
 						</div>
@@ -113,10 +113,10 @@
 				</div>
 			</div>
 		</div>
-
+        {{--
         <div class="container">
             <div class="stem_wrapper mb-4">
-                <div class="news__header_wrapper 
+                 <div class="news__header_wrapper 
                             col-12 
                             text-center 
                             p-0 
@@ -125,7 +125,8 @@
                     @include('includes.pages_headers', [
                                                     'title' => $careerPage->title ,
                                                 ])
-                </div>
+
+                </div> 
 
                 <div class="row news_wrapper p-2">
                     @foreach ($career as $item)
@@ -152,8 +153,9 @@
                                     'link' => $careerPage->fullUrl,
                                 ])
                 </div>
-            </div>
+            </div>  
         </div>
+        --}}
 
         <div class="container 
                     mt-5 

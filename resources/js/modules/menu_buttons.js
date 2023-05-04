@@ -111,7 +111,6 @@ function r_show_hide_sub_menu() {
 
 
 $(document).ready(function() {
-	console.log(222);
 
     w_mb_init();
     menu_active();

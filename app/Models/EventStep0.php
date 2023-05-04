@@ -84,10 +84,10 @@ class EventStep0 extends Model
     
     public function getMetaUrlAttribute() 
     {
-        if(file_exists(public_path('/storage/images/modules/news/step_0/meta_'.$this->{ 'id' }.'.jpg'))) {
-            return '/storage/images/modules/photo_gallery/step_0/meta_'.$this->{ 'id' }.'.jpg';
-        } else if(file_exists(public_path('/storage/images/modules/news/step_0/'.$this->{ 'id' }.'.jpg'))) {
-            return '/storage/images/modules/news/step_0/'.$this->{ 'id' }.'.jpg';
+        if(file_exists(public_path('/storage/images/modules/event/81/meta_'.$this->{ 'id' }.'.jpg'))) {
+            return '/storage/images/modules/event/81/meta_'.$this->{ 'id' }.'.jpg';
+        } else if(file_exists(public_path('/storage/images/modules/event/81/'.$this->{ 'id' }.'.jpg'))) {
+            return '/storage/images/modules/event/81/'.$this->{ 'id' }.'.jpg';
         } else {
             return '/storage/images/meta_default.jpg';
         }

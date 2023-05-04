@@ -43,11 +43,11 @@ class Page extends Model {
         if($this->{ 'meta_description_'.App::getLocale() }) {
             $textAsDesc = strip_tags($this->{ 'meta_description_'.App::getLocale() });
             
-            return mb_substr($textAsDesc, 0, 255, 'UTF-8');
+            return mb_substr($textAsDesc, 0, 200, 'UTF-8');
         } else {
             $textAsDesc = strip_tags($this->{ 'text_'.App::getLocale() });
             
-            return mb_substr($textAsDesc, 0, 255, 'UTF-8');
+            return mb_substr($textAsDesc, 0, 200, 'UTF-8');
         }
     }
 

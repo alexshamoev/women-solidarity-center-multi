@@ -51,7 +51,7 @@
 							<div class="footer__social_box">
 								<a href="https://facebook.com" target="_blank" class="footer__media_icon
 											footer__media_icon--fb">
-									<img src="http://127.0.0.1:8000/storage/images/facebook_new.svg">
+									<img src="{{ url('/') }}/storage/images/facebook_new.svg">
 								</a>
 							</div>
 						</div>
@@ -60,7 +60,7 @@
 							<div class="footer__social_box">
 								<a href="https://twitter.com" target="_blank" class="footer__media_icon
 											footer__media_icon--twitter">
-									<img src="http://127.0.0.1:8000/storage/images/twitter_new.svg">
+									<img src="{{ url('/') }}/storage/images/twitter_new.svg">
 								</a>
 							</div>
 						</div>
@@ -69,7 +69,7 @@
 							<div class="footer__social_box">
 								<a href="#" target="_blank" class="footer__media_icon
 											footer__media_icon--linkedin">
-									<img src="http://127.0.0.1:8000/storage/images/youtube_new.svg" class="youtube">
+									<img src="{{ url('/') }}/storage/images/youtube_new.svg" class="youtube">
 								</a>
 							</div>
 						</div>
@@ -78,7 +78,7 @@
 							<div class="pe-0 footer__social_box">
 								<a href="https://instagram.com" target="_blank" class="footer__media_icon
 											footer__media_icon--instagram">
-									<img src="http://127.0.0.1:8000/storage/images/instagram_new.svg">
+									<img src="{{ url('/') }}/storage/images/instagram_new.svg">
 								</a>
 							</div>
 						</div>
@@ -112,14 +112,3 @@
 		</div>
 	</div>
 @endsection
-
-<!--  <div class="p-2">
-		<h3 class="line_2">
-			თარიღი: {{ $activePublication->datetime }}
-		</h3>
-	</div>
-	<div class="p-2">
-		<div class="line_5">
-			მისამართი: {{ $activePublication->address }}
-		</div>
-	</div> -->

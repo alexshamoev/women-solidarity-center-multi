@@ -214,13 +214,9 @@
 
 
 $(document).ready(function() {
-	console.log('photo swipe 1');
-
 	
 	// Photoswipe init
 		initPhotoSwipeFromDOM('.my-gallery');
 	//
-
-	console.log('photo swipe 2');
 
 });
