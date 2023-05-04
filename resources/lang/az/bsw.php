@@ -91,4 +91,7 @@ return [
     'subscribe-success' => 'Siz bülletenə uğurla abunə oldunuz',
     'subscribe-error' => 'Xəta baş verdi, yenidən cəhd edin',
     'subscribe-error2' => 'Göstərilən e-poçt artıq bülletenə abunə olub',
+    'planned' => 'Scheduled',
+    'conducted_events' => 'Past',
+    'join_team' => 'Join Our Team',
 ];

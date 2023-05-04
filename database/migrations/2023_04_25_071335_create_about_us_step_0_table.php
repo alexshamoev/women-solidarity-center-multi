@@ -21,12 +21,6 @@ class CreateAboutUsStep0Table extends Migration
             $table->text('text_en')->nullable();
             $table->text('text_az')->nullable();
             $table->text('text_ar')->nullable();
-            $table->string('meta_title_en')->default('');
-            $table->string('meta_title_az')->default('');
-            $table->string('meta_title_ar')->default('');
-            $table->string('meta_description_en')->default('');
-            $table->string('meta_description_az')->default('');
-            $table->string('meta_description_ar')->default('');
             $table->timestamps();
         });
     }

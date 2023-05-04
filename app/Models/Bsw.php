@@ -12,4 +12,15 @@ class Bsw extends Model {
 			config(['bsw.'.$data->system_word => $data->{ 'word_'.App::getLocale() }]);
 		}
 	}
+
+
+	public static function getFullData() {
+		$bsws = (object)[];
+
+		foreach(Bsw::all() as $data) {
+			$bsws->{ $data->system_word } = $data->{ 'word_'.App::getLocale() };
+		}
+		
+		return $bsws;
+	}
 }

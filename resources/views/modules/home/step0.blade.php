@@ -211,7 +211,7 @@
                                     p-0
                                     yellow_button">
                             @include('includes.button_yellow', [
-                                                'title' => 'შემოუერთდი ჩვენს ჯგუფს',
+                                                'title' => __('bsw.join_team'),
                                                 'link' => $aboutPage->fullUrl,
                                             ])
                         </div>

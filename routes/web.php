@@ -2,21 +2,19 @@
 use App\Models\Page;
 use App\Models\Language;
 use App\Models\Module;
-use App\Http\Controllers\GoogleController;
-use App\Http\Controllers\FacebookController;
 
 
 // Line 12-13 makes sure that migrations run without error 
 // [error is when running migration and table doesn't exists]
 
 // Google Login URL
-	Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
-	Route::get('callback/google', [GoogleController::class, 'handleCallback']);
+	// Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+	// Route::get('callback/google', [GoogleController::class, 'handleCallback']);
 //
 
 // Facebook Login URL
-	Route::get('auth/facebook', [FacebookController::class, 'redirectToFB']);
-	Route::get('callback/facebook', [FacebookController::class, 'handleCallback']);
+	// Route::get('auth/facebook', [FacebookController::class, 'redirectToFB']);
+	// Route::get('callback/facebook', [FacebookController::class, 'handleCallback']);
 //
 
 if(Schema::hasTable('languages')) {
@@ -98,12 +96,12 @@ if(Schema::hasTable('languages')) {
 							Route::get('/{id}/delete', 'AAdminController@delete')->name('adminDelete');
 						});
 
-						Route::prefix('users')->group(function() {
-							Route::get('', 'AUsersController@getStartPoint')->name('userStartPoint');
-							Route::get('/{id}', 'AUsersController@edit')->name('userEdit');
-							Route::post('/{id}', 'AUsersController@update')->name('userUpdate');
-							Route::get('/{id}/delete', 'AUsersController@delete')->name('userDelete');
-						});
+						// Route::prefix('users')->group(function() {
+						// 	Route::get('', 'AUsersController@getStartPoint')->name('userStartPoint');
+						// 	Route::get('/{id}', 'AUsersController@edit')->name('userEdit');
+						// 	Route::post('/{id}', 'AUsersController@update')->name('userUpdate');
+						// 	Route::get('/{id}/delete', 'AUsersController@delete')->name('userDelete');
+						// });
 
 						Route::get('/contacts', 'AContactsController@edit')->name('contactsEdit');
 						Route::post('/contacts', 'AContactsController@update')->name('contactsUpdate');
@@ -143,18 +141,18 @@ if(Schema::hasTable('languages')) {
 		// Auth routes
 
 			// Email Verification
-				Route::get('/{lang}/verify/{id}', 'AuthController@emailVerification')->name('verifyEmail');
+				// Route::get('/{lang}/verify/{id}', 'AuthController@emailVerification')->name('verifyEmail');
 			//
 
 			// Recover
-				Route::get('/{lang}/recover', 'AuthController@getRecover')->name('getRecover');
-				Route::post('/{lang}/recover', 'AuthController@recover')->name('recover');
-				Route::get('/{lang}/reset/{email}', 'AuthController@getReset')->name('getReset');
-				Route::post('/{lang}/reset/{email}', 'AuthController@reset')->name('reset');
+				// Route::get('/{lang}/recover', 'AuthController@getRecover')->name('getRecover');
+				// Route::post('/{lang}/recover', 'AuthController@recover')->name('recover');
+				// Route::get('/{lang}/reset/{email}', 'AuthController@getReset')->name('getReset');
+				// Route::post('/{lang}/reset/{email}', 'AuthController@reset')->name('reset');
 			//
 
 			//getVerify
-				Route::get('/{lang}/get-verify/{id}', 'AuthController@getVerify')->name('getVerify');
+				// Route::get('/{lang}/get-verify/{id}', 'AuthController@getVerify')->name('getVerify');
 			//
 
 			// // Resend

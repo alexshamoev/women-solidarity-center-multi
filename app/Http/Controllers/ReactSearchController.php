@@ -5,18 +5,19 @@ namespace App\Http\Controllers;
 use DB;
 use App;
 use App\Models\Page;
-use App\Models\NewsStep0;
-use App\Models\NewsStep1;
-use App\Models\NewsStep2;
-use App\Models\NewsStep3;
-use App\Models\ProductStep0;
-use App\Models\ProductStep1;
-use App\Models\ProductStep2;
 use Illuminate\Http\Request;
+use App\Models\AboutUsStep0;
+use App\Models\EventStep0;
+use App\Models\PublicationsStep0;
 
 
-class ReactSearchController extends Controller {
-    public function get(Request $request) {
+class ReactSearchController extends Controller 
+{
+    public function get(Request $request) 
+	{
+		AboutUsStep0::setPage(Page::firstWhere('slug', 'about-us'));
+		PublicationsStep0::setPage(Page::firstWhere('slug', 'publications'));
+
         App::setLocale($request->input('lang'));
 
 
@@ -38,170 +39,81 @@ class ReactSearchController extends Controller {
 		if($searchWord) {
 			$i = 0;
 
-			foreach(Page::where('title_ge', 'like', '%'.$searchWord.'%')
-							->orWhere('title_en', 'like', '%'.$searchWord.'%')
-							->orWhere('title_ru', 'like', '%'.$searchWord.'%')
-							->orWhere('alias_ge', 'like', '%'.$searchWord.'%')
-							->orWhere('alias_en', 'like', '%'.$searchWord.'%')
-							->orWhere('alias_ru', 'like', '%'.$searchWord.'%')
-							->orWhere('text_ge', 'like', '%'.$searchWord.'%')
-							->orWhere('text_en', 'like', '%'.$searchWord.'%')
-							->orWhere('text_ru', 'like', '%'.$searchWord.'%')
-							->get() as $data) {
+			foreach(Page::where(function ($query) use ($searchWord) {
+							$query->where('title_en', 'like', '%'.$searchWord.'%')
+								->orWhere('title_az', 'like', '%'.$searchWord.'%')
+								->orWhere('title_ar', 'like', '%'.$searchWord.'%')
+								->orWhere('alias_en', 'like', '%'.$searchWord.'%')
+								->orWhere('alias_az', 'like', '%'.$searchWord.'%')
+								->orWhere('alias_ar', 'like', '%'.$searchWord.'%')
+								->orWhere('text_en', 'like', '%'.$searchWord.'%')
+								->orWhere('text_az', 'like', '%'.$searchWord.'%')
+								->orWhere('text_ar', 'like', '%'.$searchWord.'%');
+							})
+						#fix to get 1 page, get from module
+						->whereNotIn('slug', ['about-us'])
+						->take(5)->get() as $data) {
 				$result[$i]['title'] = $data->title;
 				$result[$i]['fullUrl'] = $data->fullUrl;
-				$result[$i]['text'] = '';
-
-				if(!is_null($data->text)) {
-					$result[$i]['text'] = $data->text;
-				}
+				$result[$i]['text'] = !empty($data->text) ? $data->text : '';
 
 				$i++;
 			}
 
-			// foreach(NewsStep0::where('title_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_ru', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ru', 'like', '%'.$searchWord.'%')
-			// 				->get() as $data) {
-			// 	$result[$i]['title'] = $data->title;
-			// 	$result[$i]['fullUrl'] = $data->fullUrl;
-			// 	$result[$i]['text'] = '';
-
-			// 	if(!is_null($data->text)) {
-			// 		$result[$i]['text'] = $data->text;
-			// 	}
+			foreach(AboutUsStep0::where('title_en', 'like', '%'.$searchWord.'%')
+									->orWhere('title_az', 'like', '%'.$searchWord.'%')
+									->orWhere('title_ar', 'like', '%'.$searchWord.'%')
+									->orWhere('text_en', 'like', '%'.$searchWord.'%')
+									->orWhere('text_az', 'like', '%'.$searchWord.'%')
+									->orWhere('text_ar', 'like', '%'.$searchWord.'%')
+									->take(5)->get() as $data) {
+				$result[$i]['title'] = $data->title;
+				$result[$i]['fullUrl'] = $data->fullUrl;
+				$result[$i]['text'] = !empty($data->text) ? $data->text : '';
 				
-			// 	$i++;
-			// }
+				$i++;
+			}
 
-			// foreach(NewsStep1::where('title_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_ru', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ru', 'like', '%'.$searchWord.'%')
-			// 				->get() as $data) {
-			// 	$result[$i]['title'] = $data->title;
-			// 	$result[$i]['fullUrl'] = $data->fullUrl;
-			// 	$result[$i]['text'] = '';
-
-			// 	if(!is_null($data->text)) {
-			// 		$result[$i]['text'] = $data->text;
-			// 	}
+			foreach(PublicationsStep0::where('title_en', 'like', '%'.$searchWord.'%')
+										->orWhere('title_ar', 'like', '%'.$searchWord.'%')
+										->orWhere('title_az', 'like', '%'.$searchWord.'%')
+										->orWhere('address_en', 'like', '%'.$searchWord.'%')
+										->orWhere('address_ar', 'like', '%'.$searchWord.'%')
+										->orWhere('address_az', 'like', '%'.$searchWord.'%')
+										->orWhere('header_text_en', 'like', '%'.$searchWord.'%')
+										->orWhere('header_text_ar', 'like', '%'.$searchWord.'%')
+										->orWhere('header_text_az', 'like', '%'.$searchWord.'%')
+										->orWhere('black_text_en', 'like', '%'.$searchWord.'%')
+										->orWhere('black_text_ar', 'like', '%'.$searchWord.'%')
+										->orWhere('black_text_az', 'like', '%'.$searchWord.'%')
+										->orWhere('main_text_en', 'like', '%'.$searchWord.'%')
+										->orWhere('main_text_ar', 'like', '%'.$searchWord.'%')
+										->orWhere('main_text_az', 'like', '%'.$searchWord.'%')
+										->take(5)->get() as $data) {
+				$result[$i]['title'] = $data->title;
+				$result[$i]['fullUrl'] = $data->fullUrl;
+				$result[$i]['text'] = !empty($data->text) ? $data->text : '';
 				
-			// 	$i++;
-			// }
+				$i++;
+			}
 
-			// foreach(NewsStep2::where('title_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_ru', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ru', 'like', '%'.$searchWord.'%')
-			// 				->get() as $data) {
-			// 	$result[$i]['title'] = $data->title;
-			// 	$result[$i]['fullUrl'] = $data->fullUrl;
-			// 	$result[$i]['text'] = '';
-
-			// 	if(!is_null($data->text)) {
-			// 		$result[$i]['text'] = $data->text;
-			// 	}
+			foreach(EventStep0::where('title_en', 'like', '%'.$searchWord.'%')
+									->orWhere('title_ar', 'like', '%'.$searchWord.'%')
+									->orWhere('title_az', 'like', '%'.$searchWord.'%')
+									->orWhere('text_en', 'like', '%'.$searchWord.'%')
+									->orWhere('text_ar', 'like', '%'.$searchWord.'%')
+									->orWhere('text_az', 'like', '%'.$searchWord.'%')
+									->orWhere('address_en', 'like', '%'.$searchWord.'%')
+									->orWhere('address_ar', 'like', '%'.$searchWord.'%')
+									->orWhere('address_az', 'like', '%'.$searchWord.'%')
+									->take(5)->get() as $data) {
+				$result[$i]['title'] = $data->title;
+				$result[$i]['fullUrl'] = $data->fullUrl;
+				$result[$i]['text'] = !empty($data->text) ? $data->text : '';
 				
-			// 	$i++;
-			// }
-
-			// foreach(NewsStep3::where('title_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_ru', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ru', 'like', '%'.$searchWord.'%')
-			// 				->get() as $data) {
-			// 	$result[$i]['title'] = $data->title;
-			// 	$result[$i]['fullUrl'] = $data->fullUrl;
-			// 	$result[$i]['text'] = '';
-
-			// 	if(!is_null($data->text)) {
-			// 		$result[$i]['text'] = $data->text;
-			// 	}
-				
-			// 	$i++;
-			// }
-
-			// foreach(PhotoGalleryStep0::where('title_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_ru', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ru', 'like', '%'.$searchWord.'%')
-			// 				->get() as $data) {
-			// 	$result[$i]['title'] = $data->title;
-			// 	$result[$i]['fullUrl'] = $data->fullUrl;
-			// 	$result[$i]['text'] = '';
-
-			// 	if(!is_null($data->text)) {
-			// 		$result[$i]['text'] = $data->text;
-			// 	}
-				
-			// 	$i++;
-			// }
-
-			// foreach(ProductStep0::where('title_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_ru', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ru', 'like', '%'.$searchWord.'%')
-			// 				->get() as $data) {
-			// 	$result[$i]['title'] = $data->title;
-			// 	$result[$i]['fullUrl'] = $data->fullUrl;
-			// 	$result[$i]['text'] = '';
-
-			// 	if(!is_null($data->text)) {
-			// 		$result[$i]['text'] = $data->text;
-			// 	}
-				
-			// 	$i++;
-			// }
-
-			// foreach(ProductStep1::where('title_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_ru', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ru', 'like', '%'.$searchWord.'%')
-			// 				->get() as $data) {
-			// 	$result[$i]['title'] = $data->title;
-			// 	$result[$i]['fullUrl'] = $data->fullUrl;
-			// 	$result[$i]['text'] = '';
-
-			// 	if(!is_null($data->text)) {
-			// 		$result[$i]['text'] = $data->text;
-			// 	}
-				
-			// 	$i++;
-			// }
-
-			// foreach(ProductStep2::where('title_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('title_ru', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ge', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_en', 'like', '%'.$searchWord.'%')
-			// 				->orWhere('text_ru', 'like', '%'.$searchWord.'%')
-			// 				->get() as $data) {
-			// 	$result[$i]['title'] = $data->title;
-			// 	$result[$i]['fullUrl'] = $data->fullUrl;
-			// 	$result[$i]['text'] = '';
-
-			// 	if(!is_null($data->text)) {
-			// 		$result[$i]['text'] = $data->text;
-			// 	}
-				
-			// 	$i++;
-			// }
+				$i++;
+			}
+			
 		}
 
         return response()->json($result);

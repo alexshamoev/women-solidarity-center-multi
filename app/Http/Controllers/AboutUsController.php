@@ -29,7 +29,7 @@ class AboutUsController extends FrontController
                                                     self::$page),
                             [
                                 'homePage' => Page::firstWhere('slug', 'home'),
-                                'aboutStep0' => AboutUsStep0::orderByDesc('rang')->get(),
+                                'aboutStep0' => AboutUsStep0::first(),
                                 // 'stemPage' => Page::firstWhere('slug', 'stem'),
                                 // 'stemStep0' => StemStep0::orderByDesc('rang')->take(3)->get(),
                             ]);
@@ -40,17 +40,6 @@ class AboutUsController extends FrontController
 
     public static function getStep1($lang, $step0Alias) 
     {
-        $language = Language::firstWhere('title', $lang);
-        $about = AboutUsStep0::firstWhere('alias_'.$language->title, $step0Alias);
-
-        $data = array_merge(self::getDefaultData($language,
-                                                    self::$page,
-                                                    $about),
-                                                    [
-                                                        'activeEvent' => $about
-                                                    ]
-                            );
-
-        return view('modules.event.step1', $data);
+        return redirect(self::$page->fullUrl);
     }
 }

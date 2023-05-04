@@ -19,11 +19,6 @@ class AboutUsStep0 extends Model
     }
 
 
-	public function getAliasAttribute() {
-        return $this->{ 'alias_'.App::getLocale() };
-    }
-
-
 	public function getTitleAttribute() {
         return $this->{ 'title_'.App::getLocale() };
     }
@@ -54,11 +49,11 @@ class AboutUsStep0 extends Model
         if($this->{ 'meta_description_'.App::getLocale() }) {
             $textAsDesc = strip_tags($this->{ 'meta_description_'.App::getLocale() });
             
-            return mb_substr($textAsDesc, 0, 255, 'UTF-8');
+            return mb_substr($textAsDesc, 0, 200, 'UTF-8');
         } else if($this->{ 'text_'.App::getLocale() }) {
             $textAsDesc = strip_tags($this->{ 'text_'.App::getLocale() });
             
-            return mb_substr($textAsDesc, 0, 255, 'UTF-8');
+            return mb_substr($textAsDesc, 0, 200, 'UTF-8');
         } else {
             return config('bsw.meta_description');
         }
@@ -74,10 +69,6 @@ class AboutUsStep0 extends Model
             return '/storage/images/meta_default.jpg';
         }
     }
-
-	// public function newsStep1() {
-    //     return $this->hasMany(NewsStep1::class, 'top_level', 'id')->orderBy('rang', 'desc');
-    // }
 
 
     public function getFullUrl($lang) {

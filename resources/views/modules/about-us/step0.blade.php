@@ -15,28 +15,26 @@
             
         <div class="container p-md-0 px-2">
             <div class="p-md-0 px-2">
-                <img class="" src="{{ asset('/storage/images/modules/pages/55/'.$page->id.'.jpg') }}" alt="network"/>
+                <img class="" src="{{ asset('/storage/images/modules/about_us/93/'.$aboutStep0->id.'.jpg') }}" alt="about-us"/>
             </div>        
 
             <div class="py-2">
-                @foreach ($aboutStep0 as $item)
-                   <div class="px-md-0 px-2">
-                        <h2 class="py-2  
-                                    about_us__title 
-                                    position-relative 
-                                    d-inline-block">
-                            {{ $item->title }}
-                        </h2>
-                   </div>
+                <div class="px-md-0 px-2">
+                    <h2 class="py-2  
+                                about_us__title 
+                                position-relative 
+                                d-inline-block">
+                        {{ $aboutStep0->title }}
+                    </h2>
+                </div>
 
-                    <div class="py-md-2 
-                                p-md-0
-                                p-2 
-                                pt-md-4
-                                pt-4">
-                        {!! $item->text !!}
-                    </div>
-                @endforeach
+                <div class="py-md-2 
+                            p-md-0
+                            p-2 
+                            pt-md-4
+                            pt-4">
+                    {!! $aboutStep0->text !!}
+                </div>
             </div>
 
             <div class="stem_wrapper">

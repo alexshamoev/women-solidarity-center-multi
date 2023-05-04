@@ -93,4 +93,7 @@ return [
     'subscribe-success' => 'You have successfully subscribed to the newsletter',
     'subscribe-error' => 'An error occurred, please try again',
     'subscribe-error2' => 'The specified e-mail is already subscribed to the newsletter',
+    'planned' => 'Scheduled',
+    'conducted_events' => 'Past',
+    'join_team' => 'Join Our Team',
 ];

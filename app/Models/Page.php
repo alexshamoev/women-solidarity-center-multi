@@ -53,9 +53,11 @@ class Page extends Model {
 
 
     public function getMetaUrlAttribute() {
-        if(file_exists(public_path('/storage/images/modules/pages/step_0/'.$this->{ 'id' }.'.jpg'))) {
-            return '/storage/images/modules/pages/step_0/'.$this->{ 'id' }.'.jpg';
-        } else {
+        if(file_exists(public_path('/storage/images/modules/pages/55/meta_'.$this->{ 'id' }.'.jpg'))) {
+            return '/storage/images/modules/pages/55/meta_'.$this->{ 'id' }.'.jpg';
+        }elseif(file_exists(public_path('/storage/images/modules/pages/55/'.$this->{ 'id' }.'.jpg'))){
+            return '/storage/images/modules/pages/55/'.$this->{ 'id' }.'.jpg';
+        }else {
             return '/storage/images/meta_default.jpg';
         }
     }

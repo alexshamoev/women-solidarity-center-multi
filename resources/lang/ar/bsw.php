@@ -91,4 +91,7 @@ return [
     'subscribe-success' => 'Դուք հաջողությամբ բաժանորդագրվել եք տեղեկագրին',
     'subscribe-error' => 'Սխալ է տեղի ունեցել, խնդրում ենք կրկին փորձել',
     'subscribe-error2' => 'Նշված էլ. փոստն արդեն բաժանորդագրված է տեղեկագրին',
+    'planned' => 'Scheduled',
+    'conducted_events' => 'Past',
+    'join_team' => 'Join Our Team',
 ];
