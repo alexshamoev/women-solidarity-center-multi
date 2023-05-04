@@ -96,4 +96,5 @@ return [
     'planned' => 'Scheduled',
     'conducted_events' => 'Past',
     'join_team' => 'Join Our Team',
+    'share'=> 'Share'
 ];

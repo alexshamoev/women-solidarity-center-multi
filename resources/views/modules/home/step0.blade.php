@@ -114,7 +114,7 @@
 									</div>
 
 									<div class="position-absolute news__block__title text-center">
-										<h5 class="fw-bold">პუბლიკაციები</h5>
+										<h6 class="fw-bold">პუბლიკაციები</h6>
 									</div>
 								</a> 
 							</div>

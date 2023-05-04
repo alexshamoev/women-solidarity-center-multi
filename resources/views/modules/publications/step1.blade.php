@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="container 
-					stem__page_second 
+					publications__page_second 
 					main_section_padding 
 					p-2 
 					pt-0">
@@ -33,19 +33,19 @@
 			</div>
 
 			<div class="row d-flex justify-content-center">
-				<div class="col-xl-10 p-0 position-relative stem__text_main">
+				<div class="col-xl-10 p-0 position-relative publications__text_main">
 					<div class="header__icons_parent
 								position-absolute
 								d-md-block
 								d-none
 								pt-2">
-						<div class="stem__share_text d-flex align-items-center">
+						<div class="publications__share_text d-flex align-items-center">
 							<h5 class="fw-bold">
 								{{__('bsw.share')}}
 							</h5>
 						</div>
 
-						<div class="stem__vertical_line m-auto "></div>
+						<div class="publications__vertical_line m-auto "></div>
 						
 						<div class="footer__social_border m-2">
 							<div class="footer__social_box">
