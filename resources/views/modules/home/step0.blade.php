@@ -84,12 +84,12 @@
 													align-items-center 
 													p-5 
 													h-auto">
-											<img src="/storage/images/events.svg" alt=""/>
+											<img src="/storage/images/events.svg" alt="events"/>
 										</div>
 									</div>
 
 									<div class="position-absolute news__block__title text-center">
-										<h5 class="fw-bold">ღონისძიებები</h5>
+										<h5 class="fw-bold">{{ $eventPage->title }}</h5>
 									</div>
 								</a>
 							</div>
@@ -109,12 +109,12 @@
 													align-items-center 
 													p-5 
 													h-auto">
-											<img src="/storage/images/blog.svg" alt=""/>
+											<img src="/storage/images/blog.svg" alt="publications"/>
 										</div>
 									</div>
 
 									<div class="position-absolute news__block__title text-center">
-										<h6 class="fw-bold">პუბლიკაციები</h6>
+										<h6 class="fw-bold">{{ $publicationsPage->title }}</h6>
 									</div>
 								</a> 
 							</div>
