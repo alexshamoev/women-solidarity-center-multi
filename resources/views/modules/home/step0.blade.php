@@ -42,7 +42,7 @@
 			</div>
 		@endif
 		
-		<div class="container home__main">
+		<div class="container home__main px-md-0 px-3">
 			@include('modules.animated_header.step0', $animatedHeader)
 		</div>
 

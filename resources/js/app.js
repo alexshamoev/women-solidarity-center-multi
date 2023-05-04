@@ -27,6 +27,7 @@ app.mount("#app");
 
 // React.
 require("./components/ReactApp");
+require("./components/SearchField");
 //
 
 // Restricts input for the set of matched elements to the given inputFilter function.

@@ -106,6 +106,21 @@
 	background-color: $color_0;
     z-index: 20;
 
+	&__searchAnswers{
+		a{
+			color: $color_0;
+			transition: 0.3s ease;
+			&:hover{
+				color: $color_1;
+			}
+		}
+	}
+
+	&__search_answer{
+		z-index: 50;
+		top: 100%;
+	}
+
     &__close-search,
     &__open-search {
         cursor: pointer;
@@ -140,6 +155,7 @@
 		z-index: 10;
 		font-size: 20px;
 		left: 30px;
+		pointer-events: none;
 	}
 
 	&__social_box{
@@ -175,8 +191,9 @@
 		color: $color_2;
 	}
 
-	
-
+	&__search_btn{
+		z-index: 100;
+	}
 }
 
 .youtube{

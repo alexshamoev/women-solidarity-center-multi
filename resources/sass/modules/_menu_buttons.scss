@@ -47,12 +47,9 @@
     }
 }
 
-
 .menu_buttons {
     &__item {
         transition: all 0.2s ease-in-out;
-        cursor: pointer;
-    
         span {
             color: $color_2;
             transition: all 0.2s ease-in-out;

@@ -27,7 +27,7 @@
                         d-flex 
                         justify-content-center">
                 <div class="position-relative 
-                            p-2 border 
+                            p-2
                             header__search_box">
                     <span class="ba_search_newest
                                 position-absolute 
@@ -35,24 +35,25 @@
                                 top-50 
                                 translate-middle">
                     </span>
-
-                    <input class="h-100 
-                                w-100 
-                                border-0 
-                                p-0 
-                                position-absolute 
-                                top-0 
-                                start-0 
-                                ps-5" 
-                                type="text" 
-                                placeholder="{{ __('bsw.search') }}">
-                    <button class="position-absolute
+                    
+                    <!-- <input class="h-100 
+                                    w-100 
+                                    border-0 
+                                    p-0 
+                                    position-absolute 
+                                    top-0 
+                                    start-0 
+                                    ps-5" 
+                                    type="text" 
+                                    placeholder="{{ __('bsw.search') }}"> -->
+                    <!-- <button class="position-absolute
                                     border-0 
                                     header__search_btn
                                     p-2
                                     text-white">
                         {{ __('bsw.search') }}
-                    </button>
+                    </button> -->
+                    <div id="examplereact"></div>
                 </div>
             </div>
 
