@@ -1,0 +1,92 @@
+@import 'atom';
+
+
+@media only screen and (max-width: $xs_size) {
+	
+}
+
+
+@media only screen and (min-width: $sm_size) {
+	
+}
+
+
+@media only screen and (min-width: $md_size) {
+	
+}
+
+
+@media only screen and (min-width: $lg_size) {
+	
+}
+
+
+@media only screen and (min-width: $xl_size) {
+	
+}
+
+
+@media only screen and (min-width: $xxl_size) {
+	
+}
+
+
+// <>
+body,
+input,
+textarea,
+select {
+	font: 16px / 140% $font_family_3;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+	font-family: $font_family_5;
+	line-height: 120%;
+	word-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h4{
+	font-family: $font_family_4;
+	line-height: 120%;
+	word-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h5{
+	font-family: $font_family_3;
+	line-height: 120%;
+	word-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+	font-size: 42px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 22px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	font-size: 13px;
+}
