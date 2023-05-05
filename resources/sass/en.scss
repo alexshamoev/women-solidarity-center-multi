@@ -32,61 +32,61 @@
 
 
 // <>
-	body,
-	input,
-	textarea,
-	select {
-		font: 16px/140% $font_family_1;
-		word-wrap: break-word;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+body,
+input,
+textarea,
+select {
+	font: 16px / 140% $font_family_0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-family: $font_family_1;
-		font-weight: normal;
-		line-height: 120%;
-		word-wrap: break-word;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+h1,
+h2,
+h3 {
+	font-family: $font_family_2;
+	line-height: 120%;
+	word-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
-	h1 {
-		font-size: 40px;
-	}
+h4{
+	font-family: $font_family_1;
+	line-height: 120%;
+	word-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
-	h2 {
-		font-size: 32px;
-	}
+h5{
+	font-family: $font_family_0;
+	line-height: 120%;
+	word-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
-	h3 {
-		font-size: 28px;
-	}
+h1 {
+	font-size: 42px;
+}
 
-	h4 {
-		font-size: 18px;
-	}
+h2 {
+	font-size: 32px;
+}
 
-	h5 {
-		font-size: 17px;
-	}
+h3 {
+	font-size: 22px;
+}
 
-	h6 {
-		font-size: 13px;
-	}
-// 
+h4 {
+	font-size: 18px;
+}
 
+h5 {
+	font-size: 14px;
+}
 
-// #
-
-// 
-
-
-// .
-
-// 
+h6 {
+	font-size: 13px;
+}

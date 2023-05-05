@@ -114,7 +114,7 @@
 									</div>
 
 									<div class="position-absolute news__block__title text-center">
-										<h6 class="fw-bold">{{ $publicationsPage->title }}</h6>
+										<h5 class="fw-bold">{{ $publicationsPage->title }}</h5>
 									</div>
 								</a> 
 							</div>

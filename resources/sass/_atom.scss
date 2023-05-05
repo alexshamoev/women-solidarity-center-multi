@@ -16,29 +16,53 @@ $container_xs_size: 100%;
 
 // Fonts
 @font-face {
-    font-family: 'firago_regular';
+    font-family: 'Poppins-Regular';
     font-style: normal;
     font-weight: 400;
-    src: url('/storage/fonts/firago_regular.ttf');
+    src: url('/storage/fonts/Poppins-Regular.ttf');
 }
 
 @font-face {
-    font-family: 'firago_medium';
+    font-family: 'Poppins-Medium';
     font-style: normal;
     font-weight: 400;
-    src: url('/storage/fonts/firago_medium.ttf');
+    src: url('/storage/fonts/Poppins-Medium.ttf');
 }
 
 @font-face {
-    font-family: 'firago_semibold';
+    font-family: 'Poppins-SemiBold';
     font-style: normal;
     font-weight: 400;
-    src: url('/storage/fonts/firago_semibold.ttf');
+    src: url('/storage/fonts/Poppins-SemiBold.ttf');
 }
 
-$font_family_0: 'firago_regular';
-$font_family_1: 'firago_medium';
-$font_family_2: 'firago_semibold';
+@font-face {
+    font-family: 'NotoSansArmenian-Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/storage/fonts/NotoSansArmenian-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSansArmenian-medium';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/storage/fonts/NotoSansArmenian-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSansArmenian-SemiBold';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/storage/fonts/NotoSansArmenian-SemiBold.ttf');
+}
+
+$font_family_0: 'Poppins-Regular';
+$font_family_1: 'Poppins-Medium';
+$font_family_2: 'Poppins-SemiBold';
+$font_family_3: 'NotoSansArmenian-medium';
+$font_family_4: 'NotoSansArmenian-Regular';
+$font_family_5: 'NotoSansArmenian-SemiBold';
 //
 
 // Colors
