@@ -8,6 +8,7 @@
                         align-items-center
                         text-white">
                     <img class="footer__logo" src="{{ asset('/storage/images/logo.svg') }}" class="logo">
+                    {{ $homePage->fullUrl }}
                 </div>
                 <!-- <div class="d-flex align-items-center">
                     <div class="p-2 text-white">

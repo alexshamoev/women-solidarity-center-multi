@@ -14,6 +14,7 @@
                         fw-bold 
                         fs-3">
                 <img src="{{ asset('/storage/images/logo.svg') }}" class="logo">
+                {{ $homePage->fullUrl }}
             </div>
 
             <div class="col-xxl-9

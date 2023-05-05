@@ -122,18 +122,17 @@
 					</div>
 
 					<div class="col-lg-6 col-12">
-						<a href="{{ $eventPage->fullUrl }}">
+						<a href="{{ $visibleEvent->fullUrl }}">
 							<div class="news__image">
-                    			<img class="" src="{{ asset('/storage/images/modules/about_us/93/'.$aboutPage->id.'_preview.jpg') }}" alt="{{ $aboutPage->title }}"/>
+                    			<img class="" src="{{ asset('/storage/images/modules/event/81/'.$visibleEvent->id.'_last_ev.jpg') }}" alt="{{ $visibleEvent->title }}"/>
                             	 
-								
 								<div class="news__image_description p-2">
 									<h4 class="news__image_description_title p-2">
-										Talks of modern professions
+										{{ $visibleEvent->title }}
 									</h4>
 
 									<div class="news__image_description_text p-2">
-										It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+										{!! $visibleEvent->text !!}
 									</div>
 								</div>
 							</div>

@@ -12,9 +12,9 @@ class AContactsController extends AController {
         $bswAddress = Bsw::where('system_word', 'address')->first(); 
 
 		$data = array_merge(self::getDefaultData(), ['module' => Module::where('alias', 'contacts')->first(),
-                                                        'address_ge' => $bswAddress->word_ge, 
+                                                        'address_az' => $bswAddress->word_az, 
                                                         'address_en' => $bswAddress->word_en, 
-                                                        'address_ru' => $bswAddress->word_ru]);
+                                                        'address_ar' => $bswAddress->word_ar]);
 
 		return view('modules.contacts.admin_panel.start_point', $data);
 	}
@@ -54,9 +54,9 @@ class AContactsController extends AController {
 		$bsc->save();
 
         $bsw = Bsw::where('system_word', 'address')->first();
-		$bsw->word_ge = $request->input('address_ge');
+		$bsw->word_az = $request->input('address_az');
 		$bsw->word_en = $request->input('address_en');
-		$bsw->word_ru = $request->input('address_ru');
+		$bsw->word_ar = $request->input('address_ar');
 		$bsw->save();
 
         

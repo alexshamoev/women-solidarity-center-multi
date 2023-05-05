@@ -50,6 +50,7 @@ class FrontController extends Controller {
 		}
 
 		$data = ['page' => $page,
+				'homePage' => Page::firstWhere('slug', 'home'),
 				'language' => $lang,
 				'languages' => Language::where('disable', '0')->orderByDesc('rang')->get(),
 				'menuButtons' => MenuButtonStep0::with(['page', 'menuButtonStep1', 'menuButtonStep1.page'])->orderByDesc('rang')->get(),
