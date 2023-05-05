@@ -162,6 +162,10 @@ if(Schema::hasTable('languages')) {
 			//subscribe
 				Route::post('/subscribe', 'ASubscribeController@subscribe')->name('subscribe');
 			//
+
+			//
+				// Route::post('/application', 'AJoinedController@join')->name('applicationInsert');
+			//
 		//
 
 

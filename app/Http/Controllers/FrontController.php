@@ -58,6 +58,7 @@ class FrontController extends Controller {
 				'joinOurNewtork' => JoinOurNetworkStep0::first(),
 				'partners' => Partner::orderByDesc('rang')->get(),
 				'footerLinks' => FooterLinksStep0::with(['page', 'footerLinksStep1', 'footerLinksStep1.page'])->orderByDesc('rang')->get(),
+				'applicationPage' => Page::firstWhere('slug', 'application'),
 				'termsPage' => Page::firstWhere('slug', 'terms'),
 				'privacyPage' => Page::firstWhere('slug', 'privacy'),
 			];

@@ -11,13 +11,13 @@
                 </div>
 
                 <div class="p-2">
-                    {{-- <a href="{{ $applicationPage->fullUrl }}" target="_blank"> --}}
+                    <a href="{{ $applicationPage->fullUrl }}" target="_blank">
                         <button class="p-2 px-4 border-0 join_us__button">
                             <h5 class="fw-bold p-2">
                                 {{ __('bsw.fill_form') }}
                             </h5>
                         </button>
-                    {{-- </a> --}}
+                    </a>
                 </div>
             </div>
         </div>
