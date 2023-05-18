@@ -143,6 +143,16 @@
 				</div>
 			</div>
 		</div>
+		
+		{{ $lastEvent->title }}
+		{!! $lastEvent->text !!}
+		{{ $lastEvent->fullUrl }}
+		<img class="" src="{{ asset('/storage/images/modules/event/81/'.$lastEvent->id.'_last_ev.jpg') }}" alt="{{ $lastEvent->title }}"/>
+
+		{{ $lastPublication->title }}
+		{!! $lastPublication->header_text !!} 
+		{{ $lastPublication->fullUrl }}
+		<img src="{{ asset('/storage/images/modules/publications/88/'.$lastPublication->id.'_preview.jpg') }}" alt="{{ $lastPublication->title }}"/>
 
 		<div class="about_us
                     mb-5 
