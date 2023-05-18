@@ -13,6 +13,7 @@ require("./modules/menu_buttons");
 require("./modules/home");
 require("./modules/animated_header");
 require("./modules/section_classes");
+require("./modules/application");
 
 // Vue.
 import { createApp } from "vue";

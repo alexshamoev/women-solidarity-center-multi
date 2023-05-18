@@ -13,8 +13,10 @@
                         ps-md-0  
                         fw-bold 
                         fs-3">
-                <img src="{{ asset('/storage/images/logo.svg') }}" class="logo">
-                {{ $homePage->fullUrl }}
+                <a href="{{ $homePage->fullUrl }}">
+                    <img src="{{ asset('/storage/images/logo.svg') }}" class="logo">
+                </a>
+                
             </div>
 
             <div class="col-xxl-9

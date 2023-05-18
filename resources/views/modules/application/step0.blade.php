@@ -116,8 +116,6 @@
                                         <img src="{{ asset('/storage/images/flake.svg') }}">
                                     </div>
                                 </div>
-
-                                 
                             </div>
 
                             <div class="row d-flex justify-content-center">
@@ -132,7 +130,7 @@
                                         </div>
                                         
                                         <div>
-                                            ველის შევსება სავალდებულოა
+                                           {{__('bsw.filling_is_mandatory')}}
                                         </div>
                                     </div>
                                     
@@ -211,7 +209,7 @@
                                         </div>
 
                                         <div>
-                                            ველის შევსება სავალდებულოა
+                                            {{__('bsw.filling_is_mandatory')}}
                                         </div>
                                     </div>
                                     
@@ -253,7 +251,7 @@
                                         </div>
 
                                         <div class="pe-3">
-                                            ველის შევსება სავალდებულოა
+                                            {{__('bsw.filling_is_mandatory')}}
                                         </div>
                                     </div>
                                     

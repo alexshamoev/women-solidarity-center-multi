@@ -7,8 +7,9 @@
                         d-lg-flex
                         align-items-center
                         text-white">
-                    <img class="footer__logo" src="{{ asset('/storage/images/logo.svg') }}" class="logo">
-                    {{ $homePage->fullUrl }}
+                    <a href="{{ $homePage->fullUrl }}">
+                        <img class="footer__logo" src="{{ asset('/storage/images/logo.svg') }}" class="logo">
+                    </a>
                 </div>
                 <!-- <div class="d-flex align-items-center">
                     <div class="p-2 text-white">

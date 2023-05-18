@@ -1,0 +1,174 @@
+@media only screen and (max-width: $xs_size) {
+    .application{
+        &__board_title{
+            min-height: auto;
+        }
+
+        &__content{
+            min-height: 330px;
+        }
+    }
+}
+
+@media only screen and (min-width: $sm_size) {
+    .application{
+        &__board_title{
+            min-height: auto;
+        }
+
+        &__content{
+            min-height: 330px;
+        }
+    }
+}
+
+@media only screen and (min-width: $md_size) {
+    .application{
+        &__board_title{
+            min-height: auto;
+        }
+
+        &__content{
+            min-height: 240px;
+        }
+    }
+}
+
+@media only screen and (min-width: $lg_size) {
+    .application{
+        &__board_title{
+            min-height: 405px;
+        }
+
+        &__content{
+            min-height: 240px;
+        }   
+    }
+}
+
+@media only screen and (min-width: $xl_size) {
+    .application{
+        &__board_title{
+            min-height: 405px;
+        }
+
+        &__content{
+            min-height: 240px;
+        }
+    }
+}
+
+@media only screen and (min-width: $xxl_size) {
+    .application{
+        &__board_title{
+            min-height: 405px;
+        }
+
+        &__content{
+            min-height: 240px;
+        }
+    }
+}
+
+.application{
+    &__slide_box{
+        display: none;
+        z-index: 100;
+        background-color: #fff;
+        
+    }
+
+    &__slide{
+        cursor: pointer;
+    }
+
+    &__form input{
+        width: 100%;
+        height: 62px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        padding-left: 20px;
+    }
+
+    &__button button{
+        border: 0;
+        background-color: $color_1  ;
+    }
+
+    &__number{
+        border: 1px solid $color_1;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color_1;
+        cursor: pointer;
+        &_active{
+            background: $color_1;
+            color: $color_2;
+        }
+    }
+
+    &__hor_line{
+        width:50px;
+        height: 1px;
+        background-color: $color_1;
+    }
+    
+    &__page{
+        display: none;
+
+        &_active{
+            display: block;
+        }
+    }
+
+    &__board{
+        min-height: 500px;
+    }
+
+    &__snowflake{
+        right: 30px;
+        width: 12px;
+        height: 12px;
+        pointer-events: none;
+    }
+
+    &__arrow_down{
+        width: 12px;
+        height: 12px;
+        pointer-events: none;
+    }
+
+    &__submit{
+        input{
+            background-color: $color_1;
+        }
+    }
+
+    &__input_initials {
+        height: 80px;
+    }
+
+    &__placeholder{
+        left: 20px;
+    }
+
+    &__checkbox{
+       & input{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+.testss input::placeholder {
+    padding-top: 1em;
+    text-indent: 5px;
+  }

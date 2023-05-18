@@ -132,7 +132,9 @@
 									</h4>
 
 									<div class="news__image_description_text p-2">
-										{!! $visibleEvent->text !!}
+										<div class="line_max_4">
+											{!! $visibleEvent->text !!}
+										</div>
 									</div>
 								</div>
 							</div>
@@ -144,8 +146,7 @@
 
 		<div class="about_us
                     mb-5 
-                    row  
-                    p-md-0 
+                    row
                     p-3">
             <div class="about_us__image 
                         col-xl-8 
@@ -223,7 +224,7 @@
 			@include('modules.partners.step0')
 		</div>
 
-		<div class="container mt-5 bg-white p-md-0 p-3 pt-0">
+		<div class="container mt-5 bg-white p-3 ">
 			@include('modules.join_our_network.step0')
 		</div>
 	</div>

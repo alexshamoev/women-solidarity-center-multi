@@ -99,4 +99,5 @@ return [
     'share' => 'Share',
     'more' => 'Read More',
     'registration' => 'Registration',
+    'age' => 'Age',
 ];
