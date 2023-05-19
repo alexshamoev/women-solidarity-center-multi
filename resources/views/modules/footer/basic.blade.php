@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                @foreach ($footerLinks as $data)
+                {{-- @foreach ($footerLinks as $data)
                     <div class="col-lg-3
                                 col-6
                                 pt-lg-0
@@ -97,7 +97,7 @@
                             @endif
                         @endforeach
                      </div>
-                @endforeach
+                @endforeach --}}
             </div>
 
             <div class="p-2">
