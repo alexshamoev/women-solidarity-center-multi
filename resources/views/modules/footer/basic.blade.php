@@ -1,62 +1,61 @@
 @if($widgetGetVisibility['footer'])
     <footer class="footer">
         <div class="container p-2">
-            <div class="d-lg-flex
-                        justify-content-between">
-                <div class="p-2
-                        d-lg-flex
-                        align-items-center
-                        text-white">
+            <div class="p-2">
+                <div class="footer__horizontal_line"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6
+                            d-flex
+                            align-items-center
+                            justify-content-sm-start
+                            justify-content-center
+                            p-0">
                     <a href="{{ $homePage->fullUrl }}">
-                        <img class="footer__logo" src="{{ asset('/storage/images/logo.svg') }}" class="logo">
+                        <img class="footer__logo
+                                    pb-sm-0 
+                                    pb-2" src="{{ asset('/storage/images/logo.svg') }}" class="logo">
                     </a>
                 </div>
-                <!-- <div class="d-flex align-items-center">
-                    <div class="p-2 text-white">
-                        {{ __('bsw.want_to_join') }}
-                    </div>
-                    <div class="p-2">
-                        <div class="footer__submit">
-                            {{ Form::submit( __('bsw.join')) }}
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-                <div class="p-2">
-                    <div class="footer__horizontal_line"></div>
-                </div>
-            <div class="row">
-                <div class="col-xl-3
-                            col-lg-6
+
+                <div class="col-sm-6
                             col-12
-                            p-0">
-                    <h4 class="p-2 footer__title_input">
-                        {{ __('bsw.subscribe') }}
-                    </h4>
-                    <div class="p-2 footer__email_input">
+                            p-0
+                            d-flex
+                            align-items-center
+                            justify-content-sm-end
+                            justify-content-center">
+                    <div>
+                        <h4 class="p-2 footer__title_input">
+                            {{ __('bsw.subscribe') }}
+                        </h4>
 
-                        {{ Form::open(array('route' => 'subscribe', 'method' => 'POST')) }}
+                        <div class="p-2 footer__email_input">
 
-                            {{ Form::email('email_subscribe', old('email_subscribe'), array(
-                                                                                        'placeholder' => __('bsw.email'), 
-                                                                                        'required' => 'required', 
-                                                                                        'pattern' =>  '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
-                                                                                        'title' => 'yourname@example.com',
-                                                                                        )) }}
+                            {{ Form::open(array('route' => 'subscribe', 'method' => 'POST')) }}
 
-                            <!-- {{ Form::submit('<div></div>', ['class' => 'btn btn-primary']) }} -->
-                            <button type="submit" class="footer__btn_submit">
-                                <span class="ba_thin_arrow_right"></span>
-                            </button>
+                                {{ Form::email('email_subscribe', old('email_subscribe'), array(
+                                                                                            'placeholder' => __('bsw.email'), 
+                                                                                            'required' => 'required', 
+                                                                                            'pattern' =>  '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+                                                                                            'title' => 'yourname@example.com',
+                                                                                            )) }}
 
-                            {{-- @error('email_subscribe')
-                                <div class="alert alert-danger m-0">
-                                    {{ $message }}
-                                </div>
-                            @enderror --}}
+                                <!-- {{ Form::submit('<div></div>', ['class' => 'btn btn-primary']) }} -->
+                                <button type="submit" class="footer__btn_submit">
+                                    <span class="ba_thin_arrow_right"></span>
+                                </button>
 
-                        {{ Form::close() }}
+                                {{-- @error('email_subscribe')
+                                    <div class="alert alert-danger m-0">
+                                        {{ $message }}
+                                    </div>
+                                @enderror --}}
 
+                            {{ Form::close() }}
+
+                        </div>
                     </div>
                 </div>
 
