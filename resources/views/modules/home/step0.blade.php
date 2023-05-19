@@ -67,9 +67,9 @@
 					<div class="col-lg-6 col-12 p-0">
 						<div class="row gx-2 gy-2 h-100">
 							<div class="col-sm-6 
-										news__block_wrapper 
-										p-2 
-										position-relative">
+                                    news__block_wrapper 
+                                    p-2 
+                                    position-relative">
 								<a href="{{ $eventPage->fullUrl }}">
 									<div class="news__block 
 												p-lg-0 
@@ -77,14 +77,15 @@
 												h-100 
 												d-flex 
 												justify-content-center 
-												align-items-center">
+												align-items-center"
+												data-id="1">
 										<div class="news__block_inner 
 													d-flex 
 													justify-content-center 
 													align-items-center 
 													p-5 
 													h-auto">
-											<img src="/storage/images/events.svg" alt="events"/>
+											<img src="/storage/images/advices.svg" alt=""/>
 										</div>
 									</div>
 
@@ -94,7 +95,10 @@
 								</a>
 							</div>
 
-							<div class="col-sm-6 news__block_wrapper p-2 position-relative">
+							<div class="col-sm-6 
+                                    news__block_wrapper 
+                                    p-2 
+                                    position-relative">
 								<a href="{{ $publicationsPage->fullUrl }}">
 									<div class="news__block 
 												p-lg-0 
@@ -102,38 +106,71 @@
 												h-100 
 												d-flex 
 												justify-content-center 
-												align-items-center">
+												align-items-center"
+												data-id="2">
 										<div class="news__block_inner 
 													d-flex 
 													justify-content-center 
 													align-items-center 
 													p-5 
 													h-auto">
-											<img src="/storage/images/blog.svg" alt="publications"/>
+											<img src="/storage/images/advices.svg" alt=""/>
 										</div>
 									</div>
 
 									<div class="position-absolute news__block__title text-center">
 										<h5 class="fw-bold">{{ $publicationsPage->title }}</h5>
 									</div>
-								</a> 
+								</a>
 							</div>
 						</div>
 					</div>
 
-					<div class="col-lg-6 col-12">
-						<a href="{{ $visibleEvent->fullUrl }}">
+					<!-------------- Information that appears on hover in news line ------------->
+					<div class="col-lg-6 
+								col-12 
+								news__info 
+								news__info_active" 
+								data-id="1">
+						<a href="{{ $lastEvent->fullUrl }}">
 							<div class="news__image">
-                    			<img class="" src="{{ asset('/storage/images/modules/event/81/'.$visibleEvent->id.'_last_ev.jpg') }}" alt="{{ $visibleEvent->title }}"/>
-                            	 
+								<div>
+									<img class="" src="{{ asset('/storage/images/modules/event/81/'.$lastEvent->id.'_last_ev.jpg') }}" alt="{{ $lastEvent->title }}"/>
+								</div>
+								
 								<div class="news__image_description p-2">
 									<h4 class="news__image_description_title p-2">
-										{{ $visibleEvent->title }}
+										{{ $lastEvent->title }}
 									</h4>
 
-									<div class="news__image_description_text p-2">
-										<div class="line_max_4">
-											{!! $visibleEvent->text !!}
+									<div class="p-2">
+										<div class="news__image_description_text p-2 line_max_5">
+											{!! $lastEvent->text !!}
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-lg-6 
+								col-12 
+								news__info" 
+								data-id="2">
+						<a href="{{ $lastPublication->fullUrl }}">
+							<div class="news__image">
+								<div>
+									<img src="{{ asset('/storage/images/modules/publications/88/'.$lastPublication->id.'_preview.jpg') }}" alt="{{ $lastPublication->title }}"/>
+								</div>
+								
+								<div class="news__image_description p-2">
+									<h4 class="news__image_description_title p-2">
+										{{ $lastPublication->title }}
+									</h4>
+
+									<div class="p-2">
+										<div class="news__image_description_text p-2 line_max_5">
+											{!! $lastPublication->header_text !!} 
 										</div>
 									</div>
 								</div>
@@ -143,16 +180,6 @@
 				</div>
 			</div>
 		</div>
-		
-		{{ $lastEvent->title }}
-		{!! $lastEvent->text !!}
-		{{ $lastEvent->fullUrl }}
-		<img class="" src="{{ asset('/storage/images/modules/event/81/'.$lastEvent->id.'_last_ev.jpg') }}" alt="{{ $lastEvent->title }}"/>
-
-		{{ $lastPublication->title }}
-		{!! $lastPublication->header_text !!} 
-		{{ $lastPublication->fullUrl }}
-		<img src="{{ asset('/storage/images/modules/publications/88/'.$lastPublication->id.'_preview.jpg') }}" alt="{{ $lastPublication->title }}"/>
 
 		<div class="about_us
                     mb-5 

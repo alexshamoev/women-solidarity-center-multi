@@ -100,4 +100,11 @@ return [
     'more' => 'Read More',
     'registration' => 'Registration',
     'age' => 'Age',
+    'next' => 'Next',
+    'fill_app' => 'Send Application',
+    'filling_is_mandatory' => 'Filling is mandatory',
+    'fill_app' => 'Filling the application',
+    'work_study_direction' => 'Please write more specifically in which direction you study/work?',
+    'work_study_name' => 'Please indicate where you study/work? (name of the school/organization)',
+    'why_want' => "Why do you want to join the Women's Professional Empowerment Network?",
 ];

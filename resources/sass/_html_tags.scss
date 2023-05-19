@@ -53,9 +53,12 @@ a {
 
 body {
   color: #333;
-  margin: 0; 
+  margin: 0;
   overflow-y: scroll;
   font-size: 16px;
+  background-image: url("../../storage/app/public/images/dot.svg");
+  background-size: 35px;
+  background-repeat: repeat;
 }
 
 h1,

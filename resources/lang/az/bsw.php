@@ -97,4 +97,13 @@ return [
     'share' => 'Share',
     'more' => 'Read More',
     'registration' => 'Registration',
+    'name' => 'ad',
+    'lastName' => 'Soyad',
+    'age' =>'yaş',
+    'work_study_direction' => 'Hansı istiqamətdə oxuduğunuzu/işlədiyinizi daha dəqiq yaza bilərsinizmi?',
+    'work_study_name' => 'Harada oxuduğunuzu/işlədiyinizi göstərin (müəssisə/təşkilatın adı).',
+    'why_want' => 'Niyə "Qadınların Peşəkar Gücləndirilməsi Şəbəkəsi"nə qoşulmaq istəyirsiniz?',
+    'next' =>'Sonrakı',
+    'fill_app' => 'Ərizənin doldurulması',
+    'filling_is_mandatory' => 'Doldurma məcburidir',
 ];

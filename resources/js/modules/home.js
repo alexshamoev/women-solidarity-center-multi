@@ -29,6 +29,14 @@ $(function () {
         $(this).next(".question__accordion_item_wrapper").slideToggle(500);
         $(this).find(".arrow_accordion").toggleClass("rotate");
     });
+
+    $(".news__block").on("mouseenter", function () {
+        $(".news__info").removeClass("news__info_active");
+        var targetId = $(this).data("id");
+
+        // Find the div with corresponding data-id and add the "display:block" class
+        $('[data-id="' + targetId + '"]').addClass("news__info_active");
+    });
 });
 
 window.onload = function () {
