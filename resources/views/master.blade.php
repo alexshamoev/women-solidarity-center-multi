@@ -13,7 +13,7 @@
 
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/'.app() -> getLocale().'.css') }}">
-		<link rel="shortcut icon" href="{{ asset('/storage/images/site_icon.png') }}">
+		<link rel="shortcut icon" href="{{ asset('/storage/images/favicon.svg') }}">
 
 		<script src="{{ asset('js/app.js') }}"></script>
 
