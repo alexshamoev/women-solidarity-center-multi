@@ -1,5 +1,7 @@
 <div class="block_with_border h-100">
-    <a href="{{ $link }}">
+    @isset($link)
+        <a href="{{ $link }}">
+    @endisset
         <div class="position-relative">
             <div class="block_border_image overflow-hidden">
                 <img class="" src="{{ $photo }}" alt="" />
@@ -61,5 +63,7 @@
                 @endif
             </div>
         </div>
-    </a>
+    @isset($link)
+        </a>
+    @endisset
 </div>
