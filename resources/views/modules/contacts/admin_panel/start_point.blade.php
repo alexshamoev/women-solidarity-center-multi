@@ -70,7 +70,7 @@
 			</div>
 
 
-            <div class="p-2">
+            {{-- <div class="p-2">
 				<div class="standard-block p-2">
 					<div class="p-2">
 						<span>Instagram-ის მისამართი: *</span>
@@ -86,21 +86,40 @@
 						{{ $message }}
 					</div>
 				@enderror
-			</div>
+			</div> --}}
 
 
             <div class="p-2">
 				<div class="standard-block p-2">
 					<div class="p-2">
-						<span>Twitter-ის მისამართი: *</span>
+						<span>LinkedIn-ის მისამართი: *</span>
 					</div>
 					
 					<div class="p-2">
-                        {{ Form::text('twitter_link', config('bsc.twitter_link')) }}
+                        {{ Form::text('linkedin_link', config('bsc.linkedin_link')) }}
 					</div>
 				</div>
 
-				@error('twitter_link')
+				@error('linkedin_link')
+					<div class="alert alert-danger">
+						{{ $message }}
+					</div>
+				@enderror
+			</div>
+
+
+			<div class="p-2">
+				<div class="standard-block p-2">
+					<div class="p-2">
+						<span>Youtube-ის მისამართი: *</span>
+					</div>
+					
+					<div class="p-2">
+                        {{ Form::text('youtube_link', config('bsc.youtube_link')) }}
+					</div>
+				</div>
+
+				@error('youtube_link')
 					<div class="alert alert-danger">
 						{{ $message }}
 					</div>

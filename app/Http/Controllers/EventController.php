@@ -29,8 +29,8 @@ class EventController extends FrontController
                                                     self::$page),
                             [
                                 'homePage' => Page::firstWhere('slug', 'home'),
-                                'plannedEvents' => EventStep0::where('event_date', '>=', date('Y-m-d'))->get(),
-                                'oldEvents' => EventStep0::where('event_date', '<', date('Y-m-d'))->orWhereNull('event_date')->get()
+                                'plannedEvents' => EventStep0::where('event_date', '>=', date('Y-m-d'))->orderBy('event_date', 'desc')->get(),
+                                'oldEvents' => EventStep0::where('event_date', '<', date('Y-m-d'))->orWhereNull('event_date')->orderBy('event_date', 'desc')->get()
                             ]);
 
         return view('modules.event.step0', $data);

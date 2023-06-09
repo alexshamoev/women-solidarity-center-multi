@@ -93,7 +93,7 @@ return [
     'subscribe-error2' => 'Նշված էլ. փոստն արդեն բաժանորդագրված է տեղեկագրին',
     'planned' => 'Scheduled',
     'conducted_events' => 'Past',
-    'join_team' => 'Join Our Team',
+    'join_team' => 'Join our Facebook group',
     'share' => 'Share',
     'more' => 'Read More',
     'registration' => 'Registration',
@@ -102,4 +102,5 @@ return [
     'why_want' => 'Ինչու՞ եք ցանկանում միանալ Կանանց մասնագիտական ​​հզորացման կենտրոնին:',
     'age' => 'Տարիք',
     'filling_is_mandatory' => 'Դաշտի լրացումը պարտադիր է',
+    'view_publication' => 'View and download the publication'
 ];

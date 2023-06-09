@@ -18,6 +18,7 @@ class CreateAnimatedHeaderStep0 extends Migration
             $table -> string('title_az') -> default('');
             $table -> string('title_en') -> default('');
             $table -> string('title_ar') -> default('');
+            $table -> text('link') -> nullable();
 			$table -> integer('rang') -> default(0);
             $table->timestamps();
         });

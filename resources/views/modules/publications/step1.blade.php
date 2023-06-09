@@ -103,6 +103,20 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="row d-flex justify-content-center pt-4">
+						<div class="col-md-9">
+							@if (file_exists(public_path('/storage/images/modules/publications/88/'.$activePublication->id.'.pdf')))
+								<a href="{{ asset('/storage/images/modules/publications/88/'.$activePublication->id.'.pdf') }}" target="_blank">
+									<button class="border-0 join_us__button">
+										<h5 class="fw-bold p-3">
+											{{ __('bsw.view_publication') }}
+										</h5>
+									</button>
+								</a>
+							@endif
+						</div>
+					</div>
 				</div>
 			</div>
 			

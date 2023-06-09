@@ -107,28 +107,6 @@
                 <div class="col-lg-4
                             col-12
                             p-0
-                            text-lg-start
-                            text-center
-                            d-flex
-                            align-items-center
-                            justify-content-lg-start
-                            justify-content-center">
-                    <a href="{{ $termsPage->fullUrl }}">
-                        <span class="p-2
-                                    footer__bottom_el">
-                            {{ $termsPage->title }}
-                        </span>
-                    </a>
-                    <a href="{{ $privacyPage->fullUrl }}">
-                        <span class="p-2
-                                    footer__bottom_el">
-                            {{ $privacyPage->title }}
-                        </span>
-                    </a>
-                </div>
-                <div class="col-lg-4
-                            col-12
-                            p-0
                             text-white
                             d-flex
                             align-items-center
@@ -161,18 +139,18 @@
                         
                         <div class="footer__social_border m-2">
                             <div class="footer__social_box">
-                                <a href="{{ config('bsc.twitter_link') }}"
+                                <a href="{{ config('bsc.linkedin_link') }}"
                                     target="_blank"
                                     class="footer__media_icon
-                                            footer__media_icon--twitter">
-                                    <img src="{{ asset('/storage/images/twitter_new.svg') }}">
+                                            footer__media_icon--linkedin">
+                                    <img src="{{ asset('/storage/images/linkdin.svg') }}">
                                 </a>
                             </div>
                         </div>
 
                         <div class="footer__social_border m-2">
                             <div class="footer__social_box">
-                                <a href="#"
+                                <a href="{{ config('bsc.youtube_link') }}"
                                     target="_blank"
                                     class="footer__media_icon
                                             footer__media_icon--linkedin">
@@ -181,7 +159,7 @@
                             </div>
                         </div>
 
-                        <div class="footer__social_border m-2">
+                        {{-- <div class="footer__social_border m-2">
                             <div class="pe-0 footer__social_box">
                                 <a href="{{ config('bsc.instagram_link') }}"
                                     target="_blank"
@@ -190,7 +168,7 @@
                                     <img src="{{ asset('/storage/images/instagram_new.svg') }}">
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

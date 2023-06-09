@@ -299,7 +299,7 @@ class ACoreController extends AController {
 						}
 
 						$validator = Validator::make($request->all(), array(
-							$data->db_column => "required|mimes:".$data->file_format."|max:10000"
+							$data->db_column => "required|mimes:".$data->file_format."|max:50000"
 						));
 
 						if($validator->fails()) {
@@ -1071,7 +1071,7 @@ class ACoreController extends AController {
 						}
 
 						$validator = Validator::make($request->all(), array(
-							$data->db_column => "required|mimes:".$data->file_format."|max:10000"
+							$data->db_column => "required|mimes:".$data->file_format."|max:50000"
 						));
 
 						if($validator->fails()) {

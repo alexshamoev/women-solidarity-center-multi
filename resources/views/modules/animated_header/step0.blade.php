@@ -38,7 +38,15 @@
                                     translate-middle 
                                     animated_header__title 
                                     text-center">
-                            {{ $data->title }}
+
+                            @empty($data->link)
+                                {{ $data->title }}
+                            @else
+                                <a href="{{ $data->link }}">
+                                    {{ $data->title }}
+                                </a>
+                            @endempty
+                            
                         </h3>
                         
                         <div class="animated_header__img">

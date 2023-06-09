@@ -95,7 +95,7 @@ return [
     'subscribe-error2' => 'The specified e-mail is already subscribed to the newsletter',
     'planned' => 'Scheduled',
     'conducted_events' => 'Past',
-    'join_team' => 'Join Our Team',
+    'join_team' => 'Join our Facebook group',
     'share' => 'Share',
     'more' => 'Read More',
     'registration' => 'Registration',
@@ -107,4 +107,6 @@ return [
     'work_study_direction' => 'Please write more specifically in which direction you study/work?',
     'work_study_name' => 'Please indicate where you study/work? (name of the school/organization)',
     'why_want' => "Why do you want to join the Women's Professional Empowerment Network?",
+    'view_publication' => 'View and download the publication'
+
 ];

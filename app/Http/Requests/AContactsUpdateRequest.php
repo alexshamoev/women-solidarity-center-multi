@@ -26,8 +26,8 @@ class AContactsUpdateRequest extends FormRequest
         return [
             'admin_email' => 'required|email|max:255',
             'facebook_link' => 'required|max:255',
-            'instagram_link' => 'required|max:255',
-            'twitter_link' => 'required|max:255',
+            // 'instagram_link' => 'required|max:255',
+            'linkedin_link' => 'required|max:255',
             'phone_number' => 'required|max:255',
             'cordinate_x' => 'required|max:255',
             'cordinate_y' => 'required|max:255'

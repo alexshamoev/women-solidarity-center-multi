@@ -249,7 +249,7 @@
                                     yellow_button">
                             @include('includes.button_yellow', [
                                                 'title' => __('bsw.join_team'),
-                                                'link' => $aboutPage->fullUrl,
+                                                'link' => 'https://www.facebook.com/groups/745182690114834',
                                             ])
                         </div>
                     </div>

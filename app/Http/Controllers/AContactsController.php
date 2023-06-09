@@ -29,12 +29,16 @@ class AContactsController extends AController {
 		$bsc->configuration = $request->input('facebook_link');
 		$bsc->save();
 
-        $bsc = Bsc::where('system_word', 'instagram_link')->first();
-		$bsc->configuration = $request->input('instagram_link');
+        // $bsc = Bsc::where('system_word', 'instagram_link')->first();
+		// $bsc->configuration = $request->input('instagram_link');
+		// $bsc->save();
+
+        $bsc = Bsc::where('system_word', 'linkedin_link')->first();
+		$bsc->configuration = $request->input('linkedin_link');
 		$bsc->save();
 
-        $bsc = Bsc::where('system_word', 'twitter_link')->first();
-		$bsc->configuration = $request->input('twitter_link');
+		$bsc = Bsc::where('system_word', 'youtube_link')->first();
+		$bsc->configuration = $request->input('youtube_link');
 		$bsc->save();
 
         $bsc = Bsc::where('system_word', 'phone_number')->first();

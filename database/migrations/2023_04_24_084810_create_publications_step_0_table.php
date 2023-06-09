@@ -24,9 +24,6 @@ class CreatePublicationsStep0Table extends Migration
             $table->string('datetime_en')->nullable();
             $table->string('datetime_az')->nullable();
             $table->string('datetime_ar')->nullable();
-            $table->string('address_en')->default('');
-            $table->string('address_az')->default('');
-            $table->string('address_ar')->default('');
             $table->text('header_text_en')->nullable();
             $table->text('header_text_az')->nullable();
             $table->text('header_text_ar')->nullable();

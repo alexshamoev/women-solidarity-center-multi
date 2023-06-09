@@ -85,18 +85,18 @@
                         
                     <div class="header__social_border m-2">
                         <div class="header__social_box">
-                            <a href="{{ config('bsc.twitter_link') }}"
+                            <a href="{{ config('bsc.linkedin_link') }}"
                                 target="_blank"
                                 class="header__media_icon
-                                        header__media_icon--twitter">
-                                <img src="{{ asset('/storage/images/twitter_new.svg') }}">
+                                        header__media_icon--linkedin">
+                                <img src="{{ asset('/storage/images/linkdin.svg') }}">
                             </a>
                         </div>
                     </div>
 
                     <div class="header__social_border m-2">
                         <div class="header__social_box">
-                            <a href="#"
+                            <a href="{{ config('bsc.youtube_link') }}"
                                 target="_blank"
                                 class="header__media_icon
                                         header__media_icon--linkedin">
@@ -105,7 +105,7 @@
                         </div>
                     </div>
 
-                    <div class="header__social_border m-2 me-md-0">
+                    {{-- <div class="header__social_border m-2 me-md-0">
                         <div class="pe-0 header__social_box">
                             <a href="{{ config('bsc.instagram_link') }}"
                                 target="_blank"
@@ -114,7 +114,7 @@
                                 <img src="{{ asset('/storage/images/instagram_new.svg') }}">
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

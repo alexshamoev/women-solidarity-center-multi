@@ -93,7 +93,7 @@ return [
     'subscribe-error2' => 'Göstərilən e-poçt artıq bülletenə abunə olub',
     'planned' => 'Scheduled',
     'conducted_events' => 'Past',
-    'join_team' => 'Join Our Team',
+    'join_team' => 'Join our Facebook group',
     'share' => 'Share',
     'more' => 'Read More',
     'registration' => 'Registration',
@@ -106,4 +106,6 @@ return [
     'next' =>'Sonrakı',
     'fill_app' => 'Ərizənin doldurulması',
     'filling_is_mandatory' => 'Doldurma məcburidir',
+    'view_publication' => 'View and download the publication'
+
 ];
