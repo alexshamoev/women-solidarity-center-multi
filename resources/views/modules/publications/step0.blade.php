@@ -37,8 +37,12 @@
 			@endforeach
 		</div>
 
-		<div class="container mt-3 bg-white p-md-0 p-3">
-			{{-- @include('modules.join_our_network.step0') --}}
+		<div class="container 
+					bg-white 
+					pt-0 
+					p-md-0 
+					p-3">
+			@include('modules.join_our_network.step0')
 		</div>
 	</div>
 @endsection
