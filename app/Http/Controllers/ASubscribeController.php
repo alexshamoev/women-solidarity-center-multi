@@ -7,6 +7,8 @@ use App\Http\Requests\ASubscribeRequest;
 use App\Models\Subscribe;
 use OpenSpout\Common\Entity\Style\Style;
 use Rap2hpoutre\FastExcel\FastExcel;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Subscribe as MailSubscribe;
 use Session;
 
 class ASubscribeController extends AController
@@ -32,6 +34,10 @@ class ASubscribeController extends AController
                 'email' => $request->input('email_subscribe'),
                 'active_status' => 1,
             ]);
+            
+            # send welcome email to subscriber
+            $mail = new MailSubscribe($request->input('email_subscribe'));
+            Mail::to($request->input('email_subscribe'))->send($mail);
 
             if($subscribe){
                 return redirect()->back()->with('subscribe-success', __('bsw.subscribe-success'));
