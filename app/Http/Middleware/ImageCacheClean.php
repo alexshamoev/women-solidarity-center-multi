@@ -16,14 +16,15 @@ class ImageCacheClean
      */
     public function handle(Request $request, Closure $next)
     {
+        $skipUrl = array(route('joinedExport'), route('subscribeExport'));
+
         $response = $next($request);
-        
-        if ($response->getStatusCode() == 200 ) {
+
+        if ($response->getStatusCode() == 200 && !in_array($request->url(), $skipUrl) ) {
 
             $content = $response->getContent();
             
-            $content = preg_replace('/(src="[^"]+\/storage\/images\/[^"]+\.(jpe?g|png)\/?[^"]*)"/', '$1?v=' . time() . '"', $content);
-
+            $content = preg_replace('/(src="[^"]+\/storage\/images\/[^"]+\.(jpe?g|png)\/?[^"]*)"/', '$1?' . time() . '"', $content);
 
             $response->setContent($content);
         }

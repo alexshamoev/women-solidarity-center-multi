@@ -109,6 +109,10 @@ if(Schema::hasTable('languages')) {
 						Route::get('/subscribe', 'ASubscribeController@getStartPoint')->name('subscribeStartPoint');
 						Route::post('/subscribe/export', 'ASubscribeController@export')->name('subscribeExport');
 						Route::get('/subscribe/{id}/delete', 'ASubscribeController@delete')->name('subscribeDelete');
+
+						Route::get('/joined', 'AJoinedController@getStartPoint')->name('joinedStartPoint');
+						Route::post('/joined/export', 'AJoinedController@export')->name('joinedExport');
+						Route::get('/joined/{id}/delete', 'AJoinedController@delete')->name('joinedeDelete');
 					//
 
 
@@ -164,7 +168,7 @@ if(Schema::hasTable('languages')) {
 			//
 
 			//
-				// Route::post('/application', 'AJoinedController@join')->name('applicationInsert');
+				Route::post('/application', 'AJoinedController@join')->name('applicationInsert');
 			//
 		//
 

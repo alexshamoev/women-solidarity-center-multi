@@ -67,8 +67,8 @@
                             <div class="application__number" data-number="3">3</div>
                         </div>
                     </div>
-                    {{-- 'route' => 'applicationInsert' --}}
-                    {{ Form::open(array( 'method' => 'POST')) }}
+
+                    {{ Form::open(array('route' => 'applicationInsert', 'method' => 'POST')) }}
                     <div class="row">
                         
                     </div>
