@@ -2,6 +2,16 @@
 			d-flex
 			align-items-center
 			justify-content-end">
+	<div class="languages__block
+				text-end
+				p-2">
+		<a href="https://wpen.ge/ge">
+			<div class="p-0">
+				GE
+			</div>
+		</a>
+	</div>
+	
 	@foreach($languages as $data)
 		@if($data -> isActive)
 			<div class="languages__block

@@ -29,6 +29,10 @@
 
 
 .languages {
+	a {
+		color: $color_2;
+	}
+
 	&__block {
         &--active {
 			pointer-events: none;
