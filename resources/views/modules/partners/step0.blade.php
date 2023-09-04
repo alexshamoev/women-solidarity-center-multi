@@ -3,7 +3,7 @@
 				p-2
 				partners">
 		<h5 class="p-2 fw-bold text-center">
-			{{ __('bsw.sponsors') }}
+			{{ __('bsw.partners') }}
 		</h5>
 
 		<div class="row d-flex justify-content-sm-between justify-content-center">

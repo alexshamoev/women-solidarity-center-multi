@@ -29,49 +29,91 @@ class AJoinedController extends AController
 
     public function join(AJoinedRequest $request)
     {
+        $answer_1 = $answer_2 = $answer_3 = $answer_4 = '';
+
+        // for first option
+        if (!empty($request->input('proffessions_step_1_top_level=1'))){
+            $answer_1 = implode(', ' , $request->input('proffessions_step_1_top_level=1'));
+
+            if (!empty($request->input('otherInput1'))) {
+                $answer_1 = $answer_1.', '. $request->input('otherInput1');
+            }
+        } elseif (!empty($request->input('otherInput1'))) {
+            $answer_1 = $request->input('otherInput1');
+        }
+
+        // for second option
+        if (!empty($request->input('proffessions_step_1_top_level=2'))){
+            $answer_2 = implode(', ' , $request->input('proffessions_step_1_top_level=2'));
+
+            if (!empty($request->input('otherInput2'))) {
+                $answer_2 = $answer_2.', '. $request->input('otherInput2');
+            }
+        } elseif (!empty($request->input('otherInput2'))) {
+            $answer_2 = $request->input('otherInput2');
+        }
+
+        // for 3rd option
+        if (!empty($request->input('proffessions_step_1_top_level=3'))){
+            $answer_3 = implode(', ' , $request->input('proffessions_step_1_top_level=3'));
+
+            if (!empty($request->input('otherInput3'))) {
+                $answer_3 = $answer_3.', '. $request->input('otherInput3');
+            }
+        } elseif (!empty($request->input('otherInput3'))) {
+            $answer_3 = $request->input('otherInput3');
+        }
+
+        // for 4th option
+        if (!empty($request->input('proffessions_step_1_top_level=4'))){
+            $answer_4 = implode(', ' , $request->input('proffessions_step_1_top_level=4'));
+
+            if (!empty($request->input('otherInput4'))) {
+                $answer_4 = $answer_4.', '. $request->input('otherInput4');
+            }
+        } elseif (!empty($request->input('otherInput4'))) {
+            $answer_4 = $request->input('otherInput4');
+        }
+
         $join = Joined::create([
             'name' => $request->input('name'),
             'last_name' => $request->input('lastname'),
             'age' => $request->input('age'),
-            'proffessions_step_1_top_level=1' => json_encode($request->input('proffessions_step_1')),
-            'proffessions_step_1_top_level=2' => json_encode($request->input('proffessions_step_2')),
+            'proffessions_step_1_top_level=1' => $answer_1,
+            'proffessions_step_1_top_level=2' => $answer_2,
             'work_study_direction' => $request->input('work_study_direction'),
             'work_study_name' => $request->input('work_study_name'),
             'why_want' => $request->input('why_want'),
+            'email_address' => $request->input('insert_email_address'),
+            'phone_number' => $request->input('insert_phone_number'),
+            'proffessions_step_1_top_level=3' => $answer_3,
+            'proffessions_step_1_top_level=4' => $answer_4,
         ]);
         
-        if($join){
-            return redirect()->back()->with('join-success', 'გილოცავთ, თქვენ წარმატებით გაწევრიანდით');
+        if ($join){
+            return redirect()->back()->with('join-success', __('bsw.join-success'));
         }
 
-        return redirect()->back()->with('join-error', 'დაფიქესირდა შეცდომა, სცადეთ ხელახლა');
+        return redirect()->back()->with('join-error', __('bsw.join-error'));
     }
 
 
     public function export()
     {
-
         $joined = Joined::orderByDesc('id')->get();
         $header_style = (new Style())->setFontBold()->setFontItalic();
-        
-        return (new FastExcel($joined))
+
+		return (new FastExcel($joined))
                     ->headerStyle($header_style)
                     ->download('members.xlsx', function($joined) {
 
-                        $answer_1 = $answer_2 = '';
+                        $answer_1 = $answer_2 = $answer_3 = $answer_4 = '';
 
-                        $param1 = json_decode($joined->{'proffessions_step_1_top_level=1'});
-                        if(is_array($param1)){
-                            $ans1 = ProfessionsStep1::WhereIn('id', $param1)->pluck('title_en')->toArray();
-                            $answer_1 = implode(", ",$ans1);
-                        }
+                        $answer_1 = $joined->{ 'proffessions_step_1_top_level=1' };
+                        $answer_2 = $joined->{ 'proffessions_step_1_top_level=2' };
+                        $answer_3 = $joined->{ 'proffessions_step_1_top_level=3' };
+                        $answer_4 = $joined->{ 'proffessions_step_1_top_level=4' };
 
-                        $param2 = json_decode($joined->{'proffessions_step_1_top_level=2'});
-                        if(is_array($param2)){
-                            $ans2 = ProfessionsStep1::WhereIn('id', $param2)->pluck('title_en')->toArray();
-                            $answer_2 = implode(", ",$ans2);
-                        }
-                        
                         return [
                                 'სახელი' => $joined->name,
                                 'გვარი' => $joined->last_name,
@@ -81,6 +123,10 @@ class AJoinedController extends AController
                                 'რა მიმართულებით სწავლობთ/მუშაობთ?' => $joined->work_study_direction,
                                 'სასწავლებლის/ორგანიზაციის დასახელება' => $joined->work_study_name,
                                 'რატომ გსურთ გაწევრიანება?' => $joined->why_want,
+                                'ყველაზე მნიშვნელოვანი უპირატესობები' => $answer_3,
+                                'საიდან შეიტყვეთ?' => $answer_4,
+                                'იმეილი' => $joined->email_address,
+                                'ნომერი' => $joined->phone_number,
                                 'გაწევრიანების თარიღი' => $joined->created_at->format('d-m-Y'),
                             ];
         });

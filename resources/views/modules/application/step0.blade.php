@@ -51,7 +51,7 @@
                             <div class="application__number application__number_active" data-number="1">1</div>
                         </div>
  
-                        <div class="p-2">
+                        <div class="p-2 d-md-block d-none">
                             <div class="application__hor_line"></div>
                         </div>
 
@@ -59,30 +59,49 @@
                             <div class="application__number" data-number="2">2</div>
                         </div>
 
-                        <div class="p-2">
+                        <div class="p-2 d-md-block d-none">
                             <div class="application__hor_line"></div>
                         </div>
 
                         <div class="p-2 application__number_prnt" >
                             <div class="application__number" data-number="3">3</div>
                         </div>
+
+                        <div class="p-2 d-md-block d-none">
+                            <div class="application__hor_line"></div>
+                        </div>
+
+                        <div class="p-2 application__number_prnt" >
+                            <div class="application__number" data-number="4">4</div>
+                        </div>
+
+                        <div class="p-2 d-md-block d-none">
+                            <div class="application__hor_line"></div>
+                        </div>
+
+                        <div class="p-2 application__number_prnt" >
+                            <div class="application__number" data-number="5">5</div>
+                        </div>
                     </div>
 
-                    {{ Form::open(array('route' => 'applicationInsert', 'method' => 'POST')) }}
-                    <div class="row">
-                        
-                    </div>
+                    {{ Form::open(array('route' => 'applicationInsert', 'method' => 'POST', 'id' => 'application_form')) }}
                         <div class="application__page">
                             <div class="row 
                                         application__form 
                                         d-flex 
                                         justify-content-center
                                         application__content">
+                                <div class="col-lg-10 application__label">
+                                    <h4>
+                                        {{ __('bsw.name') }}
+                                    </h4>
+                                </div>
+
                                 <div class="col-lg-10
                                             application__input_initials 
                                             p-2
                                             position-relative">
-                                    {{ Form::text('name', old('fullname'), array('required' => 'required', 'placeholder' => __('bsw.name'))) }}
+                                    {{ Form::text('name', old('fullname'), array('required' => 'required', 'placeholder' => __('bsw.enter_name'))) }}
                                     <div class="position-absolute
                                                 top-50
                                                 translate-middle-y
@@ -91,11 +110,17 @@
                                     </div>
                                 </div>	
 
+                                <div class="col-lg-10 application__label">
+                                    <h4>
+                                        {{ __('bsw.lastName') }}
+                                    </h4>
+                                </div>
+
                                 <div class="col-lg-10 
                                             application__input_initials 
                                             p-2
                                             position-relative">
-                                    {{ Form::text('lastname', old('lastname'), array('required' => 'required', 'placeholder' => __('bsw.lastName'))) }}
+                                    {{ Form::text('lastname', old('lastname'), array('required' => 'required', 'placeholder' => __('bsw.enter_lastName'))) }}
                                     <div class="position-absolute
                                                 top-50
                                                 translate-middle-y
@@ -103,12 +128,18 @@
                                         <img src="{{ asset('/storage/images/flake.svg') }}">
                                     </div>
                                 </div>	
+
+                                <div class="col-lg-10 application__label">
+                                    <h4>
+                                        {{ __('bsw.age') }}
+                                    </h4>
+                                </div>
 
                                 <div class="col-lg-10 
                                             application__input_initials
                                             p-2
                                             position-relative">
-                                    {{ Form::number('age', old('age'), array('required' => 'required', 'placeholder' => __('bsw.age'))) }}
+                                    {{ Form::number('age', old('age'), array('required' => 'required', 'placeholder' => __('bsw.enter_age'))) }}
                                     <div class="position-absolute
                                                 top-50
                                                 translate-middle-y
@@ -116,6 +147,8 @@
                                         <img src="{{ asset('/storage/images/flake.svg') }}">
                                     </div>
                                 </div>
+
+                                 
                             </div>
 
                             <div class="row d-flex justify-content-center">
@@ -130,7 +163,7 @@
                                         </div>
                                         
                                         <div>
-                                           {{__('bsw.filling_is_mandatory')}}
+                                            {{ __('bsw.required_fields') }}
                                         </div>
                                     </div>
                                     
@@ -146,17 +179,23 @@
                                         d-flex 
                                         justify-content-center
                                         application__content">
-                                @foreach ($optionTitle as $item)
+                                @foreach ($questions1 as $item)
                                     <div class="col-lg-10 p-2">
                                         <div class=" w-100 position-relative">
+                                            <div class="application__label">
+                                                <h4>
+                                                    {{ Form::label('proffessions_step_'.$item->id, $item->title) }}
+                                                </h4>
+                                            </div>
+
                                             <div class="mt-3 
                                                         application__slide border 
                                                         p-3
                                                         d-flex
                                                         align-items-center
                                                         justify-content-between">
-                                                <div>
-                                                    {{ Form::label('proffessions_step_'.$item->id, $item->title) }}
+                                                <div class="application__enter_answer">
+                                                    {{ __('bsw.enter_answer') }}
                                                 </div>
 
                                                 <div class="d-flex align-items-center">
@@ -179,16 +218,246 @@
                                                         w-100 
                                                         start-0">
                                                 <div class="p-0">
-                                                    @foreach($item->proffesionsStep1 as $profession)
+                                                    @foreach($item->proffesionsStep1 as $key => $profession)
+                                                        
                                                         <div class="d-flex border p-2 position-relative">
                                                             <div class="p-2">
-                                                                {{ Form::checkbox('proffessions_step_'.$item->id.'_'.$profession->id .'[]', $profession->id, false, ['id' => 'proffessions_step_'.$item->id.'_'.$profession->id .'[]']) }}
+                                                                {{ Form::checkbox('proffessions_step_1_top_level='.$item->id.'[]', $profession->title, false, ['id' => 'proffessions_step_0_'.$item->id.'_'.$profession->id .'[]']) }}
                                                             </div>
 
-                                                            <div class="position-absolute w-100 h-100 top-0 start-0" >
-                                                                {{ Form::label('proffessions_step_'.$item->id.'_'.$profession->id .'[]', $profession->title,['class' => 'w-100 h-100 d-flex align-items-center ps-5']) }}
+                                                            <div class="position-absolute w-100 h-100 top-0 start-0">
+                                                                {{ Form::label('proffessions_step_0_'.$item->id.'_'.$profession->id .'[]', $profession->title, ['class' => 'w-100 h-100 d-flex align-items-center ps-5']) }}
                                                             </div>
                                                         </div>
+
+                                                        @if($key === count($item->proffesionsStep1) - 1)
+                                                            <div class="d-flex border p-2">
+                                                                <label class="h-100 top-0 start-0 p-2 d-flex">
+                                                                    <input type="checkbox" class="p-2 otherCheckbox" name="otherCheckbox">
+                                                                    <div class="ps-3">
+                                                                        სხვა:
+                                                                    </div>
+                                                                </label>
+            
+                                                                <div  style="display: none;" class="w-100 otherInputContainer">
+                                                                    <input type="text" class="w-100 otherInput{{ $item->id }} otherInputBorder" name="otherInput{{ $item->id }}">
+                                                                </div>
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-10 
+                                            p-2 
+                                            d-flex 
+                                            justify-content-between 
+                                            align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <div class="application__snowflake me-2">
+                                            <img src="{{ asset('/storage/images/flake.svg') }}">
+                                        </div>
+
+                                        <div>
+                                            {{ __('bsw.required_fields') }}
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="application__button" data-id="2">
+                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold']) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="application__page">
+                            <div class="row 
+                                        d-flex 
+                                        justify-content-center 
+                                        application__form
+                                        application__content">  
+                                <div class="col-lg-10 application__label">
+                                    <h4>
+                                        {{ __('bsw.work_study_direction') }}
+                                    </h4>
+                                </div>
+
+                                <div class="p-2 col-lg-10 testss">
+                                    {{ Form::text('work_study_direction', old('work_study_direction'), array('placeholder' => __('bsw.enter_answer'))) }}
+                                </div>
+
+                                <div class="col-lg-10 application__label">
+                                    <h4>
+                                        {{ __('bsw.work_study_name') }}
+                                    </h4>
+                                </div>
+
+                                <div class="p-2 col-lg-10">
+                                    {{ Form::text('work_study_name', old('work_study_name'), array('placeholder' => __('bsw.enter_answer'))) }}
+                                </div>
+
+                                <div class="col-lg-10 application__label">
+                                    <h4>
+                                        {{ __('bsw.why_want') }}
+                                    </h4>
+                                </div>
+
+                                <div class="p-2 col-lg-10">
+                                    {{ Form::text('why_want', old('why_want'), array('required' => 'required', 'placeholder' => __('bsw.enter_answer'))) }}
+                                </div>
+                            </div>
+
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-10 
+                                            p-2 
+                                            d-flex 
+                                            justify-content-between 
+                                            align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <div class="application__snowflake me-2">
+                                            <img src="{{ asset('/storage/images/flake.svg') }}">
+                                        </div>
+
+                                        <div>
+                                            {{ __('bsw.required_fields') }}
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="application__button" data-id="3">
+                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold']) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="application__page">
+                            <div class="row 
+                                        d-flex 
+                                        justify-content-center 
+                                        application__form
+                                        application__content">
+                                <div class="col-lg-10 application__label">
+                                    <h4>
+                                        {{ __('bsw.insert_email_address') }}
+                                    </h4>
+                                </div>
+
+                                <div class="p-2 col-lg-10 testss">
+                                    {{ Form::email('insert_email_address', old('insert_email_address'), array('required' => 'required', 
+                                                                                                            'placeholder' => __('bsw.enter_answer'))) }}
+                                </div>
+
+                                <div class="col-lg-10 application__label">
+                                    <h4>
+                                        {{ __('bsw.insert_phone_number') }}
+                                    </h4>
+                                </div>
+
+                                <div class="p-2 col-lg-10 testss">
+                                    {{ Form::text('insert_phone_number', old('insert_phone_number'), array('required' => 'required', 
+                                                                                                            'placeholder' => __('bsw.enter_answer'))) }}
+                                </div>
+                            </div>
+
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-10 
+                                            p-2 
+                                            d-flex 
+                                            justify-content-between 
+                                            align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <div class="application__snowflake me-2">
+                                            <img src="{{ asset('/storage/images/flake.svg') }}">
+                                        </div>
+
+                                        <div>
+                                            {{ __('bsw.required_fields') }}
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="application__button" data-id="4">
+                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold']) }}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="application__page">
+                            <div class="row
+                                        d-flex 
+                                        justify-content-center
+                                        application__content">
+                                @foreach ($questions2 as $item)
+                                    <div class="col-lg-10 p-2">
+                                        <div class=" w-100 position-relative">
+                                            <div class="application__label">
+                                                <h4>
+                                                    {{ Form::label('proffessions_step_'.$item->id, $item->title) }}
+                                                </h4>
+                                            </div>
+
+                                            <div class="mt-3 
+                                                        application__slide border 
+                                                        p-3
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-between">
+                                                <div class="application__enter_answer">
+                                                    {{ __('bsw.enter_answer') }}
+                                                </div>
+
+                                                <div class="d-flex align-items-center">
+                                                    <div class="application__arrow_down 
+                                                                d-flex 
+                                                                align-items-center 
+                                                                me-2">
+                                                        <img src="{{ asset('/storage/images/arrow_down.svg') }}">
+                                                    </div>
+
+                                                    <div class="application__snowflake">
+                                                        <img src="{{ asset('/storage/images/flake.svg') }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="application__slide_box 
+                                                        bg-white 
+                                                        w-100 
+                                                        start-0">
+                                                <div class="p-0">
+                                                    @foreach($item->proffesionsStep1 as $key => $profession)
+                                                        
+                                                        <div class="d-flex border p-2 position-relative align-items-center">
+                                                            <div class="p-2">
+                                                                {{ Form::checkbox('proffessions_step_1_top_level='.$item->id.'[]', $profession->title, false, ['id' => 'proffessions_step_0_'.$item->id.'_'.$profession->id .'[]']) }}
+                                                            </div>
+
+                                                            <div class="w-100 h-100 top-0 start-0 application__slide_box_rel">
+                                                                {{ Form::label('proffessions_step_0_'.$item->id.'_'.$profession->id .'[]', $profession->title, ['class' => 'w-100 h-100 d-flex align-items-center ps-md-5 ps-2 pe-2']) }}
+
+                                                            </div>
+                                                        </div>
+
+                                                        @if($key === count($item->proffesionsStep1) - 1)
+                                                            <div class="d-flex border p-2">
+                                                                <label class="h-100 top-0 start-0 p-2 d-flex">
+                                                                    <input type="checkbox" class="p-2 otherCheckbox" name="otherCheckbox">
+                                                                    <div class="ps-3">
+                                                                        სხვა:
+                                                                    </div>
+                                                                </label>
+            
+                                                                <div  style="display: none;" class="w-100 otherInputContainer">
+                                                                    <input type="text" class="w-100 otherInput{{ $item->id }} otherInputBorder" name="otherInput{{ $item->id }}">
+                                                                </div>
+                                                            </div>
+                                                        @endif
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -208,50 +477,8 @@
                                             <img src="{{ asset('/storage/images/flake.svg') }}">
                                         </div>
 
-                                        <div>
-                                            {{__('bsw.filling_is_mandatory')}}
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="application__button" data-id="2">
-                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold']) }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="application__page">
-                            <div class="row 
-                                        d-flex 
-                                        justify-content-center 
-                                        application__form
-                                        application__content">  
-                                <div class="p-2 col-lg-10 testss">
-                                    {{ Form::text('work_study_direction', old('work_study_direction'), array('placeholder' => __('bsw.work_study_direction'))) }}
-                                </div>
-
-                                <div class="p-2 col-lg-10">
-                                    {{ Form::text('work_study_name', old('work_study_name'), array('placeholder' => __('bsw.work_study_name'))) }}
-                                </div>
-
-                                <div class="p-2 col-lg-10">
-                                    {{ Form::text('why_want', old('why_want'), array('required' => 'required', 'placeholder' => __('bsw.why_want'))) }}
-                                </div>
-                            </div>
-
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-lg-10 
-                                            p-2 
-                                            d-flex 
-                                            justify-content-between 
-                                            align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <div class="application__snowflake me-2">
-                                            <img src="{{ asset('/storage/images/flake.svg') }}">
-                                        </div>
-
                                         <div class="pe-3">
-                                            {{__('bsw.filling_is_mandatory')}}
+                                            {{ __('bsw.required_fields') }}
                                         </div>
                                     </div>
                                     

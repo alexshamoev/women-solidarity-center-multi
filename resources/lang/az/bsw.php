@@ -106,6 +106,17 @@ return [
     'next' =>'Sonrakı',
     'fill_app' => 'Ərizənin doldurulması',
     'filling_is_mandatory' => 'Doldurma məcburidir',
-    'view_publication' => 'View and download the publication'
+    'view_publication' => 'View and download the publication',
+
+    'enter_name' => 'Ad daxil edin',
+    'enter_lastName' => 'soyadını daxil edin',
+    'enter_age' => 'Yaşınızı daxil edin',
+    'enter_answer' => 'Cavabı daxil edin',
+    'required_fields' => 'Sahənin doldurulması məcburidir',
+    'insert_email_address' => 'E-poçt ünvanınızı daxil edin. Poçt ünvanı',
+    'insert_phone_number' => 'Zəhmət olmasa mobil nömrənizi daxil edin',
+    'join-success' => 'Təbrik edirik, uğurla qoşuldunuz',
+    'join-error' => 'Xəta aşkar edildi',
+    'partners' => 'Sayt Həmrəylik Mərkəzi - Gürcüstan layihəsi çərçivəsində yaradılıb',
 
 ];

@@ -29,7 +29,8 @@ class ApplicationController extends FrontController
                             [
                 				'homePage' => Page::firstWhere('slug', 'home'),
                                 'resourcesPage' => Page::firstWhere('slug', 'resources'),
-                                'optionTitle' => ProfessionsStep0::get(),
+                                'questions1' => ProfessionsStep0::whereIn('id', [1,2])->get(),
+                                'questions2' => ProfessionsStep0::whereIn('id', [3,4])->get(),
                             ]);
 
         return  view('modules.application.step0', $data);

@@ -27,17 +27,20 @@ class ASubscribeController extends AController
 
     public function subscribe(ASubscribeRequest $request)
     {
-        $exist = Subscribe::firstwhere('email', $request->input('email_subscribe'));
+        if(Subscribe::where('email', $request->input('email_subscribe'))->doesntExist()){
 
-        if(!$exist){
             $subscribe = Subscribe::create([
                 'email' => $request->input('email_subscribe'),
                 'active_status' => 1,
             ]);
             
             # send welcome email to subscriber
-            $mail = new MailSubscribe($request->input('email_subscribe'));
-            Mail::to($request->input('email_subscribe'))->send($mail);
+            try {
+                $mail = new MailSubscribe($request->input('email_subscribe'));
+                Mail::to($request->input('email_subscribe'))->send($mail);
+            } catch (\Throwable $th) {
+                Log::error("message: ".$th->getMessage());
+            }
 
             if($subscribe){
                 return redirect()->back()->with('subscribe-success', __('bsw.subscribe-success'));

@@ -102,5 +102,17 @@ return [
     'why_want' => 'Ինչու՞ եք ցանկանում միանալ Կանանց մասնագիտական ​​հզորացման կենտրոնին:',
     'age' => 'Տարիք',
     'filling_is_mandatory' => 'Դաշտի լրացումը պարտադիր է',
-    'view_publication' => 'View and download the publication'
+    'view_publication' => 'View and download the publication',
+
+    'enter_name' => 'Մուտքագրեք անուն',
+    'enter_lastName' => 'Մուտքագրեք ազգանունը',
+    'enter_age' => 'Մուտքագրեք ձեր տարիքը',
+    'enter_answer' => 'Մուտքագրեք պատասխանը',
+    'required_fields' => 'Դաշտի լրացումը պարտադիր է',
+    'insert_email_address' => 'Խնդրում ենք մուտքագրել ձեր էլփոստի հասցեն: Փոստային ՀԱՍՑԵ',
+    'insert_phone_number' => 'Խնդրում ենք մուտքագրել ձեր բջջային համարը',
+    'join-success' => 'Շնորհավորում ենք, դուք հաջողությամբ միացաք',
+    'join-error' => 'Սխալ է հայտնաբերվել',
+    'partners' => 'Կայքը ստեղծվել է «Համերաշխության կենտրոն-Վրաստան» նախագծի շրջանակներում',
+
 ];

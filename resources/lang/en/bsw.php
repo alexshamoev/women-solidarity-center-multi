@@ -107,6 +107,17 @@ return [
     'work_study_direction' => 'Please write more specifically in which direction you study/work?',
     'work_study_name' => 'Please indicate where you study/work? (name of the school/organization)',
     'why_want' => "Why do you want to join the Women's Professional Empowerment Network?",
-    'view_publication' => 'View and download the publication'
+    'view_publication' => 'View and download the publication',
+
+    'enter_name' => 'Enter a name',
+    'enter_lastName' => 'Enter last name',
+    'enter_age' => 'Enter your age',
+    'enter_answer' => 'Enter the answer',
+    'required_fields' => 'Field filling is mandatory',
+    'insert_email_address' => 'Please enter your email address. Mailing address',
+    'insert_phone_number' => 'Please enter your mobile number',
+    'join-success' => 'Congratulations, you have successfully joined',
+    'join-error' => 'An error was detected',
+    'partners' => 'The site was created within the framework of the Solidarity Center - Georgia project',
 
 ];

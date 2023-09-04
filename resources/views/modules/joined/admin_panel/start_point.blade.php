@@ -1,5 +1,6 @@
 @extends('admin.master')
 
+
 @section('pageMetaTitle')
 	{{ $module -> title }}
 @endsection
@@ -33,59 +34,50 @@
         </div>
 	{{ Form::close() }}
 
-
-    <table class="table table-striped ">
-        <thead>
-            <tr>
-                <th>სახელი</th>
-                <th>გვარი</th>
-                <th>ასაკი</th>
-                <th>რომელ პროფესიულ სფეროსთან გაქვს შეხება?</th>
-                <th>დებულება რომელიც შეესაბამება</th>
-                <th>რა მიმართულებით სწავლობთ/მუშაობთ?</th>
-                <th>სასწავლებლის/ორგანიზაციის დასახელება</th>
-                <th>რატომ გსურთ გაწევრიანება?</th>
-                <th>გაწევრიანების თარიღი</th>
-                <th>წაშლა</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($joined as $data)
-                @php
-                    # retrieve question 1 and 2 answers from model, checks if its array for query, then concat in table. 
-                    $answer_1 = $answer_2 = '';
-
-                    $param1 = json_decode($data->{'proffessions_step_1_top_level=1'});
-                    if(is_array($param1)){
-                        $ans1 = App\Models\ProfessionsStep1::WhereIn('id', $param1)->pluck('title_en')->toArray();
-                        $answer_1 = implode(", ",$ans1);
-                    }
-
-                    $param2 = json_decode($data->{'proffessions_step_1_top_level=2'});
-                    if(is_array($param2)){
-                        $ans2 = App\Models\ProfessionsStep1::WhereIn('id', $param2)->pluck('title_en')->toArray();
-                        $answer_2 = implode(", ",$ans2);
-                    }
-                    
-                @endphp
-
-                <tr >
-                    <td>{{ $data->name }}</td>
-                    <td>{{ $data->last_name }}</td>
-                    <td>{{ $data->age }}</td>
-                    <td>{{ $answer_1 }}</td>
-                    <td>{{ $answer_2 }}</td>
-                    <td>{{ $data->work_study_direction }}</td>
-                    <td>{{ $data->work_study_name }}</td>
-                    <td>{{ $data->why_want }}</td>
-                    <td>{{ $data->created_at->format("d-m-Y") }}</td>
-                    <td>
-                        <a href="{{ route('joinedeDelete', $data->id) }}">
-                            <i class="fas fa-times text-danger"></i>
-                        </a>
-                    </td>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="align-bottom text-center">სახელი</th>
+                    <th class="align-bottom text-center">გვარი</th>
+                    <th class="align-bottom text-center">ასაკი</th>
+                    <th class="align-bottom text-center">რომელ პროფესიულ სფეროსთან გაქვს შეხება?</th>
+                    <th class="align-bottom text-center">დებულება რომელიც შეესაბამება</th>
+                    <th class="align-bottom text-center">რა მიმართულებით სწავლობთ/მუშაობთ?</th>
+                    <th class="align-bottom text-center">სასწავლებლის/ორგანიზაციის დასახელება</th>
+                    <th class="align-bottom text-center">რატომ გსურთ გაწევრიანება?</th>
+                    <th class="align-bottom text-center">ყველაზე მნიშვნელოვანი უპირატესობები</th>
+                    <th class="align-bottom text-center">საიდან შეიტყვეთ?</th>
+                    <th class="align-bottom text-center">იმეილი</th>
+                    <th class="align-bottom text-center">ნომერი</th>
+                    <th class="align-bottom text-center">გაწევრიანების თარიღი</th>
+                    <th class="align-bottom text-center">წაშლა</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach($joined as $data)
+                    <tr>
+                        <td class="align-middle text-center">{{ $data->name }}</td>
+                        <td class="align-middle text-center">{{ $data->last_name }}</td>
+                        <td class="align-middle text-center">{{ $data->age }}</td>
+                        <td class="align-middle text-center">{{ $data->{'proffessions_step_1_top_level=1'} }}</td>
+                        <td class="align-middle text-center">{{ $data->{'proffessions_step_1_top_level=2'} }}</td>
+                        <td class="align-middle text-center">{{ $data->work_study_direction }}</td>
+                        <td class="align-middle text-center">{{ $data->work_study_name }}</td>
+                        <td class="align-middle text-center">{{ $data->why_want }}</td>
+                        <td class="align-middle text-center">{{ $data->{'proffessions_step_1_top_level=3'} }}</td>
+                        <td class="align-middle text-center">{{ $data->{'proffessions_step_1_top_level=4'} }}</td>
+                        <td class="align-middle text-center">{{ $data->email_address}}</td>
+                        <td class="align-middle text-center">{{ $data->phone_number }}</td>
+                        <td class="align-middle text-center">{{ $data->created_at->format("d-m-Y") }}</td>
+                        <td class="align-middle text-center">
+                            <a href="{{ route('joinedeDelete', $data->id) }}">
+                                <i class="fas fa-times text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 @endsection
