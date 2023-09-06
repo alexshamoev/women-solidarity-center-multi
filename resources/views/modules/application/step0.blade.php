@@ -101,7 +101,7 @@
                                             application__input_initials 
                                             p-2
                                             position-relative">
-                                    {{ Form::text('name', old('fullname'), array('required' => 'required', 'placeholder' => __('bsw.enter_name'))) }}
+                                    {{ Form::text('name', old('name'), array('required' => 'required', 'placeholder' => __('bsw.enter_name'))) }}
                                     <div class="position-absolute
                                                 top-50
                                                 translate-middle-y
