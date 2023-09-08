@@ -119,4 +119,10 @@ return [
     'join-error' => 'Xəta aşkar edildi',
     'partners' => 'Sayt Həmrəylik Mərkəzi - Gürcüstan layihəsi çərçivəsində yaradılıb',
 
+
+    'fill_field' => 'Doldurma məcburidir',
+    'email_is_required' => 'E-poçtu daxil edin',
+    'enter_valid_email' => 'Etibarlı e-poçt ünvanı daxil edin',
+
+
 ];

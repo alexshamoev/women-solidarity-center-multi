@@ -26,8 +26,7 @@
                 p-md-0
                 p-3
                 pt-md-3
-                main_section_padding
-                ">
+                main_section_padding">
 		<div class="border 
                     py-md-5 
                     application__board
@@ -48,7 +47,7 @@
                                 align-items-center 
                                 pb-4">
                         <div class="p-2 application__number_prnt" >
-                            <div class="application__number application__number_active" data-number="1">1</div>
+                            <div class="application__number application__number_first application__number_active" data-number="1">1</div>
                         </div>
  
                         <div class="p-2 d-md-block d-none">
@@ -56,7 +55,7 @@
                         </div>
 
                         <div class="p-2 application__number_prnt" >
-                            <div class="application__number" data-number="2">2</div>
+                            <div class="application__number application__number_second" data-number="2">2</div>
                         </div>
 
                         <div class="p-2 d-md-block d-none">
@@ -64,7 +63,7 @@
                         </div>
 
                         <div class="p-2 application__number_prnt" >
-                            <div class="application__number" data-number="3">3</div>
+                            <div class="application__number application__number_third" data-number="3">3</div>
                         </div>
 
                         <div class="p-2 d-md-block d-none">
@@ -72,7 +71,7 @@
                         </div>
 
                         <div class="p-2 application__number_prnt" >
-                            <div class="application__number" data-number="4">4</div>
+                            <div class="application__number application__number_forth" data-number="4">4</div>
                         </div>
 
                         <div class="p-2 d-md-block d-none">
@@ -80,7 +79,7 @@
                         </div>
 
                         <div class="p-2 application__number_prnt" >
-                            <div class="application__number" data-number="5">5</div>
+                            <div class="application__number application__number_fifth" data-number="5">5</div>
                         </div>
                     </div>
 
@@ -101,7 +100,7 @@
                                             application__input_initials 
                                             p-2
                                             position-relative">
-                                    {{ Form::text('name', old('name'), array('required' => 'required', 'placeholder' => __('bsw.enter_name'))) }}
+                                    {{ Form::text('name', old('fullname'), array('required' => 'required', 'placeholder' => __('bsw.enter_name'))) }}
                                     <div class="position-absolute
                                                 top-50
                                                 translate-middle-y
@@ -109,6 +108,14 @@
                                         <img src="{{ asset('/storage/images/flake.svg') }}">
                                     </div>
                                 </div>	
+
+                                <div class="col-lg-10 p-0">
+                                    <div class="text-danger 
+                                                file_field_first  
+                                                ps-2">
+                                        {{ __('bsw.fill_field') }}
+                                    </div>
+                                </div>
 
                                 <div class="col-lg-10 application__label">
                                     <h4>
@@ -120,7 +127,8 @@
                                             application__input_initials 
                                             p-2
                                             position-relative">
-                                    {{ Form::text('lastname', old('lastname'), array('required' => 'required', 'placeholder' => __('bsw.enter_lastName'))) }}
+                                    {{ Form::text('lastname', old('lastname'), array('required' => 'required', 'placeholder' => __('bsw.enter_lastName'),'class' => 'step_first_input')) }}
+                                    
                                     <div class="position-absolute
                                                 top-50
                                                 translate-middle-y
@@ -128,6 +136,14 @@
                                         <img src="{{ asset('/storage/images/flake.svg') }}">
                                     </div>
                                 </div>	
+
+                                <div class="col-lg-10 p-0">
+                                    <div class="text-danger 
+                                                file_field_first 
+                                                ps-2">
+                                        {{ __('bsw.fill_field') }}
+                                    </div>
+                                </div>
 
                                 <div class="col-lg-10 application__label">
                                     <h4>
@@ -139,7 +155,8 @@
                                             application__input_initials
                                             p-2
                                             position-relative">
-                                    {{ Form::number('age', old('age'), array('required' => 'required', 'placeholder' => __('bsw.enter_age'))) }}
+                                    {{ Form::number('age', old('age'), array('required' => 'required', 'placeholder' => __('bsw.enter_age'), 'class' => 'step_first_input')) }}
+
                                     <div class="position-absolute
                                                 top-50
                                                 translate-middle-y
@@ -148,7 +165,13 @@
                                     </div>
                                 </div>
 
-                                 
+                                <div class="col-lg-10 p-0">
+                                    <div class="text-danger 
+                                                file_field_first 
+                                                ps-2">
+                                        {{ __('bsw.fill_field') }}
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
@@ -163,12 +186,12 @@
                                         </div>
                                         
                                         <div>
-                                            {{ __('bsw.required_fields') }}
+                                            {{ __('bsw.fill_field') }}
                                         </div>
                                     </div>
                                     
                                     <div class="application__button" data-id="1">
-                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold']) }}
+                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold btn__form']) }}
                                     </div>
                                 </div>  
                             </div>
@@ -219,10 +242,9 @@
                                                         start-0">
                                                 <div class="p-0">
                                                     @foreach($item->proffesionsStep1 as $key => $profession)
-                                                        
                                                         <div class="d-flex border p-2 position-relative">
                                                             <div class="p-2">
-                                                                {{ Form::checkbox('proffessions_step_1_top_level='.$item->id.'[]', $profession->title, false, ['id' => 'proffessions_step_0_'.$item->id.'_'.$profession->id .'[]']) }}
+                                                                {{ Form::checkbox('proffessions_step_1_top_level='.$item->id.'[]', $profession->title, false, ['id' => 'proffessions_step_0_'.$item->id.'_'.$profession->id .'[]', 'class' => 'filed_checkbox']) }}
                                                             </div>
 
                                                             <div class="position-absolute w-100 h-100 top-0 start-0">
@@ -249,6 +271,14 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="col-lg-10 p-0">
+                                        <div class="text-danger 
+                                                    file_field_second 
+                                                    ps-2">
+                                            {{ __('bsw.fill_field') }}
+                                        </div>
+                                    </div>
                                 @endforeach
                             </div>
 
@@ -264,12 +294,12 @@
                                         </div>
 
                                         <div>
-                                            {{ __('bsw.required_fields') }}
+                                            {{ __('bsw.fill_field') }}
                                         </div>
                                     </div>
                                     
-                                    <div class="application__button" data-id="2">
-                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold']) }}
+                                    <div class="application__button_second" data-id="2">
+                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold application__button_check btn__form']) }}
                                     </div>
                                 </div>
                             </div>
@@ -287,8 +317,23 @@
                                     </h4>
                                 </div>
 
-                                <div class="p-2 col-lg-10 testss">
-                                    {{ Form::text('work_study_direction', old('work_study_direction'), array('placeholder' => __('bsw.enter_answer'))) }}
+                                <div class="p-2 col-lg-10 position-relative">
+                                    {{ Form::text('work_study_direction', old('work_study_direction'), ['class' => 'step_third_input', 'placeholder' => __('bsw.enter_answer')]) }}
+
+                                    <div class="position-absolute
+                                                top-50
+                                                translate-middle-y
+                                                application__snowflake">
+                                        <img src="{{ asset('/storage/images/flake.svg') }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-10 p-0">
+                                    <div class="ps-2 file_field_third">
+                                        <div class="text-danger border-danger">
+                                            {{ __('bsw.fill_field') }}
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-lg-10 application__label">
@@ -297,8 +342,23 @@
                                     </h4>
                                 </div>
 
-                                <div class="p-2 col-lg-10">
-                                    {{ Form::text('work_study_name', old('work_study_name'), array('placeholder' => __('bsw.enter_answer'))) }}
+                                <div class="p-2 col-lg-10 position-relative">
+                                    {{ Form::text('work_study_name', old('work_study_name'), ['class' => 'step_third_input', 'placeholder' => __('bsw.enter_answer')]) }}
+
+                                    <div class="position-absolute
+                                                top-50
+                                                translate-middle-y
+                                                application__snowflake">
+                                        <img src="{{ asset('/storage/images/flake.svg') }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-10 p-0">
+                                    <div class="ps-2 file_field_third">
+                                        <div class="text-danger border-danger">
+                                            {{ __('bsw.fill_field') }}
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-lg-10 application__label">
@@ -307,8 +367,23 @@
                                     </h4>
                                 </div>
 
-                                <div class="p-2 col-lg-10">
-                                    {{ Form::text('why_want', old('why_want'), array('required' => 'required', 'placeholder' => __('bsw.enter_answer'))) }}
+                                <div class="p-2 col-lg-10 position-relative">
+                                    {{ Form::text('why_want', old('why_want'), ['class' => 'step_third_input', 'required' => 'required', 'placeholder' => __('bsw.enter_answer')]) }}
+
+                                    <div class="position-absolute
+                                                top-50
+                                                translate-middle-y
+                                                application__snowflake">
+                                        <img src="{{ asset('/storage/images/flake.svg') }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-10 p-0">
+                                    <div class="ps-2 file_field_third">
+                                        <div class="text-danger border-danger">
+                                            {{ __('bsw.fill_field') }}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -324,12 +399,12 @@
                                         </div>
 
                                         <div>
-                                            {{ __('bsw.required_fields') }}
+                                            {{ __('bsw.fill_field') }}
                                         </div>
                                     </div>
                                     
-                                    <div class="application__button" data-id="3">
-                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold']) }}
+                                    <div class="application__button_third" data-id="3">
+                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold btn__form']) }}
                                     </div>
                                 </div>
                             </div>
@@ -347,9 +422,26 @@
                                     </h4>
                                 </div>
 
-                                <div class="p-2 col-lg-10 testss">
-                                    {{ Form::email('insert_email_address', old('insert_email_address'), array('required' => 'required', 
-                                                                                                            'placeholder' => __('bsw.enter_answer'))) }}
+                                <div class="p-2 col-lg-10 position-relative">
+                                    {{ Form::email('insert_email_address', old('insert_email_address'), ['required' => 'required', 'placeholder' => __('bsw.enter_answer'),
+                                         'class' => 'step_forth_input mail_e']) }}
+
+                                    <div class="position-absolute
+                                                top-50
+                                                translate-middle-y
+                                                application__snowflake">
+                                        <img src="{{ asset('/storage/images/flake.svg') }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-10 p-0">
+                                    <div class="ps-2
+                                                text-danger"
+                                                id="emailError" 
+                                                data-unvalid="{{ __('bsw.enter_valid_email') }}" 
+                                                data-required="{{ __('bsw.email_is_required') }}">
+                                        
+                                    </div>
                                 </div>
 
                                 <div class="col-lg-10 application__label">
@@ -358,9 +450,25 @@
                                     </h4>
                                 </div>
 
-                                <div class="p-2 col-lg-10 testss">
-                                    {{ Form::text('insert_phone_number', old('insert_phone_number'), array('required' => 'required', 
-                                                                                                            'placeholder' => __('bsw.enter_answer'))) }}
+                                <div class="p-2 col-lg-10 position-relative">
+                                    {{ Form::text('insert_phone_number', old('insert_phone_number'), ['required' => 'required', 'placeholder' => __('bsw.enter_answer'), 
+                                        'class' => 'step_forth_input mobile_number']) }}
+
+                                    <div class="position-absolute
+                                                top-50
+                                                translate-middle-y
+                                                application__snowflake">
+                                        <img src="{{ asset('/storage/images/flake.svg') }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-10 p-0">
+                                    <div class="ps-2
+                                                text-danger"
+                                                id="mobileError"
+                                                data-number="{{__('bsw.number_is_required')}}"]
+                                                data-number-correctly="{{__('bsw.number_is_correctly')}}">
+                                    </div>
                                 </div>
                             </div>
 
@@ -376,12 +484,12 @@
                                         </div>
 
                                         <div>
-                                            {{ __('bsw.required_fields') }}
+                                            {{ __('bsw.fill_field') }}
                                         </div>
                                     </div>
                                     
-                                    <div class="application__button" data-id="4">
-                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold']) }}
+                                    <div class="application__button_forth" data-id="4">
+                                        {{ Form::button(__('bsw.next'), ['class' => 'px-5 py-2 fw-bold btn__form']) }}
                                     </div>
                                 </div>
                             </div>
@@ -435,12 +543,12 @@
                                                         
                                                         <div class="d-flex border p-2 position-relative align-items-center">
                                                             <div class="p-2">
-                                                                {{ Form::checkbox('proffessions_step_1_top_level='.$item->id.'[]', $profession->title, false, ['id' => 'proffessions_step_0_'.$item->id.'_'.$profession->id .'[]']) }}
+                                                                {{ Form::checkbox('proffessions_step_1_top_level='.$item->id.'[]', $profession->title, 
+                                                                    false, ['id' => 'proffessions_step_0_'.$item->id.'_'.$profession->id .'[]', 'class' => 'filed_checkbox_sec']) }}
                                                             </div>
 
                                                             <div class="w-100 h-100 top-0 start-0 application__slide_box_rel">
                                                                 {{ Form::label('proffessions_step_0_'.$item->id.'_'.$profession->id .'[]', $profession->title, ['class' => 'w-100 h-100 d-flex align-items-center ps-md-5 ps-2 pe-2']) }}
-
                                                             </div>
                                                         </div>
 
@@ -463,6 +571,14 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="col-lg-10 m-auto p-0">
+                                        <div class="ps-2 file_field_fifth">
+                                            <div class="text-danger border-danger">
+                                                {{ __('bsw.fill_field') }}
+                                            </div>
+                                        </div>
+                                    </div>
                                 @endforeach 
                             </div>
 
@@ -478,11 +594,17 @@
                                         </div>
 
                                         <div class="pe-3">
-                                            {{ __('bsw.required_fields') }}
+                                            {{ __('bsw.fill_field') }}
                                         </div>
                                     </div>
                                     
-                                    <div class="application__submit">
+                                    <div class="application__submit position-relative">
+                                        <div class="application__submit_submit 
+                                                    position-absolute 
+                                                    w-100 
+                                                    h-100 
+                                                    top-0 
+                                                    start-0"></div>
                                         {{ Form::submit(__('bsw.fill_app'), ['class' => 'p-2 px-3 border-0 fw-bold']) }}
                                     </div>
                                 </div>

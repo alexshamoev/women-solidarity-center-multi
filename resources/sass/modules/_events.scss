@@ -1,0 +1,312 @@
+@media only screen and (max-width: $xs_size) {
+    .events{
+        &__active_events{
+            height: 380px;
+            overflow: hidden;
+            margin-right: 16px;
+        }
+
+        &__image{
+            width: 920px;
+        }
+    
+        &__img_second{
+            &::before{
+                content: "";
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: $sm_size) {
+    .events{
+        &__active_events{
+            height: 380px;
+            overflow: hidden;
+            margin-right: 16px;
+        }
+
+        &__image{
+            width: 920px;
+        }
+    
+        &__img_second{
+            &::before{
+                content: "";
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: $md_size) {
+    .events{
+        &__active_events{
+            height: 380px;
+            overflow: hidden;
+            margin-right: 0;
+        }
+
+        &__image{
+            width: 920px;
+        }
+
+        &__img_second{
+            &::before{
+                content: "";
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: $lg_size) {
+    .events{
+        &__active_events{
+            height: 380px;
+            overflow: hidden;
+            margin-right: 0;
+        }
+    
+        &__image{
+            width: 100%;
+        }
+
+        &___img_second{
+            z-index: 10;
+            &::before{
+                content: "";
+                width: 30%;
+                height: 102%;
+                background-color: $color_1;  
+                position: absolute;    
+                z-index: -1;  
+                right: -30px;
+                top: 5%;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: $xl_size) {
+    .events{
+        &__free_block{
+            width: 80%;
+        }  
+        
+        &__active_events{
+            height: auto;
+            margin-right: 0;
+        }
+
+        &__image{
+          width: 100%;
+        }
+
+
+        &__img_second{
+            z-index: 10;
+            &::before{
+                content: "";
+                width: 30%;
+                height: 102%;
+                background-color: $color_1;  
+                position: absolute;    
+                z-index: -1;  
+                right: -40px;
+                top: 5%;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: $xxl_size) {
+    .events{
+        &__free_block{
+            width: 70%;
+        }   
+
+        &__active_events{
+            height: auto;
+            margin-right: 0;
+        }
+
+        &__image{
+            width: 100%;
+        }
+
+        &__img_second{
+            z-index: 10;
+            &::before{
+                content: "";
+                width: 30%;
+                height: 102%;
+                background-color: $color_1;  
+                position: absolute;    
+                z-index: -1;  
+                right: -40px;
+                top: 5%;
+            }
+        }
+
+    }
+}
+
+.events{
+    &__main_section{
+        padding-top: 0 !important;
+    }
+
+    &__planned__event_title{
+        color: #fff;
+    }
+
+    &__planned__event_text{
+        color: #fff;
+    }
+
+    &__planned_event_btn{
+        border: 0;
+        background-color: $color_1;
+        width: 130px;
+        border: 1px solid $color_1;
+        transition: 0.3s ease-in;
+        &:hover{
+            background-color: $color_0;
+            color: $color_1;
+            border: 1px solid $color_0;
+        }
+    }
+
+    &__planned_registration_btn{
+        transition: 0.3s ease-in;
+        background-color: transparent;
+        border: 1px solid $color_2;
+        color: $color_2;
+        &:hover{
+            background-color: $color_2;
+            color: $color_0;
+        }
+    }
+
+    &__block_new:nth-child(even){
+        text-align: right;
+        .events__free_block{
+            right: 0;
+        }
+
+        .events__planned_btns{
+            justify-content: end;
+        }
+    }
+
+    &__page_second_main{
+        padding-top: 0 !important;
+    }
+
+    &__registration_btn{
+        background-color: $color_1;
+        transition: 0.3s ease;
+        &:hover{
+            background-color: $color_0;
+            color: $color_1;
+        }
+    }
+}
+
+
+.event_images_carousel {
+    position: relative;
+}
+
+.event_images_carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.event_images_carousel .owl-prev,
+.event_images_carousel .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event_images_carousel .owl-prev,
+.event_images_carousel .owl-next,
+.pswp__ui .ba_arrow_left,
+.pswp__ui .ba_arrow_right {
+    background: $color_1 !important;
+    border-radius: 0% !important;
+}
+
+.event_images_carousel .owl-prev span,
+.event_images_carousel .owl-next span,
+.pswp__ui .ba_arrow_left,
+.pswp__ui .ba_arrow_right {
+    color: $color_2;
+    font-size: 42px !important;
+    line-height: 30px !important;
+}
+
+.event_images_carousel .owl-prev {
+    left: -30px;
+}
+
+.event_images_carousel .owl-next {
+    right: -30px;
+}
+
+.event_images_carousel.owl-theme .owl-dots .owl-dot.active span{
+    color: $color_1 !important;
+    background: $color_1 !important;
+}
+
+.pswp__button--arrow--left:before, 
+.pswp__button--arrow--right:before {
+    background: none !important;
+}
+
+.pswp__ui .ba_arrow_left,
+.pswp__ui .ba_arrow_right {
+    padding: .5rem !important;
+}
+
+.stem{
+    &__main_section{
+        padding-top: 0 !important;
+    }
+
+    &__page_second_main{
+        padding-top: 0 !important;
+    }
+
+    &__share_text{
+        transform: rotate(-90deg);
+        width: 54px;
+        height: 80px;
+    }
+
+    &__vertical_line{
+        width: 2px;
+        height: 50px;
+        background-color: $color_1;
+    }
+
+    &__hor_line{
+        height: 1px;
+        background-color: $color_7;
+    }
+}

@@ -7,6 +7,10 @@
         &__content{
             min-height: 330px;
         }
+
+        &__slide_box_rel{
+            position: relative;
+        }
     }
 }
 
@@ -18,6 +22,10 @@
 
         &__content{
             min-height: 330px;
+        }
+
+        &__slide_box_rel{
+            position: relative;
         }
     }
 }
@@ -31,6 +39,10 @@
         &__content{
             min-height: 240px;
         }
+
+        &__slide_box_rel{
+            position: absolute;
+        }
     }
 }
 
@@ -43,6 +55,10 @@
         &__content{
             min-height: 240px;
         }   
+
+        &__slide_box_rel{
+            position: absolute;
+        }
     }
 }
 
@@ -54,6 +70,10 @@
 
         &__content{
             min-height: 240px;
+        }
+
+        &__slide_box_rel{
+            position: absolute;
         }
     }
 }
@@ -67,15 +87,18 @@
         &__content{
             min-height: 240px;
         }
+
+        &__slide_box_rel{
+            position: absolute;
+        }
     }
 }
 
 .application{
     &__slide_box{
         display: none;
-        z-index: 100;
+        z-index: 10000;
         background-color: #fff;
-        
     }
 
     &__slide{
@@ -87,11 +110,15 @@
         height: 62px;
         border: 1px solid rgba(0, 0, 0, 0.08);
         padding-left: 20px;
+
+        ::placeholder {
+            opacity: 50% !important;
+        }
     }
 
     &__button button{
         border: 0;
-        background-color: $color_1  ;
+        background-color: $color_1;
     }
 
     &__number{
@@ -149,12 +176,24 @@
 
     &__input_initials {
         height: 80px;
+
+        input::placeholder {
+            opacity: 50% !important;
+        }
     }
 
     &__placeholder{
         left: 20px;
     }
 
+    form::placeholder {
+        opacity: 50% !important;
+    }
+
+    input::placeholder {
+        opacity: 50% !important;
+    }
+    
     &__checkbox{
        & input{
             width: 100%;
@@ -166,9 +205,56 @@
             cursor: pointer;
         }
     }
+
+    &__label {
+        label {
+            cursor: auto;
+        }
+
+        h4 {
+            color: $color_8 !important;
+        }
+    }
+
+    &__enter_answer {
+        opacity: 50% !important;
+    }
+
+    .otherInputBorder {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid $color_8;
+    }
 }
 
 .testss input::placeholder {
     padding-top: 1em;
     text-indent: 5px;
-  }
+}
+
+.file_field_first{
+    display: none
+}
+
+.file_field_second{
+    display: none
+}
+
+.file_field_third{
+    display: none
+}
+
+.file_field_forth{
+    display: none
+}
+
+.file_field_fifth{
+    display: none
+}
+
+.btn__form{
+    border: 0;
+    background-color: $color_1;
+}
+

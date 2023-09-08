@@ -6,7 +6,7 @@
 			{{ __('bsw.partners') }}
 		</h5>
 
-		<div class="row d-flex justify-content-sm-between justify-content-center">
+		<div class="row d-flex justify-content-center">
 			@foreach($partners as $data)
 				<div class="partners__logo">
 					<a href="{{ $data->link }}" target="_blank">

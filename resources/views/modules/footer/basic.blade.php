@@ -103,15 +103,16 @@
                 <div class="footer__horizontal_line"></div>
             </div>
                 
-            <div class="row">
+            <div class="row d-flex justify-content-between">
                 <div class="col-lg-4
                             col-12
-                            p-0
+                            p-2
                             text-white
                             d-flex
                             align-items-center
+                            justify-content-lg-start
                             justify-content-center">
-                        <span class="p-1">Created by: </span>
+                        <span class="p-1 ps-0">Created by: </span>
                         <a href="http://hobbystudio.ge/" target="_blank">
                             <span class="footer__bottom_el">HobbyStudio</span>
                         </a>

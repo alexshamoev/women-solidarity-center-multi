@@ -41,4 +41,5 @@ return [
     'thanks' => 'Thanks',
     'registerSuccessStatus' => 'You were registered successfully, In order to login, please confirm your email address',
     'email_needs_verifying' => 'In order to login you email needs to be confirmed, please check your inbox.',
+   
 ];
