@@ -2,14 +2,14 @@
             position-absolute
             d-md-block
             d-none
-            pt-2">
-    <div class="stem__share_text d-flex align-items-center">
+            p-0">
+    <div class="events__share_text d-flex align-items-center">
         <h5 class="fw-bold">
             {{__('bsw.share')}}
         </h5>
     </div>
 
-    <div class="stem__vertical_line m-auto "></div>
+    <div class="events__vertical_line m-auto "></div>
     
     <div class="footer__social_border m-2">
         <div class="footer__social_box">

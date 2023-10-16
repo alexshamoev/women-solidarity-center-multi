@@ -156,6 +156,21 @@
 }
 
 .events{
+    &__share_text{
+        transform: rotate(-90deg);
+        width: 54px;
+        height: 80px;
+        h5{
+            font-size: 1.25rem;
+        }
+    }
+
+    &__vertical_line{
+        width: 2px;
+        height: 50px;
+        background-color: #FFBD05;
+    }
+
     &__main_section{
         padding-top: 0 !important;
     }
@@ -282,31 +297,4 @@
 .pswp__ui .ba_arrow_left,
 .pswp__ui .ba_arrow_right {
     padding: .5rem !important;
-}
-
-.stem{
-    &__main_section{
-        padding-top: 0 !important;
-    }
-
-    &__page_second_main{
-        padding-top: 0 !important;
-    }
-
-    &__share_text{
-        transform: rotate(-90deg);
-        width: 54px;
-        height: 80px;
-    }
-
-    &__vertical_line{
-        width: 2px;
-        height: 50px;
-        background-color: $color_1;
-    }
-
-    &__hor_line{
-        height: 1px;
-        background-color: $color_7;
-    }
 }

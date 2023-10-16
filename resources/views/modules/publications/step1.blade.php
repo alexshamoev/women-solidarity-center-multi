@@ -19,11 +19,11 @@
 					main_section_padding 
 					p-2 
 					pt-0">
-			<h2 class="p-2 text-center pt-0">
+			{{-- <h2 class="p-2 text-center pt-0">
 				{{ $activePublication->title }}
-			</h2>
+			</h2> --}}
 
-			<div class="row d-flex justify-content-center">
+			<div class="row d-flex justify-content-center pt-4">
 				@if(file_exists(public_path('storage/images/modules/publications/88/'.$activePublication->id.'.jpg')))
 					<div class="col-xl-10
 								p-2">
