@@ -69,6 +69,22 @@
                     </div>
                 </div>
             </div>
+            
+            @if ($activeEvent->eventStep1->count() > 0)
+                <div class="container p-2">
+                    <div class="owl-carousel owl-theme event_images_carousel">
+                        @foreach($activeEvent->eventStep1 as $data)
+                                <!-- <figure itemprop="associatedMedia" class="col-sm-6 "> -->
+                                    <a href="{{ asset('/storage/images/modules/event/96/'.$data->id.'.jpg') }}" data-size="2000x1200"
+                                    data-med="{{ asset('/storage/images/modules/event/96/'.$data->id.'.jpg') }}" data-med-size="2000x1200">
+                                        <img src="{{ asset('/storage/images/modules/event/96/'.$data->id.'_preview.jpg') }}" itemprop="thumbnail" alt="{{ $data->title }}"/>
+                                    </a>
+                                    <!-- <figcaption class="d-none" itemprop="{{ $data->title }}">{{ $data->title }}</figcaption> -->
+                                <!-- </figure> -->
+                        @endforeach
+                    </div>
+                </div>
+            @endif
             {{--
             <div class="container">
                 <div class="stem_wrapper mb-4">

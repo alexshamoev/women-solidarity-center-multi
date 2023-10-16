@@ -2,29 +2,31 @@
 
 namespace App\Providers;
 
-use App\Models\AnimatedHeaderStep0;
+use App\Models\Page;
+use App\Models\Module;
+use App\Models\Partner;
+use App\Models\Language;
 use App\Models\EventStep0;
+use App\Models\EventStep1;
+use App\Models\ModuleStep;
+use App\Observers\PageObserver;
+use App\Models\PhotoGalleryStep1;
 use App\Models\PublicationsStep0;
-use App\Observers\AnimatedHeaderStep0Observer;
+
+use App\Observers\ModuleObserver;
+use App\Observers\PartnerObserver;
+use App\Models\AnimatedHeaderStep0;
+use App\Observers\LanguageObserver;
 use App\Observers\EventStep0Observer;
-use App\Observers\PublicationsStep0Observer;
+use App\Observers\EventStep1Observer;
+use App\Observers\ModuleStepObserver;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
+use App\Observers\PhotoGalleryStep1Observer;
+use App\Observers\PublicationsStep0Observer;
+use App\Observers\AnimatedHeaderStep0Observer;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-
-use App\Models\Module;
-use App\Observers\ModuleObserver;
-use App\Models\ModuleStep;
-use App\Observers\ModuleStepObserver;
-use App\Models\Language;
-use App\Observers\LanguageObserver;
-use App\Models\PhotoGalleryStep1;
-use App\Observers\PhotoGalleryStep1Observer;
-use App\Models\Page;
-use App\Observers\PageObserver;
-use App\Models\Partner;
-use App\Observers\PartnerObserver;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -56,6 +58,7 @@ class EventServiceProvider extends ServiceProvider
         AnimatedHeaderStep0::observe(AnimatedHeaderStep0Observer::class);
         PublicationsStep0::observe(PublicationsStep0Observer::class);
         EventStep0::observe(EventStep0Observer::class);
+        EventStep1::observe(EventStep1Observer::class);
         
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\EventStep0;
+use App\Models\EventStep1;
 use Illuminate\Support\Facades\Storage;
 
 class EventStep0Observer
@@ -53,6 +54,10 @@ class EventStep0Observer
 
         if(Storage::exists($file)) {
             Storage::delete($file);
+        }
+
+        foreach($eventStep0->eventStep1 as $data) {
+            EventStep1::destroy($data -> id);
         }
     }
 

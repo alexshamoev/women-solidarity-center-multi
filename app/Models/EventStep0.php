@@ -94,10 +94,10 @@ class EventStep0 extends Model
     }
 
 
-	// public function eventStep1() 
-    // {
-    //     return $this->hasMany(EventStep1::class, 'top_level', 'id')->orderBy('rang', 'desc');
-    // }
+	public function eventStep1() 
+    {
+        return $this->hasMany(EventStep1::class, 'top_level', 'id')->orderBy('rang', 'desc');
+    }
 
 
     public function getFullUrl($lang) 
