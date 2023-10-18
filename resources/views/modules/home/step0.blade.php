@@ -256,6 +256,39 @@
                 </div>
             </div>
         </div>
+
+		<div class="video_gallery mb-4">
+            <div class="news__header_wrapper 
+                        col-12 
+                        text-center 
+                        p-0 
+                        pt-2">
+                @include('includes.pages_headers', [
+                                                  'title' => $videoPage->title ,
+                                              ])
+            </div>
+
+            <div class="row p-2">
+                @foreach ($videoStep0 as $item)
+                    <div class="col-xl-4 
+                                col-md-6 
+                                col-sm-12 
+                                p-2">
+                        @include('includes.block_with_border', [
+                            'description' => $item->title,
+                            'youtube_link' => $item->youtube_link
+                        ])
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                @include('includes.button_with_arrow', [
+                                        'title' => __('bsw.view_all'),
+                                        'link' => $videoPage->fullUrl,
+                ])
+            </div>
+        </div>
 		
 		<div class="pertners pt-4">
 			@include('modules.partners.step0')

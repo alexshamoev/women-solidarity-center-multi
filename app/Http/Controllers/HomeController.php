@@ -6,6 +6,7 @@ use App\Models\Language;
 use App\Models\EventStep0;
 use App\Models\AboutUsStep0;
 use App\Models\PublicationsStep0;
+use App\Models\VideoGalleryStep0;
 use App\Models\AnimatedHeaderStep0;
 use App\Http\Controllers\FrontController;
 
@@ -39,6 +40,8 @@ class HomeController extends FrontController
                                                     'lastPublication' => PublicationsStep0::orderBy('id', 'desc')->take(1)->first(),
                                                     'visibleEvent' => EventStep0::orderByDesc('id')->first(),
                                                     'aboutPage' => AboutUsStep0::first(),
+                                                    'videoPage' => Page::firstWhere('slug', 'video-gallery'),
+                                                    'videoStep0' => VideoGalleryStep0::orderBy('id', 'desc')->take(3)->get(),
                                                 ]);
         
         return view('modules.home.step0', $data);

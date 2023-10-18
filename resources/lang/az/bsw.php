@@ -123,6 +123,7 @@ return [
     'fill_field' => 'Doldurma məcburidir',
     'email_is_required' => 'E-poçtu daxil edin',
     'enter_valid_email' => 'Etibarlı e-poçt ünvanı daxil edin',
+    'view_all' => 'Hamısını gör',
 
 
 ];

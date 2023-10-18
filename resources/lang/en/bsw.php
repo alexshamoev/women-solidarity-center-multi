@@ -124,5 +124,5 @@ return [
     'fill_field' => 'Filling is mandatory',
     'email_is_required' => 'Enter email',
     'enter_valid_email' => 'Enter a valid email address',
-
+    'view_all' => 'See all',
 ];
