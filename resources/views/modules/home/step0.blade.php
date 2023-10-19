@@ -257,7 +257,7 @@
             </div>
         </div>
 
-		<div class="video_gallery mb-4">
+		<div class="video_gallery mb-4 container">
             <div class="news__header_wrapper 
                         col-12 
                         text-center 
