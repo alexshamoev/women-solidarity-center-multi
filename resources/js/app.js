@@ -15,6 +15,7 @@ require("./modules/animated_header");
 require("./modules/section_classes");
 require("./modules/application");
 require("./modules/owl_sliders");
+require("./modules/video_gallery");
 
 // Vue.
 import { createApp } from "vue";

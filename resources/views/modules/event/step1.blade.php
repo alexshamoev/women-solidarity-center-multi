@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="row d-flex justify-content-center pt-xl-5">
-				<div class="col-xl-10 p-0 position-relative stem__text_main">
+				<div class="col-xl-10 p-0 position-relative events__text_main">
                     @include('includes.social_icons', [
                                                             'ImgUrl1' => asset('/storage/images/facebook_new.svg'),
                                                             'ImgUrl2' => asset('/storage/images/linkdin.svg'),

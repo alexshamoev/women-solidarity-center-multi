@@ -15,13 +15,13 @@ $(function ($) {
             },
             600: {
                 items: 2,
-                nav: false,
+                nav: true,
                 dots: true,
             },
             1000: {
                 items: 3,
                 nav: true,
-                dots: false,
+                dots: true,
             },
         },
     });

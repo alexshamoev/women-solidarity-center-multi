@@ -15,6 +15,10 @@
                 content: "";
             }
         }
+
+        &__text_main{
+            height: auto;
+        } 
     }
 }
 
@@ -36,6 +40,10 @@
                 content: "";
             }
         }
+
+        &__text_main{
+            height: auto;
+        }
     }
 }
 
@@ -56,6 +64,10 @@
             &::before{
                 content: "";
             }
+        }
+
+        &__text_main{
+            min-height: 370px;
         }
     }
 }
@@ -86,6 +98,10 @@
                 top: 5%;
             }
         }
+
+        &__text_main{
+            min-height: 370px;
+        }
     }
 }
 
@@ -105,7 +121,6 @@
           width: 100%;
         }
 
-
         &__img_second{
             z-index: 10;
             &::before{
@@ -118,6 +133,10 @@
                 right: -40px;
                 top: 5%;
             }
+        }
+
+        &__text_main{
+            min-height: 370px;
         }
     }
 }
@@ -152,6 +171,9 @@
             }
         }
 
+        &__text_main{
+            min-height: 370px;
+        }
     }
 }
 

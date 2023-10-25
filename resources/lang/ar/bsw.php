@@ -35,6 +35,8 @@ return [
     'user' => 'User',
     'golden_brand' => 'Golden Brand',
     'read_more' => 'Read more',
+    'read_more' => 'ամբողջությամբ',
+    'show_less' => 'Ցույց տալ ավելի քիչ',
     'price' => 'Price',
     'add_to_cart' => 'Add to cart',
     'size' => 'Size',
@@ -120,5 +122,6 @@ return [
     'email_is_required' => 'Մուտքագրեք էլ',
     'enter_valid_email' => 'Մուտքագրեք վավեր էլփոստի հասցե',
     'view_all' => 'Տեսնել բոլորը',
+    
 
 ];

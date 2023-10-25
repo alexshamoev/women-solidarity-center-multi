@@ -85,7 +85,7 @@
 													align-items-center 
 													p-5 
 													h-auto">
-											<img src="/storage/images/advices.svg" alt=""/>
+											<img src="/storage/images/events.svg" alt=""/>
 										</div>
 									</div>
 
@@ -114,7 +114,7 @@
 													align-items-center 
 													p-5 
 													h-auto">
-											<img src="/storage/images/advices.svg" alt=""/>
+											<img src="/storage/images/blog.svg" alt=""/>
 										</div>
 									</div>
 
