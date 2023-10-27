@@ -241,3 +241,13 @@
 .news__info_active{
     display: block;
 }
+
+.news__image_description{
+    & a{
+        color: #fff;
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+

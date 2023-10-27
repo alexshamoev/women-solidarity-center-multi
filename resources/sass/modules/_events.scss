@@ -208,7 +208,6 @@
     &__planned_event_btn{
         border: 0;
         background-color: $color_1;
-        width: 130px;
         border: 1px solid $color_1;
         transition: 0.3s ease-in;
         &:hover{
@@ -223,6 +222,7 @@
         background-color: transparent;
         border: 1px solid $color_2;
         color: $color_2;
+        font-size: 14px;
         &:hover{
             background-color: $color_2;
             color: $color_0;

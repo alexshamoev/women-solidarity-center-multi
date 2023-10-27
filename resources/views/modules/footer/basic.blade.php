@@ -31,7 +31,7 @@
                             {{ __('bsw.subscribe') }}
                         </h4>
 
-                        <div class="p-2 footer__email_input">
+                        <div class="p-2 footer__email_input d-flex justify-content-end">
 
                             {{ Form::open(array('route' => 'subscribe', 'method' => 'POST')) }}
 

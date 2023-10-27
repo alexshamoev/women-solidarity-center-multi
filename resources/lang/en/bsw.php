@@ -35,6 +35,7 @@ return [
     'user' => 'User',
     'golden_brand' => 'Golden Brand',
     'read_more' => 'Read more',
+    'show_less' => 'Show less',
     'price' => 'Price',
     'add_to_cart' => 'Add to cart',
     'size' => 'Size',
@@ -103,7 +104,6 @@ return [
     'next' => 'Next',
     'fill_app' => 'Send Application',
     'filling_is_mandatory' => 'Filling is mandatory',
-    'fill_app' => 'Filling the application',
     'work_study_direction' => 'Please write more specifically in which direction you study/work?',
     'work_study_name' => 'Please indicate where you study/work? (name of the school/organization)',
     'why_want' => "Why do you want to join the Women's Professional Empowerment Network?",
@@ -125,4 +125,7 @@ return [
     'email_is_required' => 'Enter email',
     'enter_valid_email' => 'Enter a valid email address',
     'view_all' => 'See all',
+
+    'number_is_required' => 'Enter your mobile number',
+    'number_is_correctly' => 'Enter the mobile number correctly'
 ];

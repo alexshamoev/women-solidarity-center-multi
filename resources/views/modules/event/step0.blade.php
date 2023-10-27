@@ -54,7 +54,7 @@
 											<a href="{{ $data->fullUrl }}">
 												<button class="p-3 
 																events__planned_event_btn">
-													<h5 class="fw-bold">{{ __('bsw.more') }}</h5>
+													<h5 class="fw-bold">{{ __('bsw.read_more') }}</h5>
 												</button>
 											</a>
 										</div>
